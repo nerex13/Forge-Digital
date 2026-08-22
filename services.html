@@ -1,1 +1,2258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Website Services | Forged Digital Creations</title>
+
+  <meta
+    name="description"
+    content="Explore custom website design, redesigns, quote systems, Google Business setup, domain help, SEO foundations, and website maintenance from Forged Digital Creations."
+  >
+
+  <meta name="theme-color" content="#05070b">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+
+      color: #ffffff;
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(73, 96, 255, 0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(157, 67, 255, 0.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #05070b,
+          #07090e 50%,
+          #040609
+        );
+    }
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      z-index: -4;
+      pointer-events: none;
+
+      opacity: 0.22;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background: rgba(136,112,255,0.45);
+      color: #ffffff;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+
+      pointer-events: none;
+      z-index: -3;
+    }
+
+    .orb {
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(100px);
+      opacity: 0.25;
+
+      animation: drift 15s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 450px;
+      height: 450px;
+
+      left: -180px;
+      top: -130px;
+
+      background: #536cff;
+    }
+
+    .orb-two {
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      top: 35%;
+
+      background: #9148ff;
+
+      animation-delay: -5s;
+    }
+
+    .orb-three {
+      width: 350px;
+      height: 350px;
+
+      left: 38%;
+      bottom: -210px;
+
+      background: #2857ff;
+
+      animation-delay: -9s;
+    }
+
+    @keyframes drift {
+      0%,
+      100% {
+        transform:
+          translate3d(0, 0, 0)
+          scale(1);
+      }
+
+      50% {
+        transform:
+          translate3d(35px, -30px, 0)
+          scale(1.08);
+      }
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          #8298ff,
+          #ab6aff,
+          #d4d9ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 18px;
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      color: #b8c1ff;
+
+      background:
+        rgba(102,113,255,0.07);
+
+      border:
+        1px solid rgba(128,143,255,0.27);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #8b91ff;
+
+      box-shadow:
+        0 0 12px rgba(139,145,255,0.8);
+    }
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 0 23px;
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          90deg,
+          #6d84ff,
+          #965dff
+        );
+
+      box-shadow:
+        0 12px 38px rgba(91,87,255,0.25);
+    }
+
+    .btn-secondary {
+      color: #d4d9e2;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.11);
+    }
+
+    header {
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(5,7,11,0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.065);
+    }
+
+    nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      position: relative;
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      color: #ffffff;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          145deg,
+          #788dff,
+          #8f5fff 55%,
+          #5526bb
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.16);
+
+      box-shadow:
+        0 0 24px rgba(109,111,255,0.38),
+        inset 0 1px 6px rgba(255,255,255,0.2);
+    }
+
+    .brand-mark::after {
+      content: "";
+
+      position: absolute;
+      inset: 4px;
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      border-radius: 9px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+
+      line-height: 1.05;
+    }
+
+    .brand-main {
+      font-size: 15px;
+      letter-spacing: 1.3px;
+    }
+
+    .brand-sub {
+      margin-top: 3px;
+
+      color: #828b99;
+
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2.6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #bfc5d0;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-cta {
+      min-height: 42px;
+
+      display: inline-flex;
+      align-items: center;
+
+      padding: 0 16px;
+
+      border-radius: 11px;
+
+      color: #ffffff !important;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(109,132,255,0.22),
+          rgba(150,93,255,0.22)
+        );
+
+      border:
+        1px solid rgba(132,129,255,0.28);
+    }
+
+    .hero {
+      padding:
+        155px 0
+        80px;
+
+      text-align: center;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+
+      margin:
+        0 auto
+        20px;
+
+      font-size:
+        clamp(48px, 8vw, 82px);
+
+      line-height: 0.95;
+      letter-spacing: -3.5px;
+    }
+
+    .hero p {
+      max-width: 720px;
+
+      margin: 0 auto;
+
+      color: #9ba3b0;
+
+      font-size:
+        clamp(16px, 2vw, 19px);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .trust-row {
+      max-width: 920px;
+
+      margin:
+        55px auto
+        0;
+
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      background:
+        rgba(255,255,255,0.02);
+    }
+
+    .trust-item {
+      padding: 22px;
+
+      border-right:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+
+      font-size: 16px;
+    }
+
+    .trust-item span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: #7f8794;
+
+      font-size: 12px;
+    }
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: #8f9cff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin-top: 10px;
+
+      font-size:
+        clamp(36px, 6vw, 58px);
+
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+
+      color: #929aa7;
+
+      font-size: 17px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+
+      min-height: 330px;
+
+      padding: 30px;
+
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.013)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.085);
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(126,139,255,0.32);
+    }
+
+    .service-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 230px;
+      height: 230px;
+
+      right: -100px;
+      top: -120px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(116,102,255,0.18),
+          transparent 68%
+        );
+
+      pointer-events: none;
+    }
+
+    .service-num {
+      color: #8190ff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.8px;
+    }
+
+    .service-card h3 {
+      margin-top: 28px;
+
+      font-size: 30px;
+
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .service-card p {
+      margin-top: 13px;
+
+      max-width: 520px;
+
+      color: #929aa7;
+    }
+
+    .service-list {
+      margin-top: 22px;
+
+      display: grid;
+
+      gap: 9px;
+    }
+
+    .service-list div {
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
+
+      color: #cbd0d9;
+
+      font-size: 13px;
+    }
+
+    .service-list div::before {
+      content: "✓";
+
+      color: #9aa4ff;
+
+      font-weight: 900;
+    }
+
+    .service-footer {
+      margin-top: 24px;
+
+      padding-top: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.065);
+    }
+
+    .service-price span {
+      display: block;
+
+      color: #747d8a;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .service-price strong {
+      display: block;
+
+      margin-top: 2px;
+
+      font-size: 24px;
+    }
+
+    .small-link {
+      color: #aeb7ff;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .packages {
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(99,76,255,0.05),
+          transparent
+        );
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .package {
+      position: relative;
+
+      padding: 30px;
+
+      border-radius: 22px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .package.featured {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.13),
+          rgba(145,85,255,0.05)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.31);
+
+      box-shadow:
+        0 20px 55px rgba(81,64,255,0.12);
+    }
+
+    .popular {
+      position: absolute;
+
+      top: 16px;
+      right: 16px;
+
+      padding: 6px 9px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(122,114,255,0.16);
+
+      color: #b9c0ff;
+
+      border:
+        1px solid rgba(129,137,255,0.24);
+
+      font-size: 9px;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .package-name {
+      color: #8d99ff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+    }
+
+    .package h3 {
+      margin-top: 12px;
+
+      font-size: 30px;
+    }
+
+    .package-price {
+      margin-top: 15px;
+
+      font-size: 38px;
+      font-weight: 900;
+    }
+
+    .package-price small {
+      color: #717a87;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .package > p {
+      margin-top: 13px;
+
+      color: #929aa7;
+
+      font-size: 14px;
+    }
+
+    .package-list {
+      display: grid;
+
+      gap: 10px;
+
+      margin-top: 24px;
+    }
+
+    .package-list div {
+      color: #c7ccd5;
+
+      font-size: 13px;
+    }
+
+    .package-list div::before {
+      content: "✓";
+
+      margin-right: 8px;
+
+      color: #9aa4ff;
+
+      font-weight: 900;
+    }
+
+    .package .btn {
+      width: 100%;
+
+      margin-top: 26px;
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+    }
+
+    .addon {
+      padding: 24px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+    }
+
+    .addon h3 {
+      font-size: 18px;
+    }
+
+    .addon p {
+      margin-top: 7px;
+
+      color: #868f9c;
+
+      font-size: 13px;
+    }
+
+    .addon strong {
+      display: block;
+
+      margin-top: 18px;
+
+      color: #b6beff;
+
+      font-size: 13px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+    }
+
+    .process-card {
+      padding: 25px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.022);
+
+      border:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .process-number {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #6f84ff,
+          #985eff
+        );
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .process-card h3 {
+      margin-top: 24px;
+
+      font-size: 20px;
+    }
+
+    .process-card p {
+      margin-top: 8px;
+
+      color: #858e9b;
+
+      font-size: 13px;
+    }
+
+    .cta-box {
+      padding: 58px;
+
+      border-radius: 26px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.15),
+          rgba(145,85,255,0.06)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.28);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.18);
+    }
+
+    .cta-box h2 {
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      font-size:
+        clamp(38px, 6vw, 62px);
+
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+
+      margin:
+        17px auto
+        0;
+
+      color: #929aa7;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 28px;
+    }
+
+    footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,0.06);
+
+      color: #737c89;
+
+      font-size: 12px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+    }
+
+    @media (max-width: 950px) {
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .addons-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-row {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+
+        border-bottom:
+          1px solid rgba(255,255,255,0.07);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .cta-box {
+        padding: 38px 24px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width:
+          calc(100% - 24px);
+      }
+
+      .brand-main {
+        font-size: 12px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-cta {
+        padding: 0 12px;
+
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn {
+        width: 100%;
+      }
+
+      .addons-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 24px;
+      }
+
+      .service-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+  </div>
+
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <div class="brand-mark">
+            F
+          </div>
+
+          <div class="brand-text">
+
+            <span class="brand-main">
+              FORGED DIGITAL
+            </span>
+
+            <span class="brand-sub">
+              CREATIONS
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="portfolio.html">
+            Portfolio
+          </a>
+
+          <a href="maintenance.html">
+            Maintenance
+          </a>
+
+          <a
+            href="quote.html"
+            class="nav-cta"
+          >
+            Start a Project
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="eyebrow">
+
+          <span class="eyebrow-dot"></span>
+
+          Website Services
+
+        </div>
+
+
+        <h1>
+
+          Built around your business.
+
+          <span class="gradient-text">
+            Not a template.
+          </span>
+
+        </h1>
+
+
+        <p>
+
+          From a sharp one-page site
+          to a full business website with
+          quote systems, galleries, Google setup,
+          and ongoing management,
+          Forged Digital Creations builds around
+          what your business actually needs.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="quote.html"
+            class="btn btn-primary"
+          >
+            Start Your Project →
+          </a>
+
+          <a
+            href="#packages"
+            class="btn btn-secondary"
+          >
+            View Packages
+          </a>
+
+        </div>
+
+
+        <div class="trust-row">
+
+          <div class="trust-item">
+
+            <strong>
+              Mobile First
+            </strong>
+
+            <span>
+              Designed for phones and desktops
+            </span>
+
+          </div>
+
+
+          <div class="trust-item">
+
+            <strong>
+              Custom Built
+            </strong>
+
+            <span>
+              Designed around your actual business
+            </span>
+
+          </div>
+
+
+          <div class="trust-item">
+
+            <strong>
+              Built To Grow
+            </strong>
+
+            <span>
+              Add pages, services, and features later
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            Core Services
+          </div>
+
+          <h2>
+            Everything needed to build a stronger online presence.
+          </h2>
+
+          <p>
+            Pick the pieces you need,
+            or let us put together the right setup
+            for your business.
+          </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+          <article class="service-card">
+
+            <div class="service-num">
+              SERVICE 01
+            </div>
+
+            <h3>
+              Custom Website Design
+            </h3>
+
+            <p>
+              A professional website designed
+              around your brand, services,
+              customers, and business goals.
+            </p>
+
+            <div class="service-list">
+
+              <div>
+                Custom layout and styling
+              </div>
+
+              <div>
+                Mobile responsive design
+              </div>
+
+              <div>
+                Calls to action
+              </div>
+
+              <div>
+                Service and contact sections
+              </div>
+
+              <div>
+                Launch-ready structure
+              </div>
+
+            </div>
+
+            <div class="service-footer">
+
+              <div class="service-price">
+
+                <span>
+                  Starting at
+                </span>
+
+                <strong>
+                  $399
+                </strong>
+
+              </div>
+
+              <a
+                class="small-link"
+                href="quote.html?package=ignite"
+              >
+                Start Project →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-num">
+              SERVICE 02
+            </div>
+
+            <h3>
+              Website Redesign
+            </h3>
+
+            <p>
+              Keep the business,
+              lose the outdated website.
+              We rebuild the presentation around
+              a cleaner, stronger experience.
+            </p>
+
+            <div class="service-list">
+
+              <div>
+                Modern visual refresh
+              </div>
+
+              <div>
+                Improved mobile layout
+              </div>
+
+              <div>
+                Stronger calls to action
+              </div>
+
+              <div>
+                Better service organization
+              </div>
+
+              <div>
+                Existing content migration
+              </div>
+
+            </div>
+
+            <div class="service-footer">
+
+              <div class="service-price">
+
+                <span>
+                  Pricing
+                </span>
+
+                <strong>
+                  Custom
+                </strong>
+
+              </div>
+
+              <a
+                class="small-link"
+                href="quote.html"
+              >
+                Request Quote →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-num">
+              SERVICE 03
+            </div>
+
+            <h3>
+              Quote & Booking Systems
+            </h3>
+
+            <p>
+              Turn the website into a tool.
+              Customers can submit project details,
+              request estimates, or start the
+              scheduling process online.
+            </p>
+
+            <div class="service-list">
+
+              <div>
+                Custom intake forms
+              </div>
+
+              <div>
+                Quote request systems
+              </div>
+
+              <div>
+                Service selections
+              </div>
+
+              <div>
+                Customer contact capture
+              </div>
+
+              <div>
+                Mobile-friendly forms
+              </div>
+
+            </div>
+
+            <div class="service-footer">
+
+              <div class="service-price">
+
+                <span>
+                  Add-on
+                </span>
+
+                <strong>
+                  Custom
+                </strong>
+
+              </div>
+
+              <a
+                class="small-link"
+                href="quote.html"
+              >
+                Add To Project →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-num">
+              SERVICE 04
+            </div>
+
+            <h3>
+              Google Business Setup
+            </h3>
+
+            <p>
+              Help connect your website
+              to a stronger local presence
+              so customers searching nearby
+              can find your business more easily.
+            </p>
+
+            <div class="service-list">
+
+              <div>
+                Profile setup guidance
+              </div>
+
+              <div>
+                Business information review
+              </div>
+
+              <div>
+                Website connection
+              </div>
+
+              <div>
+                Service area assistance
+              </div>
+
+              <div>
+                Search visibility foundations
+              </div>
+
+            </div>
+
+            <div class="service-footer">
+
+              <div class="service-price">
+
+                <span>
+                  Available
+                </span>
+
+                <strong>
+                  Add-on
+                </strong>
+
+              </div>
+
+              <a
+                class="small-link"
+                href="quote.html"
+              >
+                Ask About Setup →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-num">
+              SERVICE 05
+            </div>
+
+            <h3>
+              Domain Setup
+            </h3>
+
+            <p>
+              Already own a domain?
+              Need help choosing one?
+              We can help get your website
+              connected to the address customers
+              will actually remember.
+            </p>
+
+            <div class="service-list">
+
+              <div>
+                Domain selection help
+              </div>
+
+              <div>
+                DNS connection assistance
+              </div>
+
+              <div>
+                GitHub Pages connection
+              </div>
+
+              <div>
+                HTTPS setup
+              </div>
+
+              <div>
+                Launch verification
+              </div>
+
+            </div>
+
+            <div class="service-footer">
+
+              <div class="service-price">
+
+                <span>
+                  Available
+                </span>
+
+                <strong>
+                  Add-on
+                </strong>
+
+              </div>
+
+              <a
+                class="small-link"
+                href="quote.html"
+              >
+                Add Domain Help →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-num">
+              SERVICE 06
+            </div>
+
+            <h3>
+              Website Maintenance
+            </h3>
+
+            <p>
+              Your website does not have to freeze
+              on launch day.
+              Keep your services,
+              pricing, photos, and information current.
+            </p>
+
+            <div class="service-list">
+
+              <div>
+                Content updates
+              </div>
+
+              <div>
+                Pricing changes
+              </div>
+
+              <div>
+                New services
+              </div>
+
+              <div>
+                Photo updates
+              </div>
+
+              <div>
+                Ongoing site improvements
+              </div>
+
+            </div>
+
+            <div class="service-footer">
+
+              <div class="service-price">
+
+                <span>
+                  Monthly
+                </span>
+
+                <strong>
+                  Plans
+                </strong>
+
+              </div>
+
+              <a
+                class="small-link"
+                href="maintenance.html"
+              >
+                View Maintenance →
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+
+    <section
+      class="packages"
+      id="packages"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            Website Packages
+          </div>
+
+          <h2>
+            Start with the right level of build.
+          </h2>
+
+          <p>
+            These are starting points.
+            Your final quote depends on
+            the number of pages,
+            features,
+            and custom functionality you need.
+          </p>
+
+        </div>
+
+
+        <div class="package-grid">
+
+
+          <article class="package">
+
+            <div class="package-name">
+              Ignite
+            </div>
+
+            <h3>
+              Starter Website
+            </h3>
+
+            <div class="package-price">
+              $399
+              <small>
+                starting
+              </small>
+            </div>
+
+            <p>
+              Built for a small business
+              that needs a clean,
+              professional online presence.
+            </p>
+
+            <div class="package-list">
+
+              <div>
+                1-page custom website
+              </div>
+
+              <div>
+                Mobile responsive design
+              </div>
+
+              <div>
+                Service sections
+              </div>
+
+              <div>
+                Contact section
+              </div>
+
+              <div>
+                SEO foundations
+              </div>
+
+              <div>
+                Domain connection assistance
+              </div>
+
+            </div>
+
+            <a
+              href="quote.html?package=ignite"
+              class="btn btn-secondary"
+            >
+              Choose Ignite
+            </a>
+
+          </article>
+
+
+          <article class="package featured">
+
+            <div class="popular">
+              Most Popular
+            </div>
+
+            <div class="package-name">
+              Forge
+            </div>
+
+            <h3>
+              Business Website
+            </h3>
+
+            <div class="package-price">
+              $699
+              <small>
+                starting
+              </small>
+            </div>
+
+            <p>
+              The sweet spot for businesses
+              that need more than a basic page
+              and want the website to actively
+              help generate customers.
+            </p>
+
+            <div class="package-list">
+
+              <div>
+                Custom business website
+              </div>
+
+              <div>
+                Multiple sections or pages
+              </div>
+
+              <div>
+                Custom contact or quote form
+              </div>
+
+              <div>
+                Mobile optimization
+              </div>
+
+              <div>
+                SEO foundations
+              </div>
+
+              <div>
+                Google Business assistance
+              </div>
+
+            </div>
+
+            <a
+              href="quote.html?package=forge"
+              class="btn btn-primary"
+            >
+              Choose Forge →
+            </a>
+
+          </article>
+
+
+          <article class="package">
+
+            <div class="package-name">
+              Foundry
+            </div>
+
+            <h3>
+              Advanced Website
+            </h3>
+
+            <div class="package-price">
+              $999+
+            </div>
+
+            <p>
+              For businesses that need
+              a more complete website,
+              custom functionality,
+              and a deeper launch setup.
+            </p>
+
+            <div class="package-list">
+
+              <div>
+                Multiple custom pages
+              </div>
+
+              <div>
+                Advanced forms or tools
+              </div>
+
+              <div>
+                Portfolio or gallery
+              </div>
+
+              <div>
+                Domain configuration
+              </div>
+
+              <div>
+                Google Business setup
+              </div>
+
+              <div>
+                Launch assistance
+              </div>
+
+            </div>
+
+            <a
+              href="quote.html?package=foundry"
+              class="btn btn-secondary"
+            >
+              Choose Foundry
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ADDONS -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            Add-Ons
+          </div>
+
+          <h2>
+            Add what your business actually needs.
+          </h2>
+
+          <p>
+            Not every business needs the same tools.
+            These can be added to a website project
+            when they make sense.
+          </p>
+
+        </div>
+
+
+        <div class="addons-grid">
+
+          <article class="addon">
+
+            <h3>
+              Quote Forms
+            </h3>
+
+            <p>
+              Collect customer details,
+              services,
+              and project information.
+            </p>
+
+            <strong>
+              Custom pricing
+            </strong>
+
+          </article>
+
+
+          <article class="addon">
+
+            <h3>
+              Galleries
+            </h3>
+
+            <p>
+              Showcase completed work,
+              projects,
+              or before-and-after results.
+            </p>
+
+            <strong>
+              Custom pricing
+            </strong>
+
+          </article>
+
+
+          <article class="addon">
+
+            <h3>
+              Google Business
+            </h3>
+
+            <p>
+              Help with profile setup,
+              connection,
+              and local visibility foundations.
+            </p>
+
+            <strong>
+              Available add-on
+            </strong>
+
+          </article>
+
+
+          <article class="addon">
+
+            <h3>
+              Domain Setup
+            </h3>
+
+            <p>
+              Help choosing,
+              buying,
+              and connecting your business domain.
+            </p>
+
+            <strong>
+              Available add-on
+            </strong>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            How It Works
+          </div>
+
+          <h2>
+            Simple process. Custom result.
+          </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+          <article class="process-card">
+
+            <div class="process-number">
+              1
+            </div>
+
+            <h3>
+              Tell Us About It
+            </h3>
+
+            <p>
+              Complete the project intake
+              with your business,
+              goals,
+              style,
+              and website needs.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <div class="process-number">
+              2
+            </div>
+
+            <h3>
+              Scope The Build
+            </h3>
+
+            <p>
+              We determine the pages,
+              features,
+              and setup required
+              for your project.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <div class="process-number">
+              3
+            </div>
+
+            <h3>
+              Design & Review
+            </h3>
+
+            <p>
+              The website is built,
+              then adjusted based on
+              your review and feedback.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <div class="process-number">
+              4
+            </div>
+
+            <h3>
+              Launch
+            </h3>
+
+            <p>
+              Once approved,
+              the site is connected
+              and ready for customers.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="section-kicker">
+            Start Building
+          </div>
+
+          <h2>
+            Not sure which service fits?
+            <span class="gradient-text">
+              That's what the project intake is for.
+            </span>
+          </h2>
+
+          <p>
+            Tell us what your business does
+            and what you want the website to accomplish.
+            We can shape the project from there.
+          </p>
+
+          <div class="cta-actions">
+
+            <a
+              href="quote.html"
+              class="btn btn-primary"
+            >
+              Start Your Project →
+            </a>
+
+            <a
+              href="portfolio.html"
+              class="btn btn-secondary"
+            >
+              See Our Work
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-row">
+
+        <div>
+          Forged Digital Creations © 2026
+        </div>
+
+        <div>
+          Forged to stand out. Built to perform.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
