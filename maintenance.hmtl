@@ -1,1 +1,2277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Website Maintenance | Forged Digital Creations</title>
+
+  <meta
+    name="description"
+    content="Keep your website updated, accurate, polished, and ready to grow with ongoing website maintenance from Forged Digital Creations."
+  >
+
+  <meta name="theme-color" content="#05070b">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+
+      color: #ffffff;
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(73, 96, 255, 0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(157, 67, 255, 0.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #05070b,
+          #07090e 50%,
+          #040609
+        );
+    }
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      z-index: -4;
+      pointer-events: none;
+
+      opacity: 0.22;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background: rgba(136,112,255,0.45);
+      color: #ffffff;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+      pointer-events: none;
+
+      z-index: -3;
+    }
+
+    .orb {
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(100px);
+      opacity: 0.25;
+
+      animation: drift 15s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 450px;
+      height: 450px;
+
+      left: -180px;
+      top: -130px;
+
+      background: #536cff;
+    }
+
+    .orb-two {
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      top: 35%;
+
+      background: #9148ff;
+
+      animation-delay: -5s;
+    }
+
+    .orb-three {
+      width: 350px;
+      height: 350px;
+
+      left: 38%;
+      bottom: -210px;
+
+      background: #2857ff;
+
+      animation-delay: -9s;
+    }
+
+    @keyframes drift {
+      0%,
+      100% {
+        transform:
+          translate3d(0, 0, 0)
+          scale(1);
+      }
+
+      50% {
+        transform:
+          translate3d(35px, -30px, 0)
+          scale(1.08);
+      }
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          #8298ff,
+          #ab6aff,
+          #d4d9ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 18px;
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      color: #b8c1ff;
+
+      background:
+        rgba(102,113,255,0.07);
+
+      border:
+        1px solid rgba(128,143,255,0.27);
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #8b91ff;
+
+      box-shadow:
+        0 0 12px rgba(139,145,255,0.8);
+    }
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 0 23px;
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          90deg,
+          #6d84ff,
+          #965dff
+        );
+
+      box-shadow:
+        0 12px 38px rgba(91,87,255,0.25);
+    }
+
+    .btn-secondary {
+      color: #d4d9e2;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.11);
+    }
+
+    header {
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(5,7,11,0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.065);
+    }
+
+    nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      position: relative;
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      color: #ffffff;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          145deg,
+          #788dff,
+          #8f5fff 55%,
+          #5526bb
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.16);
+
+      box-shadow:
+        0 0 24px rgba(109,111,255,0.38),
+        inset 0 1px 6px rgba(255,255,255,0.2);
+    }
+
+    .brand-mark::after {
+      content: "";
+
+      position: absolute;
+      inset: 4px;
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      border-radius: 9px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+
+      line-height: 1.05;
+    }
+
+    .brand-main {
+      font-size: 15px;
+      letter-spacing: 1.3px;
+    }
+
+    .brand-sub {
+      margin-top: 3px;
+
+      color: #828b99;
+
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2.6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #bfc5d0;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-cta {
+      min-height: 42px;
+
+      display: inline-flex;
+      align-items: center;
+
+      padding: 0 16px;
+
+      border-radius: 11px;
+
+      color: #ffffff !important;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(109,132,255,0.22),
+          rgba(150,93,255,0.22)
+        );
+
+      border:
+        1px solid rgba(132,129,255,0.28);
+    }
+
+    .hero {
+      padding:
+        155px 0
+        90px;
+
+      text-align: center;
+    }
+
+    .hero h1 {
+      max-width: 960px;
+
+      margin:
+        0 auto
+        22px;
+
+      font-size:
+        clamp(50px, 8vw, 86px);
+
+      line-height: 0.95;
+      letter-spacing: -3.5px;
+    }
+
+    .hero p {
+      max-width: 740px;
+
+      margin: 0 auto;
+
+      color: #9ba3b0;
+
+      font-size:
+        clamp(16px, 2vw, 19px);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .status-strip {
+      max-width: 920px;
+
+      margin:
+        55px auto
+        0;
+
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.02);
+    }
+
+    .status-item {
+      padding: 23px;
+
+      border-right:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .status-item:last-child {
+      border-right: 0;
+    }
+
+    .status-item strong {
+      display: block;
+
+      font-size: 16px;
+    }
+
+    .status-item span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: #7f8794;
+
+      font-size: 12px;
+    }
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: #8f9cff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.8px;
+
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin-top: 10px;
+
+      font-size:
+        clamp(36px, 6vw, 58px);
+
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+
+      color: #929aa7;
+
+      font-size: 17px;
+    }
+
+    .care-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 16px;
+    }
+
+    .care-card {
+      min-height: 245px;
+
+      padding: 27px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+    }
+
+    .care-icon {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(109,132,255,0.18),
+          rgba(150,93,255,0.12)
+        );
+
+      border:
+        1px solid rgba(129,137,255,0.19);
+
+      color: #b8c1ff;
+
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .care-card h3 {
+      margin-top: 24px;
+
+      font-size: 20px;
+    }
+
+    .care-card p {
+      margin-top: 8px;
+
+      color: #858e9b;
+
+      font-size: 13px;
+    }
+
+    .plans {
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(102,85,255,0.045),
+          transparent
+        );
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 18px;
+    }
+
+    .plan {
+      position: relative;
+
+      padding: 30px;
+
+      border-radius: 22px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .plan.featured {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.13),
+          rgba(145,85,255,0.05)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.31);
+
+      box-shadow:
+        0 20px 55px rgba(81,64,255,0.12);
+    }
+
+    .popular {
+      position: absolute;
+
+      top: 16px;
+      right: 16px;
+
+      padding: 6px 9px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(122,114,255,0.16);
+
+      color: #b9c0ff;
+
+      border:
+        1px solid rgba(129,137,255,0.24);
+
+      font-size: 9px;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .plan-label {
+      color: #8d99ff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+    }
+
+    .plan h3 {
+      margin-top: 12px;
+
+      font-size: 30px;
+    }
+
+    .plan-price {
+      margin-top: 15px;
+
+      font-size: 38px;
+      font-weight: 900;
+    }
+
+    .plan-price small {
+      color: #717a87;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .plan > p {
+      margin-top: 13px;
+
+      color: #929aa7;
+
+      font-size: 14px;
+    }
+
+    .plan-list {
+      display: grid;
+
+      gap: 10px;
+
+      margin-top: 24px;
+    }
+
+    .plan-list div {
+      color: #c7ccd5;
+
+      font-size: 13px;
+    }
+
+    .plan-list div::before {
+      content: "✓";
+
+      margin-right: 8px;
+
+      color: #9aa4ff;
+
+      font-weight: 900;
+    }
+
+    .plan .btn {
+      width: 100%;
+
+      margin-top: 26px;
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 18px;
+    }
+
+    .included-card {
+      padding: 28px;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.04),
+          rgba(255,255,255,0.015)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+    }
+
+    .included-card h3 {
+      font-size: 22px;
+    }
+
+    .included-card p {
+      margin-top: 9px;
+
+      color: #8c94a1;
+
+      font-size: 14px;
+    }
+
+    .included-list {
+      margin-top: 20px;
+
+      display: grid;
+
+      gap: 10px;
+    }
+
+    .included-list div {
+      color: #c7ccd5;
+
+      font-size: 13px;
+    }
+
+    .included-list div::before {
+      content: "→";
+
+      margin-right: 8px;
+
+      color: #8d99ff;
+
+      font-weight: 900;
+    }
+
+    .comparison {
+      padding-top: 20px;
+    }
+
+    .comparison-box {
+      overflow: hidden;
+
+      border-radius: 22px;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+        rgba(255,255,255,0.02);
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns:
+        1.5fr repeat(3,1fr);
+
+      min-height: 58px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.06);
+    }
+
+    .comparison-row:last-child {
+      border-bottom: 0;
+    }
+
+    .comparison-row > div {
+      padding: 16px 18px;
+
+      display: flex;
+      align-items: center;
+
+      color: #aeb4bf;
+
+      font-size: 13px;
+    }
+
+    .comparison-row > div:not(:last-child) {
+      border-right:
+        1px solid rgba(255,255,255,0.06);
+    }
+
+    .comparison-head {
+      background:
+        rgba(255,255,255,0.03);
+    }
+
+    .comparison-head > div {
+      color: #ffffff;
+
+      font-weight: 900;
+    }
+
+    .comparison-feature {
+      color: #d6dae2 !important;
+
+      font-weight: 800;
+    }
+
+    .yes {
+      color: #b7c0ff !important;
+
+      font-weight: 900;
+    }
+
+    .muted {
+      color: #707886 !important;
+    }
+
+    .one-time {
+      padding-top: 30px;
+    }
+
+    .one-time-box {
+      padding: 40px;
+
+      border-radius: 22px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.04),
+          rgba(255,255,255,0.015)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .one-time-copy {
+      max-width: 680px;
+    }
+
+    .one-time-copy h3 {
+      font-size: 30px;
+
+      line-height: 1.05;
+    }
+
+    .one-time-copy p {
+      margin-top: 11px;
+
+      color: #8f97a4;
+    }
+
+    .one-time-price {
+      flex-shrink: 0;
+
+      text-align: right;
+    }
+
+    .one-time-price span {
+      display: block;
+
+      color: #747c89;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .one-time-price strong {
+      display: block;
+
+      margin-top: 2px;
+
+      font-size: 30px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 14px;
+    }
+
+    .process-card {
+      padding: 25px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.022);
+
+      border:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .process-number {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #6f84ff,
+          #985eff
+        );
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .process-card h3 {
+      margin-top: 24px;
+
+      font-size: 20px;
+    }
+
+    .process-card p {
+      margin-top: 8px;
+
+      color: #858e9b;
+
+      font-size: 13px;
+    }
+
+    .cta-box {
+      padding: 60px;
+
+      border-radius: 27px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.15),
+          rgba(145,85,255,0.06)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.28);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.18);
+    }
+
+    .cta-box h2 {
+      max-width: 800px;
+
+      margin: 0 auto;
+
+      font-size:
+        clamp(40px,6vw,64px);
+
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+
+      margin:
+        17px auto
+        0;
+
+      color: #929aa7;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 28px;
+    }
+
+    footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,0.06);
+
+      color: #737c89;
+
+      font-size: 12px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+    }
+
+    @media (max-width: 950px) {
+      .care-grid,
+      .plan-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .included-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .comparison-row {
+        grid-template-columns:
+          1.2fr repeat(3,1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .status-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .status-item {
+        border-right: 0;
+
+        border-bottom:
+          1px solid rgba(255,255,255,0.07);
+      }
+
+      .status-item:last-child {
+        border-bottom: 0;
+      }
+
+      .comparison-box {
+        overflow-x: auto;
+      }
+
+      .comparison-row {
+        min-width: 720px;
+      }
+
+      .one-time-box {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .one-time-price {
+        text-align: left;
+      }
+
+      .cta-box {
+        padding: 40px 24px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width:
+          calc(100% - 24px);
+      }
+
+      .brand-main {
+        font-size: 12px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-cta {
+        padding: 0 12px;
+
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn {
+        width: 100%;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+  </div>
+
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <div class="brand-mark">
+            F
+          </div>
+
+          <div class="brand-text">
+
+            <span class="brand-main">
+              FORGED DIGITAL
+            </span>
+
+            <span class="brand-sub">
+              CREATIONS
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="portfolio.html">
+            Portfolio
+          </a>
+
+          <a
+            href="quote.html"
+            class="nav-cta"
+          >
+            Start a Project
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="eyebrow">
+
+          <span class="eyebrow-dot"></span>
+
+          Website Maintenance
+
+        </div>
+
+
+        <h1>
+
+          Launch day is not the
+
+          <span class="gradient-text">
+            finish line.
+          </span>
+
+        </h1>
+
+
+        <p>
+
+          Businesses change.
+          Pricing changes.
+          Services change.
+          Photos get outdated.
+          Website maintenance keeps your site accurate,
+          polished,
+          and useful without making you wrestle with code.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="#plans"
+            class="btn btn-primary"
+          >
+            View Maintenance Plans ↓
+          </a>
+
+          <a
+            href="quote.html"
+            class="btn btn-secondary"
+          >
+            Ask About Management
+          </a>
+
+        </div>
+
+
+        <div class="status-strip">
+
+          <div class="status-item">
+
+            <strong>
+              Stay Current
+            </strong>
+
+            <span>
+              Keep services, pricing, and information accurate
+            </span>
+
+          </div>
+
+
+          <div class="status-item">
+
+            <strong>
+              Stay Polished
+            </strong>
+
+            <span>
+              Small issues do not pile up over time
+            </span>
+
+          </div>
+
+
+          <div class="status-item">
+
+            <strong>
+              Stay Flexible
+            </strong>
+
+            <span>
+              Add new content as your business grows
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHAT WE HANDLE -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            What We Handle
+          </div>
+
+          <h2>
+            The little changes that keep your website from getting stale.
+          </h2>
+
+          <p>
+            Maintenance is built around the updates
+            real small businesses actually need after launch.
+          </p>
+
+        </div>
+
+
+        <div class="care-grid">
+
+          <article class="care-card">
+
+            <div class="care-icon">
+              01
+            </div>
+
+            <h3>
+              Content Updates
+            </h3>
+
+            <p>
+              Change wording,
+              hours,
+              business information,
+              service details,
+              or other website content.
+            </p>
+
+          </article>
+
+
+          <article class="care-card">
+
+            <div class="care-icon">
+              02
+            </div>
+
+            <h3>
+              Pricing Changes
+            </h3>
+
+            <p>
+              Update service prices,
+              packages,
+              fees,
+              or promotional offers when your business changes.
+            </p>
+
+          </article>
+
+
+          <article class="care-card">
+
+            <div class="care-icon">
+              03
+            </div>
+
+            <h3>
+              New Services
+            </h3>
+
+            <p>
+              Add new services,
+              sections,
+              or supporting content without rebuilding the site.
+            </p>
+
+          </article>
+
+
+          <article class="care-card">
+
+            <div class="care-icon">
+              04
+            </div>
+
+            <h3>
+              Photo Updates
+            </h3>
+
+            <p>
+              Swap outdated photos,
+              add new work,
+              and keep galleries or before-and-after sections fresh.
+            </p>
+
+          </article>
+
+
+          <article class="care-card">
+
+            <div class="care-icon">
+              05
+            </div>
+
+            <h3>
+              Small Fixes
+            </h3>
+
+            <p>
+              Broken links,
+              strange spacing,
+              outdated buttons,
+              or little issues can be cleaned up as they appear.
+            </p>
+
+          </article>
+
+
+          <article class="care-card">
+
+            <div class="care-icon">
+              06
+            </div>
+
+            <h3>
+              Ongoing Improvements
+            </h3>
+
+            <p>
+              Add refinements over time as you learn
+              what customers are clicking,
+              asking,
+              and responding to.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PLANS -->
+
+    <section
+      class="plans"
+      id="plans"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            Monthly Plans
+          </div>
+
+          <h2>
+            Pick the level of support your business actually needs.
+          </h2>
+
+          <p>
+            These plans are designed for ongoing updates,
+            not massive redesigns every month.
+            Larger changes can be quoted separately.
+          </p>
+
+        </div>
+
+
+        <div class="plan-grid">
+
+
+          <article class="plan">
+
+            <div class="plan-label">
+              Essential
+            </div>
+
+            <h3>
+              Basic Maintenance
+            </h3>
+
+            <div class="plan-price">
+              $39
+              <small>
+                / month
+              </small>
+            </div>
+
+            <p>
+              Best for simple websites that only need occasional updates.
+            </p>
+
+            <div class="plan-list">
+
+              <div>
+                Up to 2 small content updates per month
+              </div>
+
+              <div>
+                Pricing or text changes
+              </div>
+
+              <div>
+                Link and button fixes
+              </div>
+
+              <div>
+                General site check
+              </div>
+
+              <div>
+                Email-based update requests
+              </div>
+
+            </div>
+
+            <a
+              href="quote.html"
+              class="btn btn-secondary"
+            >
+              Ask About Essential
+            </a>
+
+          </article>
+
+
+          <article class="plan featured">
+
+            <div class="popular">
+              Most Popular
+            </div>
+
+            <div class="plan-label">
+              Growth
+            </div>
+
+            <h3>
+              Active Website Care
+            </h3>
+
+            <div class="plan-price">
+              $79
+              <small>
+                / month
+              </small>
+            </div>
+
+            <p>
+              For businesses that update services,
+              pricing,
+              photos,
+              or content more regularly.
+            </p>
+
+            <div class="plan-list">
+
+              <div>
+                Up to 5 small updates per month
+              </div>
+
+              <div>
+                Pricing and content changes
+              </div>
+
+              <div>
+                Photo and gallery updates
+              </div>
+
+              <div>
+                New service section additions
+              </div>
+
+              <div>
+                General site checks
+              </div>
+
+              <div>
+                Priority update handling
+              </div>
+
+            </div>
+
+            <a
+              href="quote.html"
+              class="btn btn-primary"
+            >
+              Ask About Growth →
+            </a>
+
+          </article>
+
+
+          <article class="plan">
+
+            <div class="plan-label">
+              Managed
+            </div>
+
+            <h3>
+              Ongoing Management
+            </h3>
+
+            <div class="plan-price">
+              $149
+              <small>
+                / month
+              </small>
+            </div>
+
+            <p>
+              For businesses that want the website
+              actively managed instead of thinking about it themselves.
+            </p>
+
+            <div class="plan-list">
+
+              <div>
+                Up to 10 small updates per month
+              </div>
+
+              <div>
+                Content and pricing management
+              </div>
+
+              <div>
+                Photo and portfolio updates
+              </div>
+
+              <div>
+                New sections and service additions
+              </div>
+
+              <div>
+                Ongoing layout refinements
+              </div>
+
+              <div>
+                Priority support
+              </div>
+
+            </div>
+
+            <a
+              href="quote.html"
+              class="btn btn-secondary"
+            >
+              Ask About Managed
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHAT COUNTS -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            What Counts As An Update
+          </div>
+
+          <h2>
+            Clear expectations.
+            No mystery bucket.
+          </h2>
+
+          <p>
+            Maintenance covers normal website upkeep.
+            Larger builds,
+            new systems,
+            or major redesigns are handled separately.
+          </p>
+
+        </div>
+
+
+        <div class="included-grid">
+
+          <article class="included-card">
+
+            <h3>
+              Included Maintenance
+            </h3>
+
+            <p>
+              The normal day-to-day changes that keep a business site current.
+            </p>
+
+            <div class="included-list">
+
+              <div>
+                Changing prices
+              </div>
+
+              <div>
+                Editing text
+              </div>
+
+              <div>
+                Replacing photos
+              </div>
+
+              <div>
+                Updating business hours
+              </div>
+
+              <div>
+                Adding a small service section
+              </div>
+
+              <div>
+                Fixing broken links
+              </div>
+
+              <div>
+                Changing phone or email details
+              </div>
+
+              <div>
+                Updating calls to action
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="included-card">
+
+            <h3>
+              Quoted Separately
+            </h3>
+
+            <p>
+              Bigger changes that are closer to development work than upkeep.
+            </p>
+
+            <div class="included-list">
+
+              <div>
+                Full page redesigns
+              </div>
+
+              <div>
+                Large new page builds
+              </div>
+
+              <div>
+                Advanced booking systems
+              </div>
+
+              <div>
+                E-commerce functionality
+              </div>
+
+              <div>
+                Major custom calculators
+              </div>
+
+              <div>
+                Large-scale rebranding
+              </div>
+
+              <div>
+                Complex third-party integrations
+              </div>
+
+              <div>
+                Complete website rebuilds
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMPARISON -->
+
+    <section class="comparison">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            Plan Comparison
+          </div>
+
+          <h2>
+            See the difference at a glance.
+          </h2>
+
+        </div>
+
+
+        <div class="comparison-box">
+
+          <div class="comparison-row comparison-head">
+
+            <div>
+              Feature
+            </div>
+
+            <div>
+              Essential
+            </div>
+
+            <div>
+              Growth
+            </div>
+
+            <div>
+              Managed
+            </div>
+
+          </div>
+
+
+          <div class="comparison-row">
+
+            <div class="comparison-feature">
+              Monthly Updates
+            </div>
+
+            <div>
+              Up to 2
+            </div>
+
+            <div>
+              Up to 5
+            </div>
+
+            <div>
+              Up to 10
+            </div>
+
+          </div>
+
+
+          <div class="comparison-row">
+
+            <div class="comparison-feature">
+              Text & Pricing Changes
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+          </div>
+
+
+          <div class="comparison-row">
+
+            <div class="comparison-feature">
+              Photo Updates
+            </div>
+
+            <div class="muted">
+              Limited
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+          </div>
+
+
+          <div class="comparison-row">
+
+            <div class="comparison-feature">
+              New Small Sections
+            </div>
+
+            <div class="muted">
+              —
+            </div>
+
+            <div>
+              Limited
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+          </div>
+
+
+          <div class="comparison-row">
+
+            <div class="comparison-feature">
+              Priority Handling
+            </div>
+
+            <div class="muted">
+              —
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+          </div>
+
+
+          <div class="comparison-row">
+
+            <div class="comparison-feature">
+              Ongoing Layout Refinements
+            </div>
+
+            <div class="muted">
+              —
+            </div>
+
+            <div class="muted">
+              —
+            </div>
+
+            <div class="yes">
+              ✓
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ONE TIME -->
+
+    <section class="one-time">
+
+      <div class="container">
+
+        <div class="one-time-box">
+
+          <div class="one-time-copy">
+
+            <div class="section-kicker">
+              No Monthly Plan?
+            </div>
+
+            <h3>
+              One-time updates are available too.
+            </h3>
+
+            <p>
+              If you only need a change every once in a while,
+              you do not have to sign up for monthly maintenance.
+              Send over the update and it can be quoted individually.
+            </p>
+
+          </div>
+
+
+          <div class="one-time-price">
+
+            <span>
+              One-Time Work
+            </span>
+
+            <strong class="gradient-text">
+              Custom Quote
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            How Maintenance Works
+          </div>
+
+          <h2>
+            Send the change.
+            We handle the code.
+          </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+          <article class="process-card">
+
+            <div class="process-number">
+              1
+            </div>
+
+            <h3>
+              Request
+            </h3>
+
+            <p>
+              Send the text,
+              pricing,
+              photo,
+              or change you want made.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <div class="process-number">
+              2
+            </div>
+
+            <h3>
+              Update
+            </h3>
+
+            <p>
+              We make the change directly in the website.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <div class="process-number">
+              3
+            </div>
+
+            <h3>
+              Check
+            </h3>
+
+            <p>
+              The update is reviewed for desktop and mobile layout.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <div class="process-number">
+              4
+            </div>
+
+            <h3>
+              Live
+            </h3>
+
+            <p>
+              The website gets updated and the new version goes live.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="section-kicker">
+            Keep It Current
+          </div>
+
+          <h2>
+
+            Your website should grow with your
+
+            <span class="gradient-text">
+              business.
+            </span>
+
+          </h2>
+
+          <p>
+            Whether you need a few updates each month
+            or want the website managed for you,
+            there is a maintenance option that keeps things moving.
+          </p>
+
+          <div class="cta-actions">
+
+            <a
+              href="quote.html"
+              class="btn btn-primary"
+            >
+              Ask About Maintenance →
+            </a>
+
+            <a
+              href="services.html"
+              class="btn btn-secondary"
+            >
+              View Website Services
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-row">
+
+        <div>
+          Forged Digital Creations © 2026
+        </div>
+
+        <div>
+          Forged to stand out. Built to perform.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
