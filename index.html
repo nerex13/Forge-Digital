@@ -741,12 +741,9 @@
       left: 0;
       right: 0;
       z-index: 1000;
-
       background: rgba(5,7,11,.79);
-
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-
       border-bottom: 1px solid rgba(255,255,255,.065);
     }
 
@@ -772,33 +769,28 @@
       display: grid;
       place-items: center;
       border-radius: 10px;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 1000;
-
-      background:
-        linear-gradient(
-          145deg,
-          #a9b8ff 0%,
-          #6f81ff 24%,
-          #7049d1 61%,
-          #24133f 100%
-        );
-
-      border: 1px solid rgba(233,236,255,.32);
-
-      box-shadow:
-        0 0 24px rgba(105,98,255,.4),
-        inset 0 1px 2px rgba(255,255,255,.38),
-        inset 0 -10px 24px rgba(28,7,66,.45);
+      overflow: hidden;
     }
 
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      inset: 4px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 7px;
+    .brand-logo {
+      background: #030408;
+      border: 1px solid rgba(151,104,255,.35);
+
+      box-shadow:
+        0 0 18px rgba(111,72,255,.45),
+        0 0 32px rgba(129,55,255,.18);
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.35);
+
+      filter:
+        saturate(1.15)
+        contrast(1.1);
     }
 
     .brand-text {
@@ -1030,13 +1022,13 @@
     }
 
     /* =========================================================
-       REAL VIDEO FIRE
+       FORGED LOGO + FIRE
     ========================================================= */
 
     .forge-logo-stage {
       position: relative;
-      width: 360px;
-      height: 305px;
+      width: 410px;
+      height: 335px;
       margin-bottom: 18px;
       display: flex;
       align-items: center;
@@ -1047,9 +1039,9 @@
     .fire-video-wrap {
       position: absolute;
       left: 50%;
-      bottom: 3px;
-      width: 285px;
-      height: 265px;
+      bottom: 5px;
+      width: 335px;
+      height: 260px;
       transform: translateX(-50%);
       z-index: 1;
       overflow: hidden;
@@ -1059,52 +1051,47 @@
         radial-gradient(
           ellipse at center 72%,
           #000 0%,
-          #000 42%,
-          rgba(0,0,0,.85) 58%,
-          transparent 78%
+          #000 50%,
+          rgba(0,0,0,.85) 65%,
+          transparent 86%
         );
 
       mask-image:
         radial-gradient(
           ellipse at center 72%,
           #000 0%,
-          #000 42%,
-          rgba(0,0,0,.85) 58%,
-          transparent 78%
+          #000 50%,
+          rgba(0,0,0,.85) 65%,
+          transparent 86%
         );
     }
 
     .fire-video {
       position: absolute;
       left: 50%;
-      bottom: -6px;
-      width: 115%;
-      height: 115%;
+      bottom: -20px;
+      width: 125%;
+      height: 125%;
       transform: translateX(-50%);
       object-fit: cover;
+      object-position: center bottom;
 
       mix-blend-mode: screen;
 
       filter:
-        saturate(1.22)
-        contrast(1.18)
-        brightness(1.08)
-        drop-shadow(
-          0 0 12px
-          rgba(255,126,35,.5)
-        )
-        drop-shadow(
-          0 0 30px
-          rgba(255,72,24,.28)
-        );
+        saturate(1.5)
+        contrast(1.35)
+        brightness(1.12)
+        drop-shadow(0 0 12px rgba(255,126,35,.62))
+        drop-shadow(0 0 30px rgba(255,72,24,.38));
 
       opacity: .96;
     }
 
     .fire-video-glow {
       position: absolute;
-      width: 300px;
-      height: 245px;
+      width: 340px;
+      height: 255px;
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
@@ -1114,14 +1101,14 @@
       background:
         radial-gradient(
           ellipse at center bottom,
-          rgba(255,244,201,.21) 0%,
-          rgba(255,181,78,.24) 19%,
-          rgba(255,85,28,.19) 39%,
-          rgba(154,72,255,.07) 61%,
+          rgba(255,244,201,.25) 0%,
+          rgba(255,181,78,.28) 19%,
+          rgba(255,85,28,.23) 39%,
+          rgba(154,72,255,.08) 61%,
           transparent 75%
         );
 
-      filter: blur(27px);
+      filter: blur(28px);
       animation: fireGlow 2.1s ease-in-out infinite;
     }
 
@@ -1183,100 +1170,62 @@
       }
     }
 
-    /* =========================================================
-       BIGGER HARDER FD EMBLEM
-    ========================================================= */
-
     .forge-emblem {
       position: relative;
       z-index: 6;
-      width: 174px;
-      height: 174px;
-      display: grid;
-      place-items: center;
-      border-radius: 22px;
+      width: 300px;
+      height: 205px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 20px;
 
-      color: #fff;
-      font-size: 69px;
-      font-weight: 1000;
-      letter-spacing: -7px;
-
-      transform:
-        rotate(-1.5deg);
-
-      text-shadow:
-        0 3px 0 rgba(0,0,0,.6),
-        0 0 14px rgba(255,255,255,.16);
-
-      background:
-        linear-gradient(
-          145deg,
-          #c3ccff 0%,
-          #8998ff 16%,
-          #6575ef 34%,
-          #7546c9 65%,
-          #241238 100%
-        );
+      background: #030407;
 
       border:
         1px solid
-        rgba(238,240,255,.55);
+        rgba(143,104,255,.28);
 
       box-shadow:
-        0 0 0 1px rgba(118,124,255,.21),
-        0 0 0 6px rgba(104,90,255,.028),
-        0 28px 75px rgba(0,0,0,.7),
-        0 0 48px rgba(105,87,255,.42),
-        0 20px 55px rgba(255,83,28,.12),
-        inset 0 2px 2px rgba(255,255,255,.55),
-        inset 0 -32px 50px rgba(26,7,57,.55);
+        0 25px 65px rgba(0,0,0,.72),
+        0 0 30px rgba(122,62,255,.30),
+        0 0 70px rgba(114,48,255,.18),
+        0 22px 45px rgba(255,78,24,.16);
 
       animation:
         emblemFloat 4.2s ease-in-out infinite;
     }
 
-    .forge-emblem::before {
-      content: "";
-      position: absolute;
-      inset: 7px;
-      border-radius: 16px;
-      border:
-        1px solid
-        rgba(255,255,255,.2);
-      pointer-events: none;
-    }
+    .forge-logo-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.04);
 
-    .forge-emblem::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-
-      background:
-        linear-gradient(
-          125deg,
-          rgba(255,255,255,.34) 0%,
-          rgba(255,255,255,.08) 18%,
-          transparent 34%,
-          transparent 65%,
-          rgba(255,92,32,.13) 100%
+      filter:
+        saturate(1.18)
+        contrast(1.1)
+        brightness(1.03)
+        drop-shadow(
+          0 0 18px
+          rgba(132,56,255,.28)
         );
-
-      pointer-events: none;
     }
 
     @keyframes emblemFloat {
       0%,
       100% {
         transform:
-          rotate(-1.5deg)
+          rotate(-1deg)
           translateY(0);
       }
 
       50% {
         transform:
-          rotate(-.5deg)
-          translateY(-5px);
+          rotate(.25deg)
+          translateY(-6px);
       }
     }
 
@@ -2933,7 +2882,6 @@
       .brand-mark {
         width: 39px;
         height: 39px;
-        font-size: 16px;
       }
 
       .brand-main {
@@ -2951,24 +2899,19 @@
 
       .forge-logo-stage {
         width: 100%;
-        height: 250px;
+        height: 285px;
         margin-bottom: 16px;
       }
 
       .fire-video-wrap {
-        width: 240px;
+        width: 285px;
         height: 225px;
       }
 
       .forge-emblem {
-        width: 140px;
-        height: 140px;
-        border-radius: 18px;
-        font-size: 55px;
-      }
-
-      .forge-emblem::before {
-        border-radius: 13px;
+        width: 250px;
+        height: 172px;
+        border-radius: 17px;
       }
 
       .forge-caption {
@@ -3222,8 +3165,12 @@
           href="#top"
           class="brand"
         >
-          <div class="brand-mark">
-            FD
+
+          <div class="brand-mark brand-logo">
+            <img
+              src="28B8892B-8EC4-4866-A6D1-FD70BDA9896B.png"
+              alt="Forged Digital Creations"
+            >
           </div>
 
           <div class="brand-text">
@@ -3334,19 +3281,12 @@
 
             <div class="fire-video-wrap">
 
-              <video
+              <img
                 class="fire-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
+                src="IMG_0569.webp"
+                alt=""
+                aria-hidden="true"
               >
-                <source
-                  src="fire.webm"
-                  type="video/webm"
-                >
-              </video>
 
             </div>
 
@@ -3382,8 +3322,13 @@
               style="--ember-x:35px;"
             ></span>
 
-            <div class="forge-emblem">
-              FD
+            <div class="forge-emblem forge-logo-image">
+
+              <img
+                src="28B8892B-8EC4-4866-A6D1-FD70BDA9896B.png"
+                alt="Forged Digital Creations"
+              >
+
             </div>
 
             <div class="forge-caption">
@@ -4666,8 +4611,11 @@
             class="brand"
           >
 
-            <div class="brand-mark">
-              FD
+            <div class="brand-mark brand-logo">
+              <img
+                src="28B8892B-8EC4-4866-A6D1-FD70BDA9896B.png"
+                alt="Forged Digital Creations"
+              >
             </div>
 
             <div class="brand-text">
