@@ -1,0 +1,1547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Contact | Forged Digital Creations</title>
+
+  <meta
+    name="description"
+    content="Contact Forged Digital Creations about website design, maintenance, Google Business setup, domain help, and custom website projects."
+  >
+
+  <meta name="theme-color" content="#05070b">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+
+      color: #ffffff;
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(73, 96, 255, 0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(157, 67, 255, 0.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #05070b,
+          #07090e 50%,
+          #040609
+        );
+    }
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      z-index: -4;
+      pointer-events: none;
+
+      opacity: 0.22;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    ::selection {
+      background: rgba(136,112,255,0.45);
+      color: #ffffff;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+      pointer-events: none;
+
+      z-index: -3;
+    }
+
+    .orb {
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(100px);
+      opacity: 0.25;
+
+      animation: drift 15s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 450px;
+      height: 450px;
+
+      left: -180px;
+      top: -130px;
+
+      background: #536cff;
+    }
+
+    .orb-two {
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      top: 35%;
+
+      background: #9148ff;
+
+      animation-delay: -5s;
+    }
+
+    .orb-three {
+      width: 350px;
+      height: 350px;
+
+      left: 38%;
+      bottom: -210px;
+
+      background: #2857ff;
+
+      animation-delay: -9s;
+    }
+
+    @keyframes drift {
+      0%,
+      100% {
+        transform:
+          translate3d(0,0,0)
+          scale(1);
+      }
+
+      50% {
+        transform:
+          translate3d(35px,-30px,0)
+          scale(1.08);
+      }
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          #8298ff,
+          #ab6aff,
+          #d4d9ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 18px;
+
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      color: #b8c1ff;
+
+      background:
+        rgba(102,113,255,0.07);
+
+      border:
+        1px solid rgba(128,143,255,0.27);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #8b91ff;
+
+      box-shadow:
+        0 0 12px rgba(139,145,255,0.8);
+    }
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 0 23px;
+
+      border: 0;
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          90deg,
+          #6d84ff,
+          #965dff
+        );
+
+      box-shadow:
+        0 12px 38px rgba(91,87,255,0.25);
+    }
+
+    .btn-secondary {
+      color: #d4d9e2;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.11);
+    }
+
+    header {
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(5,7,11,0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.065);
+    }
+
+    nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      position: relative;
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      color: #ffffff;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          145deg,
+          #788dff,
+          #8f5fff 55%,
+          #5526bb
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.16);
+
+      box-shadow:
+        0 0 24px rgba(109,111,255,0.38),
+        inset 0 1px 6px rgba(255,255,255,0.2);
+    }
+
+    .brand-mark::after {
+      content: "";
+
+      position: absolute;
+      inset: 4px;
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      border-radius: 9px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+
+      line-height: 1.05;
+    }
+
+    .brand-main {
+      font-size: 15px;
+      letter-spacing: 1.3px;
+    }
+
+    .brand-sub {
+      margin-top: 3px;
+
+      color: #828b99;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 2.6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #bfc5d0;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-cta {
+      min-height: 42px;
+
+      display: inline-flex;
+      align-items: center;
+
+      padding: 0 16px;
+
+      border-radius: 11px;
+
+      color: #ffffff !important;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(109,132,255,0.22),
+          rgba(150,93,255,0.22)
+        );
+
+      border:
+        1px solid rgba(132,129,255,0.28);
+    }
+
+    .hero {
+      padding:
+        155px 0
+        80px;
+
+      text-align: center;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+
+      margin:
+        0 auto
+        22px;
+
+      font-size:
+        clamp(50px,8vw,84px);
+
+      line-height: 0.95;
+
+      letter-spacing: -3.5px;
+    }
+
+    .hero p {
+      max-width: 720px;
+
+      margin: 0 auto;
+
+      color: #9ba3b0;
+
+      font-size:
+        clamp(16px,2vw,19px);
+    }
+
+    .contact-section {
+      padding:
+        30px 0
+        110px;
+    }
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.85fr 1.15fr;
+
+      gap: 24px;
+
+      align-items: start;
+    }
+
+    .contact-side {
+      display: grid;
+
+      gap: 16px;
+    }
+
+    .contact-card {
+      padding: 28px;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.013)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-card-label {
+      color: #8492ff;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: 1.6px;
+
+      text-transform: uppercase;
+    }
+
+    .contact-card h2 {
+      margin-top: 10px;
+
+      font-size: 27px;
+
+      line-height: 1.05;
+    }
+
+    .contact-card p {
+      margin-top: 10px;
+
+      color: #8e96a3;
+
+      font-size: 14px;
+    }
+
+    .contact-value {
+      display: block;
+
+      margin-top: 18px;
+
+      color: #ffffff;
+
+      font-size: 18px;
+      font-weight: 900;
+
+      word-break: break-word;
+    }
+
+    .contact-value:hover {
+      color: #b7beff;
+    }
+
+    .project-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.13),
+          rgba(145,85,255,0.05)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.24);
+    }
+
+    .project-card .btn {
+      width: 100%;
+
+      margin-top: 22px;
+    }
+
+    .form-shell {
+      padding: 36px;
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.013)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.085);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.22);
+    }
+
+    .form-head {
+      margin-bottom: 30px;
+    }
+
+    .form-head span {
+      color: #8795ff;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: 1.6px;
+
+      text-transform: uppercase;
+    }
+
+    .form-head h2 {
+      margin-top: 8px;
+
+      font-size:
+        clamp(30px,5vw,42px);
+
+      line-height: 1;
+
+      letter-spacing: -1.5px;
+    }
+
+    .form-head p {
+      margin-top: 12px;
+
+      max-width: 620px;
+
+      color: #8f97a4;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 16px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field-grid .field {
+      margin-bottom: 0;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #d3d7de;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+
+      min-height: 52px;
+
+      padding: 0 15px;
+
+      border-radius: 12px;
+
+      outline: none;
+
+      color: #ffffff;
+
+      background:
+        rgba(255,255,255,0.03);
+
+      border:
+        1px solid rgba(255,255,255,0.09);
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    textarea {
+      min-height: 150px;
+
+      padding: 14px 15px;
+
+      resize: vertical;
+    }
+
+    select {
+      appearance: none;
+
+      background-image:
+        linear-gradient(
+          45deg,
+          transparent 50%,
+          #7f8795 50%
+        ),
+        linear-gradient(
+          135deg,
+          #7f8795 50%,
+          transparent 50%
+        );
+
+      background-position:
+        calc(100% - 20px) 22px,
+        calc(100% - 15px) 22px;
+
+      background-size:
+        5px 5px,
+        5px 5px;
+
+      background-repeat: no-repeat;
+    }
+
+    option {
+      color: #111111;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #646c79;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color:
+        rgba(130,142,255,0.55);
+
+      background:
+        rgba(255,255,255,0.045);
+
+      box-shadow:
+        0 0 0 4px rgba(111,99,255,0.08);
+    }
+
+    .submit-row {
+      margin-top: 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+    }
+
+    .submit-note {
+      color: #6f7784;
+
+      font-size: 11px;
+    }
+
+    .submit-row .btn {
+      flex-shrink: 0;
+    }
+
+    .quick-section {
+      padding:
+        0 0
+        110px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+    }
+
+    .quick-card {
+      min-height: 220px;
+
+      padding: 26px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+    }
+
+    .quick-number {
+      color: #8795ff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.4px;
+    }
+
+    .quick-card h3 {
+      margin-top: 24px;
+
+      font-size: 20px;
+    }
+
+    .quick-card p {
+      margin-top: 8px;
+
+      color: #858e9b;
+
+      font-size: 13px;
+    }
+
+    .quick-card a {
+      display: inline-block;
+
+      margin-top: 18px;
+
+      color: #aeb7ff;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .cta-section {
+      padding:
+        0 0
+        110px;
+    }
+
+    .cta-box {
+      padding: 58px;
+
+      border-radius: 27px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.15),
+          rgba(145,85,255,0.06)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.28);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.18);
+    }
+
+    .cta-box h2 {
+      max-width: 780px;
+
+      margin: 0 auto;
+
+      font-size:
+        clamp(38px,6vw,62px);
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+
+      margin:
+        17px auto
+        0;
+
+      color: #929aa7;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 28px;
+    }
+
+    footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,0.06);
+
+      color: #737c89;
+
+      font-size: 12px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field-full {
+        grid-column: auto;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .submit-row {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .submit-row .btn {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 38px 24px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .brand-main {
+        font-size: 12px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-cta {
+        padding: 0 12px;
+
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .form-shell {
+        padding: 26px 19px;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .cta-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+  </div>
+
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <div class="brand-mark">
+            F
+          </div>
+
+          <div class="brand-text">
+
+            <span class="brand-main">
+              FORGED DIGITAL
+            </span>
+
+            <span class="brand-sub">
+              CREATIONS
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="portfolio.html">
+            Portfolio
+          </a>
+
+          <a
+            href="quote.html"
+            class="nav-cta"
+          >
+            Start a Project
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="eyebrow">
+
+          <span class="eyebrow-dot"></span>
+
+          Contact Forged
+
+        </div>
+
+
+        <h1>
+
+          Have a question?
+          Let's
+
+          <span class="gradient-text">
+            talk.
+          </span>
+
+        </h1>
+
+
+        <p>
+
+          Whether you are thinking about a new website,
+          need help with an existing one,
+          or just want to ask what is possible,
+          reach out and start the conversation.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="contact-section">
+
+      <div class="container">
+
+        <div class="contact-grid">
+
+
+          <div class="contact-side">
+
+
+            <div class="contact-card">
+
+              <div class="contact-card-label">
+                Call Or Text
+              </div>
+
+              <h2>
+                Prefer your phone?
+              </h2>
+
+              <p>
+                Reach out directly for questions,
+                project conversations,
+                or website help.
+              </p>
+
+              <a
+                href="tel:+12082704041"
+                class="contact-value"
+              >
+                208-270-4041
+              </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+              <div class="contact-card-label">
+                Email
+              </div>
+
+              <h2>
+                Send the details.
+              </h2>
+
+              <p>
+                Email is great for project ideas,
+                links,
+                examples,
+                and anything you want reviewed.
+              </p>
+
+              <a
+                href="mailto:ForgedDigitalCreations@gmail.com"
+                class="contact-value"
+              >
+                ForgedDigitalCreations@gmail.com
+              </a>
+
+            </div>
+
+
+            <div class="contact-card project-card">
+
+              <div class="contact-card-label">
+                Ready To Build?
+              </div>
+
+              <h2>
+                Skip straight to the project intake.
+              </h2>
+
+              <p>
+                The full intake walks through your business,
+                website goals,
+                design direction,
+                budget,
+                and project scope.
+              </p>
+
+              <a
+                href="quote.html"
+                class="btn btn-primary"
+              >
+                Start Your Project →
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-shell">
+
+            <div class="form-head">
+
+              <span>
+                Send A Message
+              </span>
+
+              <h2>
+                Tell us what you need.
+              </h2>
+
+              <p>
+                This shorter form is for general questions
+                and conversations.
+                For a full website quote,
+                use the project intake.
+              </p>
+
+            </div>
+
+
+            <form
+              action="https://formspree.io/f/xkjweqpd"
+              method="POST"
+            >
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Forged Digital Creations Contact"
+              >
+
+
+              <div class="field-grid">
+
+                <div class="field">
+
+                  <label for="name">
+                    Your Name *
+                  </label>
+
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="business">
+                    Business Name
+                  </label>
+
+                  <input
+                    id="business"
+                    name="business"
+                    type="text"
+                    placeholder="Business name"
+                  >
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="email">
+                    Email *
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="phone">
+                    Phone Number
+                  </label>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="(000) 000-0000"
+                    autocomplete="tel"
+                  >
+
+                </div>
+
+
+                <div class="field field-full">
+
+                  <label for="topic">
+                    What Can We Help With?
+                  </label>
+
+                  <select
+                    id="topic"
+                    name="topic"
+                  >
+
+                    <option value="">
+                      Select one
+                    </option>
+
+                    <option value="New Website">
+                      New Website
+                    </option>
+
+                    <option value="Website Redesign">
+                      Website Redesign
+                    </option>
+
+                    <option value="Website Maintenance">
+                      Website Maintenance
+                    </option>
+
+                    <option value="Google Business Setup">
+                      Google Business Setup
+                    </option>
+
+                    <option value="Domain Help">
+                      Domain Help
+                    </option>
+
+                    <option value="General Question">
+                      General Question
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="field field-full">
+
+                  <label for="message">
+                    Message *
+                  </label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us what you are working on, what you need help with, or what you would like to know."
+                    required
+                  ></textarea>
+
+                </div>
+
+              </div>
+
+
+              <div class="submit-row">
+
+                <p class="submit-note">
+                  For detailed project planning,
+                  use the full project intake.
+                </p>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                >
+                  Send Message →
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="quick-section">
+
+      <div class="container">
+
+        <div class="quick-grid">
+
+
+          <article class="quick-card">
+
+            <div class="quick-number">
+              01
+            </div>
+
+            <h3>
+              Need A Website?
+            </h3>
+
+            <p>
+              See the website packages,
+              custom services,
+              and project options available.
+            </p>
+
+            <a href="services.html">
+              Explore Services →
+            </a>
+
+          </article>
+
+
+          <article class="quick-card">
+
+            <div class="quick-number">
+              02
+            </div>
+
+            <h3>
+              Want To See The Work?
+            </h3>
+
+            <p>
+              Explore websites built for
+              Freshline Exterior Cleaning
+              and Twin Turbo Detailers.
+            </p>
+
+            <a href="portfolio.html">
+              View Portfolio →
+            </a>
+
+          </article>
+
+
+          <article class="quick-card">
+
+            <div class="quick-number">
+              03
+            </div>
+
+            <h3>
+              Already Have A Site?
+            </h3>
+
+            <p>
+              Website maintenance can handle
+              updates,
+              pricing changes,
+              photos,
+              and ongoing improvements.
+            </p>
+
+            <a href="maintenance.html">
+              View Maintenance →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="cta-section">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <h2>
+
+            Ready to turn the idea
+            into a
+
+            <span class="gradient-text">
+              real website?
+            </span>
+
+          </h2>
+
+          <p>
+            The project intake gives us the information
+            needed to understand the business,
+            design direction,
+            scope,
+            and features you are looking for.
+          </p>
+
+          <div class="cta-actions">
+
+            <a
+              href="quote.html"
+              class="btn btn-primary"
+            >
+              Start Your Project →
+            </a>
+
+            <a
+              href="about.html"
+              class="btn btn-secondary"
+            >
+              About Forged
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-row">
+
+        <div>
+          Forged Digital Creations © 2026
+        </div>
+
+        <div>
+          Forged to stand out. Built to perform.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
