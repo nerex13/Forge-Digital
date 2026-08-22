@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <title>Forged Digital Creations | Custom Websites for Modern Businesses</title>
 
   <meta
     name="description"
-    content="Forged Digital Creations builds custom, modern, mobile-friendly websites designed to help businesses look established, professional, and ready to grow."
+    content="Forged Digital Creations builds custom, professional, mobile-friendly websites for local businesses."
   >
 
-  <meta name="theme-color" content="#05070b">
-
   <style>
-    /* =========================================================
-       RESET
-    ========================================================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -30,32 +28,23 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+
       background:
         radial-gradient(
-          circle at 18% 8%,
-          rgba(74, 98, 255, 0.16),
-          transparent 34%
+          circle at 15% 10%,
+          rgba(83, 105, 255, 0.17),
+          transparent 30%
         ),
         radial-gradient(
-          circle at 82% 24%,
-          rgba(157, 68, 255, 0.14),
-          transparent 31%
+          circle at 85% 25%,
+          rgba(152, 72, 255, 0.16),
+          transparent 28%
         ),
-        linear-gradient(
-          180deg,
-          #05070b,
-          #07090e 45%,
-          #040609
-        );
+        #05060a;
 
       color: #ffffff;
       line-height: 1.6;
       overflow-x: hidden;
-      min-height: 100vh;
-    }
-
-    body.menu-open {
-      overflow: hidden;
     }
 
     a {
@@ -63,357 +52,40 @@
       text-decoration: none;
     }
 
-    button,
-    input,
-    textarea,
-    select {
-      font: inherit;
-    }
-
-    button {
-      color: inherit;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    ::selection {
-      background: rgba(132, 116, 255, 0.45);
-      color: white;
-    }
-
-    /* =========================================================
-       GLOBAL BACKGROUND
-    ========================================================= */
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -4;
-
-      background-image:
-        linear-gradient(
-          rgba(255, 255, 255, 0.018) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.018) 1px,
-          transparent 1px
-        );
-
-      background-size: 55px 55px;
-      opacity: 0.22;
-    }
-
-    .ambient {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -3;
-      overflow: hidden;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.28;
-      animation: drift 15s ease-in-out infinite;
-    }
-
-    .orb-one {
-      width: 480px;
-      height: 480px;
-      background: #4c64ff;
-      top: -180px;
-      left: -120px;
-    }
-
-    .orb-two {
-      width: 520px;
-      height: 520px;
-      background: #8a42ff;
-      top: 35%;
-      right: -250px;
-      animation-delay: -5s;
-    }
-
-    .orb-three {
-      width: 400px;
-      height: 400px;
-      background: #244dff;
-      bottom: -220px;
-      left: 30%;
-      animation-delay: -9s;
-    }
-
-    @keyframes drift {
-      0%,
-      100% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-
-      50% {
-        transform: translate3d(40px, -35px, 0) scale(1.08);
-      }
-    }
-
-    /* =========================================================
-       CURSOR GLOW
-    ========================================================= */
-
-    .cursor-glow {
-      width: 320px;
-      height: 320px;
-
-      border-radius: 50%;
-
-      position: fixed;
-      left: 0;
-      top: 0;
-
-      transform: translate(-50%, -50%);
-
-      pointer-events: none;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(105, 95, 255, 0.10),
-          rgba(105, 95, 255, 0.04) 35%,
-          transparent 70%
-        );
-
-      z-index: 2;
-      opacity: 0;
-
-      transition: opacity 0.3s ease;
-    }
-
-    body:hover .cursor-glow {
-      opacity: 1;
-    }
-
-    /* =========================================================
-       GLOBAL UTILITIES
-    ========================================================= */
-
     .container {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1180px, calc(100% - 34px));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 105px 0;
-      position: relative;
-    }
-
-    .section-heading {
-      margin-bottom: 48px;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      margin-bottom: 16px;
-      padding: 7px 13px;
-
-      border: 1px solid rgba(132, 145, 255, 0.3);
-      border-radius: 999px;
-
-      background: rgba(103, 115, 255, 0.07);
-
-      color: #b8c0ff;
-
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
-
-    .section-label::before {
-      content: "";
-
-      width: 6px;
-      height: 6px;
-
-      border-radius: 50%;
-
-      background: #8f79ff;
-
-      box-shadow:
-        0 0 8px #8f79ff,
-        0 0 20px rgba(143, 121, 255, 0.75);
-    }
-
-    .section-title {
-      font-size: clamp(36px, 5vw, 60px);
-      line-height: 1.03;
-      margin-bottom: 18px;
-      letter-spacing: -2px;
-    }
-
-    .section-copy {
-      max-width: 720px;
-      color: #9da5b4;
-      font-size: 18px;
-    }
-
-    .gradient-text {
-      background:
-        linear-gradient(
-          90deg,
-          #7f97ff,
-          #a86cff,
-          #d1d7ff
-        );
+    .accent {
+      background: linear-gradient(
+        90deg,
+        #6f7cff,
+        #a653ff
+      );
 
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .muted {
-      color: #929aa8;
-    }
-
-    .glass {
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.047),
-          rgba(255, 255, 255, 0.014)
-        );
-
-      border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-      backdrop-filter: blur(14px);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-
-      transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
-
-    .btn {
-      min-height: 52px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-
-      padding: 0 23px;
-
-      border-radius: 12px;
-
-      font-weight: 800;
-
-      border: 0;
-
-      cursor: pointer;
-
-      transition:
-        transform 0.22s ease,
-        box-shadow 0.22s ease,
-        border-color 0.22s ease,
-        background 0.22s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background:
-        linear-gradient(
-          90deg,
-          #6c84ff,
-          #955cff
-        );
-
-      box-shadow:
-        0 12px 38px rgba(93, 89, 255, 0.27);
-    }
-
-    .btn-primary:hover {
-      box-shadow:
-        0 16px 50px rgba(93, 89, 255, 0.38);
-    }
-
-    .btn-secondary {
-      background:
-        rgba(255, 255, 255, 0.035);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.12);
-
-      color: #d3d8e1;
-    }
-
-    .btn-secondary:hover {
-      border-color:
-        rgba(135, 149, 255, 0.32);
-    }
-
-    .btn-small {
-      min-height: 44px;
-      padding: 0 17px;
-      font-size: 13px;
-    }
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
+    /* HEADER */
 
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-
       z-index: 1000;
 
-      background: rgba(5, 7, 11, 0.76);
-      backdrop-filter: blur(18px);
+      background: rgba(5, 6, 10, 0.85);
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
 
       border-bottom:
-        1px solid rgba(255, 255, 255, 0.065);
-
-      transition:
-        background 0.25s ease,
-        box-shadow 0.25s ease;
+        1px solid rgba(255,255,255,0.08);
     }
 
-    header.scrolled {
-      background: rgba(5, 7, 11, 0.92);
-
-      box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.25);
-    }
-
-    nav {
+    .nav {
       min-height: 78px;
 
       display: flex;
@@ -427,390 +99,143 @@
       display: flex;
       align-items: center;
       gap: 12px;
-
-      font-weight: 900;
-      letter-spacing: 0.4px;
-
-      flex-shrink: 0;
     }
 
     .brand-mark {
-      position: relative;
-
-      width: 42px;
-      height: 42px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 12px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #788dff,
-          #8f5fff 55%,
-          #5526bb
-        );
-
-      color: #ffffff;
-      font-size: 20px;
-      font-weight: 900;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.16);
-
-      box-shadow:
-        0 0 24px rgba(109, 111, 255, 0.38),
-        inset 0 1px 6px rgba(255, 255, 255, 0.2);
-    }
-
-    .brand-mark::before {
-      content: "";
-
-      position: absolute;
-      width: 22px;
-      height: 3px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.7),
-          transparent
-        );
-
-      transform: rotate(-42deg);
-
-      opacity: 0.55;
-    }
-
-    .brand-mark::after {
-      content: "";
-
-      position: absolute;
-      inset: 4px;
-
-      border-radius: 9px;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05;
-    }
-
-    .brand-main {
-      font-size: 15px;
-      letter-spacing: 1.3px;
-    }
-
-    .brand-sub {
-      margin-top: 3px;
-
-      color: #828b99;
-
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 2.6px;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-
-      gap: 25px;
-
-      color: #c5cbd5;
-
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .desktop-nav a {
-      transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .desktop-nav a:hover {
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .nav-cta {
-      padding: 11px 18px;
-
-      border-radius: 11px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #6c83ff,
-          #965fff
-        );
-
-      color: #ffffff !important;
-
-      box-shadow:
-        0 10px 30px rgba(94, 90, 255, 0.24);
-    }
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    .menu-button {
       width: 44px;
       height: 44px;
 
       border-radius: 12px;
 
-      border:
-        1px solid rgba(255, 255, 255, 0.1);
-
-      background:
-        rgba(255, 255, 255, 0.035);
-
-      display: none;
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-    }
-
-    .menu-icon {
-      width: 20px;
-      height: 14px;
-      position: relative;
-    }
-
-    .menu-icon span {
-      position: absolute;
-      left: 0;
-
-      width: 100%;
-      height: 2px;
-
-      border-radius: 20px;
-
-      background: white;
-
-      transition:
-        transform 0.25s ease,
-        opacity 0.25s ease,
-        top 0.25s ease;
-    }
-
-    .menu-icon span:nth-child(1) {
-      top: 0;
-    }
-
-    .menu-icon span:nth-child(2) {
-      top: 6px;
-    }
-
-    .menu-icon span:nth-child(3) {
-      top: 12px;
-    }
-
-    .menu-button.active .menu-icon span:nth-child(1) {
-      top: 6px;
-      transform: rotate(45deg);
-    }
-
-    .menu-button.active .menu-icon span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-button.active .menu-icon span:nth-child(3) {
-      top: 6px;
-      transform: rotate(-45deg);
-    }
-
-    .mobile-menu {
-      position: fixed;
-      inset: 79px 0 0;
-
-      z-index: 999;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(5, 7, 11, 0.98),
-          rgba(5, 7, 11, 0.995)
-        );
-
-      backdrop-filter: blur(20px);
-
-      transform: translateY(-10px);
-      opacity: 0;
-      visibility: hidden;
-
-      transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
-    }
-
-    .mobile-menu.open {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .mobile-menu-inner {
-      width: min(600px, calc(100% - 32px));
-      margin: 0 auto;
-
-      padding: 32px 0;
-
       display: grid;
-      gap: 12px;
-    }
+      place-items: center;
 
-    .mobile-menu a {
-      padding: 17px 18px;
-
-      border-radius: 14px;
-
-      background:
-        rgba(255, 255, 255, 0.025);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.065);
-
-      font-weight: 800;
-    }
-
-    .mobile-menu a:last-child {
-      text-align: center;
+      font-weight: 900;
+      font-size: 17px;
 
       background:
         linear-gradient(
-          90deg,
-          #6c84ff,
-          #955cff
+          135deg,
+          #6176ff,
+          #a64dff
         );
 
-      border-color: transparent;
+      box-shadow:
+        0 0 30px rgba(105, 96, 255, 0.3);
     }
 
-    /* =========================================================
-       HERO
-    ========================================================= */
+    .brand-text strong {
+      display: block;
+
+      font-size: 17px;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-text span {
+      display: block;
+
+      color: #939aab;
+
+      font-size: 11px;
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      color: #c7cada;
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .nav-button {
+      padding: 12px 18px;
+
+      color: #ffffff;
+
+      border:
+        1px solid rgba(139, 104, 255, 0.65);
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(100, 119, 255, 0.18),
+          rgba(170, 75, 255, 0.18)
+        );
+    }
+
+    /* HERO */
 
     .hero {
-      position: relative;
-
-      min-height: 100vh;
-
-      padding-top: 150px;
-      padding-bottom: 90px;
+      min-height: 750px;
 
       display: flex;
       align-items: center;
 
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 580px;
-      height: 580px;
-
-      right: -160px;
-      top: 70px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(93, 71, 255, 0.11);
-
-      filter: blur(90px);
-
-      pointer-events: none;
+      padding: 105px 0 90px;
     }
 
     .hero-grid {
-      position: relative;
-      z-index: 3;
-
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-columns: 1.1fr 0.9fr;
 
       gap: 70px;
-
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
+      display: inline-block;
 
-      padding: 8px 14px;
+      padding: 9px 14px;
+
       margin-bottom: 24px;
+
+      border:
+        1px solid rgba(124, 102, 255, 0.45);
 
       border-radius: 999px;
 
-      border:
-        1px solid rgba(128, 143, 255, 0.28);
+      color: #aeb6ff;
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
 
       background:
-        rgba(99, 112, 255, 0.07);
-
-      color: #b8c1ff;
-
-      font-size: 13px;
-      font-weight: 700;
+        rgba(104, 89, 255, 0.08);
     }
 
-    .pulse {
-      width: 8px;
-      height: 8px;
+    h1 {
+      font-size: clamp(54px, 8vw, 96px);
 
-      border-radius: 50%;
-
-      background: #8395ff;
-
-      box-shadow:
-        0 0 0 0 rgba(131, 149, 255, 0.65);
-
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      70% {
-        box-shadow:
-          0 0 0 11px rgba(131, 149, 255, 0);
-      }
-    }
-
-    .hero h1 {
-      max-width: 760px;
-
-      margin-bottom: 25px;
-
-      font-size: clamp(50px, 7vw, 86px);
-      line-height: 0.94;
+      line-height: 0.93;
       letter-spacing: -4px;
+
+      max-width: 760px;
     }
 
     .hero p {
-      max-width: 670px;
+      margin-top: 28px;
 
-      margin-bottom: 32px;
+      color: #a9afbf;
 
-      color: #a4acb9;
-
-      font-size: clamp(17px, 2vw, 21px);
+      font-size: 20px;
+      max-width: 660px;
     }
 
     .hero-buttons {
@@ -819,395 +244,260 @@
 
       gap: 14px;
 
-      margin-bottom: 36px;
+      margin-top: 34px;
     }
 
-    .hero-stats {
-      display: flex;
-      flex-wrap: wrap;
+    .button {
+      min-height: 54px;
 
-      gap: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 24px;
+
+      border-radius: 13px;
+
+      font-weight: 800;
+
+      transition: transform 0.2s ease;
     }
 
-    .stat strong {
-      display: block;
-
-      font-size: 24px;
-      line-height: 1.1;
+    .button:hover {
+      transform: translateY(-2px);
     }
 
-    .stat span {
-      color: #7f8795;
-      font-size: 13px;
-    }
-
-    /* =========================================================
-       HERO MOCK SITE
-    ========================================================= */
-
-    .visual-wrap {
-      position: relative;
-      perspective: 1100px;
-    }
-
-    .visual-glow {
-      position: absolute;
-
-      width: 80%;
-      height: 70%;
-
-      left: 10%;
-      top: 15%;
-
-      border-radius: 50%;
-
+    .button-primary {
       background:
-        rgba(92, 75, 255, 0.17);
-
-      filter: blur(70px);
-
-      pointer-events: none;
-    }
-
-    .browser-card {
-      position: relative;
-
-      overflow: hidden;
-
-      border-radius: 22px;
-
-      background: #10131a;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.1);
+        linear-gradient(
+          135deg,
+          #6479ff,
+          #a94fff
+        );
 
       box-shadow:
-        0 35px 100px rgba(0, 0, 0, 0.56),
-        0 0 85px rgba(82, 86, 255, 0.1);
-
-      transform:
-        rotateY(-5deg)
-        rotateX(2deg);
-
-      animation:
-        floatCard 6s ease-in-out infinite;
+        0 15px 45px rgba(100, 83, 255, 0.25);
     }
 
-    @keyframes floatCard {
-      0%,
-      100% {
-        transform:
-          rotateY(-5deg)
-          rotateX(2deg)
-          translateY(0);
-      }
+    .button-secondary {
+      border:
+        1px solid rgba(255,255,255,0.18);
 
-      50% {
-        transform:
-          rotateY(-3deg)
-          rotateX(1deg)
-          translateY(-14px);
-      }
+      background:
+        rgba(255,255,255,0.04);
+    }
+
+    /* HERO VISUAL */
+
+    .hero-card {
+      padding: 34px;
+
+      border:
+        1px solid rgba(255,255,255,0.12);
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.02)
+        );
+
+      box-shadow:
+        0 40px 90px rgba(0,0,0,0.35);
+    }
+
+    .browser {
+      overflow: hidden;
+
+      border-radius: 19px;
+
+      background: #0b0d14;
+
+      border:
+        1px solid rgba(255,255,255,0.1);
     }
 
     .browser-top {
-      height: 43px;
+      height: 42px;
+
+      padding: 0 15px;
 
       display: flex;
       align-items: center;
 
       gap: 7px;
 
-      padding: 0 14px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #181c25,
-          #141821
-        );
+      background: #11131b;
 
       border-bottom:
-        1px solid rgba(255, 255, 255, 0.055);
+        1px solid rgba(255,255,255,0.08);
     }
 
     .dot {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
 
       border-radius: 50%;
 
-      background: #4b515d;
+      background: #5d6270;
     }
 
-    .browser-url {
-      flex: 1;
+    .browser-content {
+      min-height: 380px;
 
-      height: 22px;
-
-      margin-left: 10px;
-
-      border-radius: 6px;
-
-      background: #0d1016;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .mock-site {
-      min-height: 465px;
-
-      padding: 45px 32px 35px;
+      padding: 35px 28px;
 
       background:
         radial-gradient(
-          circle at 78% 20%,
-          rgba(107, 87, 255, 0.26),
-          transparent 31%
+          circle at 90% 10%,
+          rgba(141, 75, 255, 0.35),
+          transparent 34%
         ),
         linear-gradient(
           145deg,
-          #11151d,
-          #080a0f
+          #0a0d16,
+          #111325
         );
     }
 
-    .mock-brand {
-      display: flex;
-      align-items: center;
+    .mini-label {
+      color: #969fff;
 
-      gap: 9px;
+      text-transform: uppercase;
 
-      margin-bottom: 42px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
     }
 
-    .mock-brand-icon {
-      width: 24px;
-      height: 24px;
+    .browser-content h2 {
+      margin-top: 14px;
 
-      border-radius: 7px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #7690ff,
-          #955fff
-        );
-
-      box-shadow:
-        0 0 16px rgba(112, 121, 255, 0.4);
+      font-size: 42px;
+      line-height: 1;
     }
 
-    .mock-brand-line {
-      width: 90px;
-      height: 8px;
+    .browser-content p {
+      margin-top: 18px;
 
-      border-radius: 20px;
+      font-size: 15px;
 
-      background: #d3d7e1;
-    }
-
-    .mock-tag {
-      width: 105px;
-      height: 11px;
-
-      margin-bottom: 24px;
-
-      border-radius: 50px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #6d85ff,
-          #9661ff
-        );
-    }
-
-    .mock-title {
-      width: 82%;
-      height: 25px;
-
-      margin-bottom: 12px;
-
-      border-radius: 7px;
-
-      background: #f6f7fb;
-    }
-
-    .mock-title.short {
-      width: 56%;
-    }
-
-    .mock-copy {
-      width: 88%;
-      height: 9px;
-
-      margin-top: 22px;
-
-      border-radius: 50px;
-
-      background: #555d6d;
-    }
-
-    .mock-copy.small {
-      width: 66%;
-      margin-top: 9px;
-    }
-
-    .mock-buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 28px;
+      color: #a7adbc;
     }
 
     .mock-button {
-      width: 105px;
-      height: 35px;
+      margin-top: 28px;
 
-      border-radius: 8px;
+      width: 170px;
+      height: 45px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      font-size: 13px;
+      font-weight: 800;
 
       background:
         linear-gradient(
-          90deg,
-          #6d84ff,
-          #945fff
+          135deg,
+          #6378ff,
+          #9a53ff
         );
     }
 
-    .mock-button.alt {
-      background: #1b2029;
+    /* STATS */
 
-      border:
-        1px solid #343b49;
+    .stats {
+      padding: 15px 0 80px;
     }
 
-    .mock-grid {
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
 
-      gap: 10px;
-
-      margin-top: 48px;
-    }
-
-    .mock-card {
-      height: 95px;
-
-      border-radius: 12px;
-
-      background:
-        rgba(255, 255, 255, 0.035);
-
       border:
-        1px solid rgba(255, 255, 255, 0.06);
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mock-card::after {
-      content: "";
-
-      position: absolute;
-      left: 15px;
-      right: 15px;
-      bottom: 18px;
-
-      height: 7px;
+        1px solid rgba(255,255,255,0.09);
 
       border-radius: 20px;
 
+      overflow: hidden;
+
       background:
-        rgba(255, 255, 255, 0.1);
+        rgba(255,255,255,0.025);
     }
 
-    .floating-badge {
-      position: absolute;
-      z-index: 5;
+    .stat {
+      padding: 28px;
 
-      padding: 13px 16px;
+      text-align: center;
 
-      border-radius: 14px;
+      border-right:
+        1px solid rgba(255,255,255,0.08);
+    }
 
-      background:
-        rgba(17, 20, 29, 0.9);
+    .stat:last-child {
+      border-right: 0;
+    }
 
-      backdrop-filter: blur(14px);
+    .stat strong {
+      display: block;
 
-      border:
-        1px solid rgba(255, 255, 255, 0.1);
+      font-size: 27px;
+    }
 
-      box-shadow:
-        0 16px 42px rgba(0, 0, 0, 0.42);
+    .stat span {
+      color: #8d94a6;
 
       font-size: 13px;
-      font-weight: 800;
-
-      animation:
-        badgeFloat 5s ease-in-out infinite;
     }
 
-    .badge-one {
-      top: 42px;
-      right: -38px;
+    /* SECTIONS */
+
+    section {
+      padding: 100px 0;
     }
 
-    .badge-two {
-      bottom: 38px;
-      left: -38px;
-      animation-delay: -2.5s;
-    }
+    .section-label {
+      color: #9289ff;
 
-    @keyframes badgeFloat {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    /* =========================================================
-       TRUST STRIP
-    ========================================================= */
-
-    .trust-strip {
-      background:
-        rgba(255, 255, 255, 0.016);
-
-      border-top:
-        1px solid rgba(255, 255, 255, 0.065);
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.065);
-    }
-
-    .trust-row {
-      min-height: 105px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-
-      gap: 25px;
-
-      color: #7f8795;
-
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.1px;
       text-transform: uppercase;
+
+      letter-spacing: 2.5px;
+
+      font-size: 12px;
+      font-weight: 900;
     }
 
-    /* =========================================================
-       SERVICES
-    ========================================================= */
+    .section-title {
+      margin-top: 12px;
+
+      font-size: clamp(38px, 5vw, 62px);
+
+      line-height: 1.02;
+      letter-spacing: -2px;
+
+      max-width: 800px;
+    }
+
+    .section-description {
+      margin-top: 20px;
+
+      color: #9ea5b5;
+
+      max-width: 700px;
+
+      font-size: 18px;
+    }
+
+    /* SERVICES */
 
     .services-grid {
+      margin-top: 45px;
+
       display: grid;
       grid-template-columns: repeat(3, 1fr);
 
@@ -1215,1300 +505,532 @@
     }
 
     .service-card {
-      position: relative;
+      min-height: 260px;
 
-      min-height: 270px;
+      padding: 28px;
 
-      overflow: hidden;
+      border:
+        1px solid rgba(255,255,255,0.09);
 
-      padding: 29px;
-
-      border-radius: 19px;
+      border-radius: 20px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(255, 255, 255, 0.045),
-          rgba(255, 255, 255, 0.014)
+          rgba(255,255,255,0.055),
+          rgba(255,255,255,0.015)
         );
-
-      border:
-        1px solid rgba(255, 255, 255, 0.075);
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
     }
 
-    .service-card::before {
-      content: "";
+    .service-number {
+      color: #817dff;
 
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(111, 95, 255, 0.13),
-          transparent 34%
-        );
-
-      pointer-events: none;
-    }
-
-    .service-card:hover {
-      transform: translateY(-7px);
-
-      border-color:
-        rgba(126, 138, 255, 0.34);
-
-      box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.2);
-    }
-
-    .service-icon {
-      width: 47px;
-      height: 47px;
-
-      display: grid;
-      place-items: center;
-
-      margin-bottom: 24px;
-
-      border-radius: 13px;
-
-      background:
-        rgba(111, 123, 255, 0.09);
-
-      border:
-        1px solid rgba(112, 124, 255, 0.21);
-
-      font-size: 22px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
     }
 
     .service-card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
+      margin-top: 38px;
+
+      font-size: 24px;
     }
 
     .service-card p {
-      color: #98a0af;
+      margin-top: 12px;
+
+      color: #9097a8;
+
       font-size: 15px;
     }
 
-    .service-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
+    /* PORTFOLIO */
 
-      margin-top: 18px;
-
-      color: #aeb8ff;
-
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    /* =========================================================
-       ESTIMATOR
-    ========================================================= */
-
-    .estimator-section {
-      overflow: hidden;
-    }
-
-    .estimator-shell {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-
-      gap: 24px;
-
-      align-items: start;
-    }
-
-    .estimator-builder,
-    .estimate-panel {
-      border-radius: 24px;
-
+    #work {
       background:
         linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.045),
-          rgba(255, 255, 255, 0.015)
+          180deg,
+          transparent,
+          rgba(112, 75, 255, 0.055),
+          transparent
         );
-
-      border:
-        1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .estimator-builder {
-      padding: 30px;
-    }
+    .portfolio-grid {
+      margin-top: 48px;
 
-    .estimator-block + .estimator-block {
-      margin-top: 28px;
-      padding-top: 28px;
-
-      border-top:
-        1px solid rgba(255, 255, 255, 0.065);
-    }
-
-    .estimator-block h3 {
-      font-size: 17px;
-      margin-bottom: 14px;
-    }
-
-    .option-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
-      gap: 10px;
-    }
-
-    .option-card {
-      position: relative;
-
-      cursor: pointer;
-
-      min-height: 76px;
-
-      display: flex;
-      align-items: center;
-
-      padding: 16px;
-
-      border-radius: 14px;
-
-      background:
-        rgba(255, 255, 255, 0.025);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.07);
-
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .option-card:hover {
-      transform: translateY(-2px);
-
-      border-color:
-        rgba(130, 141, 255, 0.25);
-    }
-
-    .option-card.selected {
-      background:
-        rgba(105, 112, 255, 0.11);
-
-      border-color:
-        rgba(124, 137, 255, 0.5);
-
-      box-shadow:
-        inset 0 0 25px rgba(106, 91, 255, 0.06);
-    }
-
-    .option-card input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .option-card strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .option-card span {
-      display: block;
-      color: #858e9c;
-      font-size: 12px;
-      margin-top: 2px;
-    }
-
-    .page-selector {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .page-control {
-      width: 44px;
-      height: 44px;
-
-      border-radius: 12px;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.1);
-
-      background:
-        rgba(255, 255, 255, 0.035);
-
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    .page-display {
-      min-width: 80px;
-
-      padding: 9px 14px;
-
-      text-align: center;
-
-      border-radius: 12px;
-
-      background:
-        rgba(255, 255, 255, 0.03);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .page-display strong {
-      font-size: 20px;
-    }
-
-    .page-display span {
-      display: block;
-      color: #858e9b;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .estimate-panel {
-      position: sticky;
-      top: 105px;
-
-      padding: 30px;
-
-      overflow: hidden;
-    }
-
-    .estimate-panel::before {
-      content: "";
-
-      position: absolute;
-
-      width: 250px;
-      height: 250px;
-
-      border-radius: 50%;
-
-      top: -140px;
-      right: -110px;
-
-      background:
-        rgba(112, 82, 255, 0.25);
-
-      filter: blur(50px);
-    }
-
-    .estimate-panel > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .estimate-small {
-      color: #8b94a2;
-
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    .estimate-price {
-      margin: 8px 0 12px;
-
-      font-size: clamp(48px, 7vw, 68px);
-      line-height: 1;
-
-      letter-spacing: -3px;
-      font-weight: 900;
-    }
-
-    .estimate-note {
-      color: #8f98a6;
-      font-size: 13px;
-      margin-bottom: 24px;
-    }
-
-    .estimate-list {
-      list-style: none;
-
-      margin-bottom: 26px;
-    }
-
-    .estimate-list li {
-      padding: 10px 0;
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.055);
-
-      color: #c3c9d2;
-
-      font-size: 14px;
-    }
-
-    .estimate-list li::before {
-      content: "✓";
-      color: #8d9cff;
-      margin-right: 9px;
-      font-weight: 900;
-    }
-
-    .estimate-empty {
-      color: #798290 !important;
-    }
-
-    .estimate-empty::before {
-      content: "•" !important;
-      color: #59616e !important;
-    }
-
-    .estimate-panel .btn {
-      width: 100%;
-    }
-
-    /* =========================================================
-       PORTFOLIO
-    ========================================================= */
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 22px;
+      gap: 26px;
     }
 
     .project {
       overflow: hidden;
 
-      border-radius: 21px;
-
-      background: #0d1016;
-
       border:
-        1px solid rgba(255, 255, 255, 0.075);
+        1px solid rgba(255,255,255,0.1);
 
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-    }
+      border-radius: 26px;
 
-    .project:hover {
-      transform: translateY(-6px);
-
-      border-color:
-        rgba(137, 127, 255, 0.4);
-
-      box-shadow:
-        0 28px 70px rgba(0, 0, 0, 0.24);
-    }
-
-    .project-preview {
-      height: 330px;
-
-      padding: 27px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-blue {
-      background:
-        radial-gradient(
-          circle at 50% 20%,
-          rgba(50, 142, 255, 0.3),
-          transparent 38%
-        ),
-        #07101a;
-    }
-
-    .project-purple {
-      background:
-        radial-gradient(
-          circle at 50% 20%,
-          rgba(141, 67, 255, 0.32),
-          transparent 38%
-        ),
-        #0d0917;
-    }
-
-    .project-preview::before {
-      content: "";
-
-      position: absolute;
-
-      width: 250px;
-      height: 250px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(255, 255, 255, 0.03);
-
-      filter: blur(10px);
-    }
-
-    .mini-browser {
-      width: 88%;
-      height: 88%;
-
-      position: relative;
-      z-index: 2;
-
-      overflow: hidden;
-
-      border-radius: 14px;
-
-      background: #10141b;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.11);
-
-      box-shadow:
-        0 20px 55px rgba(0, 0, 0, 0.35);
-
-      transition: transform 0.25s ease;
-    }
-
-    .project:hover .mini-browser {
-      transform: scale(1.03);
-    }
-
-    .mini-browser-top {
-      height: 28px;
-
-      display: flex;
-      align-items: center;
-      gap: 5px;
-
-      padding: 0 9px;
-
-      background: #171b23;
-    }
-
-    .mini-browser-top span {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #555c69;
-    }
-
-    .mini-page {
-      padding: 28px;
-    }
-
-    .mini-logo {
-      width: 72px;
-      height: 8px;
-
-      margin-bottom: 40px;
-
-      border-radius: 10px;
-
-      background: #8a9dff;
-    }
-
-    .mini-heading {
-      width: 75%;
-      height: 16px;
-
-      margin-bottom: 9px;
-
-      border-radius: 5px;
-
-      background: #f4f5fa;
-    }
-
-    .mini-heading.short {
-      width: 45%;
-    }
-
-    .mini-line {
-      width: 65%;
-      height: 7px;
-
-      margin-top: 18px;
-
-      border-radius: 10px;
-
-      background: #4d5460;
-    }
-
-    .mini-cta {
-      width: 90px;
-      height: 30px;
-
-      margin-top: 25px;
-
-      border-radius: 7px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #6d84ff,
-          #9a5fff
-        );
-    }
-
-    .project-info {
-      padding: 26px;
-    }
-
-    .project-tag {
-      display: inline-block;
-
-      margin-bottom: 9px;
-
-      color: #8c9aff;
-
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-    }
-
-    .project-info h3 {
-      margin-bottom: 7px;
-      font-size: 22px;
-    }
-
-    .project-info p {
-      color: #959dab;
-    }
-
-    .project-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-
-      margin-top: 17px;
-    }
-
-    .project-meta span {
-      padding: 6px 9px;
-
-      border-radius: 999px;
-
-      background:
-        rgba(255, 255, 255, 0.035);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.065);
-
-      color: #8d95a2;
-
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-
-    /* =========================================================
-       PROCESS
-    ========================================================= */
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 16px;
-    }
-
-    .process-card {
-      position: relative;
-
-      padding: 26px;
-
-      border-radius: 18px;
-
-      background:
-        rgba(255, 255, 255, 0.025);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .process-number {
-      margin-bottom: 30px;
-
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.4px;
-
-      color: #8796ff;
-    }
-
-    .process-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .process-card p {
-      color: #9199a6;
-      font-size: 14px;
-    }
-
-    .process-card::after {
-      content: "";
-
-      position: absolute;
-
-      width: 34px;
-      height: 1px;
-
-      right: -25px;
-      top: 49px;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(127, 143, 255, 0.6),
-          transparent
-        );
-    }
-
-    .process-card:last-child::after {
-      display: none;
-    }
-
-    /* =========================================================
-       STATS
-    ========================================================= */
-
-    .stats-section {
-      padding: 55px 0;
-
-      border-top:
-        1px solid rgba(255, 255, 255, 0.06);
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.06);
-
-      background:
-        rgba(255, 255, 255, 0.014);
-    }
-
-    .big-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 20px;
-    }
-
-    .big-stat {
-      text-align: center;
-    }
-
-    .big-stat strong {
-      display: block;
-
-      font-size: clamp(34px, 5vw, 52px);
-      line-height: 1;
-
-      margin-bottom: 8px;
-
-      letter-spacing: -2px;
-    }
-
-    .big-stat span {
-      color: #808996;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* =========================================================
-       PRICING
-    ========================================================= */
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 20px;
-
-      align-items: stretch;
-    }
-
-    .price-card {
-      position: relative;
-
-      padding: 33px;
-
-      border-radius: 21px;
-
-      background:
-        rgba(255, 255, 255, 0.024);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.085);
+      background: #0a0c12;
 
       transition:
         transform 0.25s ease,
         border-color 0.25s ease;
     }
 
-    .price-card:hover {
+    .project:hover {
       transform: translateY(-5px);
+
       border-color:
-        rgba(127, 138, 255, 0.28);
+        rgba(136, 104, 255, 0.45);
     }
 
-    .price-card.featured {
-      transform: scale(1.03);
+    .project-preview {
+      min-height: 335px;
 
+      padding: 35px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .freshline-preview {
       background:
         radial-gradient(
-          circle at top,
-          rgba(103, 111, 255, 0.16),
+          circle at 90% 15%,
+          rgba(86, 204, 44, 0.25),
           transparent 35%
         ),
-        rgba(255, 255, 255, 0.03);
-
-      border-color:
-        rgba(120, 132, 255, 0.45);
-
-      box-shadow:
-        0 25px 75px rgba(66, 68, 190, 0.13);
+        linear-gradient(
+          145deg,
+          #050806,
+          #10180c
+        );
     }
 
-    .price-card.featured:hover {
-      transform:
-        scale(1.03)
-        translateY(-5px);
+    .twin-preview {
+      background:
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(46, 153, 255, 0.32),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #05090f,
+          #081522
+        );
     }
 
-    .popular {
-      position: absolute;
+    .preview-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      top: 16px;
-      right: 16px;
+      gap: 20px;
+    }
 
-      padding: 6px 9px;
+    .preview-logo {
+      font-size: 18px;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+    }
+
+    .freshline-preview .preview-logo span {
+      color: #62cf28;
+    }
+
+    .twin-preview .preview-logo span {
+      color: #4baeff;
+    }
+
+    .preview-badge {
+      padding: 7px 11px;
+
+      border:
+        1px solid rgba(255,255,255,0.12);
 
       border-radius: 999px;
 
-      background:
-        linear-gradient(
-          90deg,
-          #7183ff,
-          #9562ff
-        );
+      color: #b9bfcb;
 
       font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1px;
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
       text-transform: uppercase;
     }
 
-    .price-name {
+    .preview-content small {
+      display: block;
+
       margin-bottom: 10px;
 
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 900;
 
-      color: #9ca9ff;
+      letter-spacing: 2px;
 
-      letter-spacing: 1.3px;
       text-transform: uppercase;
     }
 
-    .price {
-      margin-bottom: 8px;
-
-      font-size: 43px;
-      font-weight: 900;
+    .freshline-preview .preview-content small {
+      color: #62cf28;
     }
 
-    .price-sub {
-      min-height: 65px;
-
-      margin-bottom: 27px;
-
-      color: #9199a7;
-
-      font-size: 14px;
+    .twin-preview .preview-content small {
+      color: #4baeff;
     }
 
-    .feature-list {
-      list-style: none;
-      margin-bottom: 30px;
-    }
+    .preview-content h3 {
+      max-width: 500px;
 
-    .feature-list li {
-      padding: 9px 0;
+      font-size: clamp(38px, 5vw, 56px);
 
-      color: #c2c7d0;
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.05);
-
-      font-size: 14px;
-    }
-
-    .feature-list li::before {
-      content: "✓";
-
-      margin-right: 10px;
-
-      color: #8d9cff;
-
-      font-weight: 900;
-    }
-
-    /* =========================================================
-       MAINTENANCE PLANS
-    ========================================================= */
-
-    .maintenance-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-    .maintenance-card {
-      padding: 28px;
-
-      border-radius: 19px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.037),
-          rgba(255, 255, 255, 0.013)
-        );
-
-      border:
-        1px solid rgba(255, 255, 255, 0.075);
-    }
-
-    .maintenance-card.featured {
-      border-color:
-        rgba(124, 137, 255, 0.36);
-
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(115, 97, 255, 0.13),
-          transparent 40%
-        ),
-        rgba(255, 255, 255, 0.025);
-    }
-
-    .maintenance-name {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .maintenance-price {
-      font-size: 34px;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-
-    .maintenance-price small {
-      font-size: 12px;
-      color: #828b98;
-    }
-
-    .maintenance-card p {
-      color: #929aa7;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    /* =========================================================
-       FAQ
-    ========================================================= */
-
-    .faq-wrap {
-      max-width: 850px;
-    }
-
-    .faq-item {
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .faq-question {
-      width: 100%;
-
-      padding: 22px 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      border: 0;
-
-      background: transparent;
-
-      text-align: left;
-
-      color: white;
-      cursor: pointer;
-    }
-
-    .faq-question span:first-child {
-      font-size: 17px;
-      font-weight: 800;
-    }
-
-    .faq-plus {
-      width: 28px;
-      height: 28px;
-
-      flex-shrink: 0;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 9px;
-
-      background:
-        rgba(255, 255, 255, 0.035);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.075);
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .faq-item.open .faq-plus {
-      transform: rotate(45deg);
-
-      background:
-        rgba(113, 100, 255, 0.12);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-
-      transition:
-        max-height 0.32s ease,
-        padding 0.32s ease;
-    }
-
-    .faq-answer p {
-      max-width: 760px;
-      color: #939ba8;
-      padding-bottom: 0;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 300px;
-    }
-
-    .faq-item.open .faq-answer p {
-      padding-bottom: 22px;
-    }
-
-    /* =========================================================
-       CTA
-    ========================================================= */
-
-    .cta-section {
-      padding-bottom: 120px;
-    }
-
-    .cta-box {
-      position: relative;
-
-      overflow: hidden;
-
-      padding: 75px 40px;
-
-      border-radius: 28px;
-
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(129, 102, 255, 0.31),
-          transparent 42%
-        ),
-        linear-gradient(
-          145deg,
-          #11151e,
-          #080a0f
-        );
-
-      border:
-        1px solid rgba(255, 255, 255, 0.1);
-
-      box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.28);
-    }
-
-    .cta-box::after {
-      content: "";
-
-      position: absolute;
-
-      width: 360px;
-      height: 360px;
-
-      border-radius: 50%;
-
-      left: 50%;
-      top: -250px;
-
-      transform: translateX(-50%);
-
-      background:
-        rgba(120, 93, 255, 0.2);
-
-      filter: blur(65px);
-
-      pointer-events: none;
-    }
-
-    .cta-box > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-box h2 {
-      margin-bottom: 18px;
-
-      font-size: clamp(37px, 5vw, 64px);
-      line-height: 1;
+      line-height: 0.95;
       letter-spacing: -2px;
     }
 
-    .cta-box p {
-      max-width: 660px;
+    .preview-content p {
+      max-width: 490px;
 
-      margin: 0 auto 30px;
+      margin-top: 16px;
 
-      color: #9da4b1;
+      color: #a4aab7;
 
-      font-size: 17px;
+      font-size: 15px;
     }
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+    .preview-button {
+      margin-top: 24px;
 
-    footer {
-      padding: 45px 0 95px;
+      width: fit-content;
 
-      border-top:
-        1px solid rgba(255, 255, 255, 0.065);
+      padding: 11px 16px;
 
-      color: #777f8c;
+      border-radius: 9px;
 
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 900;
     }
 
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .freshline-preview .preview-button {
+      background: #62cf28;
 
-      gap: 20px;
+      color: #061000;
     }
 
-    .footer-brand {
-      color: #a4abb7;
+    .twin-preview .preview-button {
+      background: #319cff;
+
+      color: #03101c;
+    }
+
+    .project-info {
+      padding: 28px;
+    }
+
+    .project-type {
+      color: #878fa2;
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
       font-weight: 800;
     }
 
-    .footer-links {
+    .project-info h3 {
+      margin-top: 8px;
+
+      font-size: 29px;
+    }
+
+    .project-info p {
+      margin-top: 12px;
+
+      color: #989fae;
+    }
+
+    .project-features {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+
+      gap: 8px;
+
+      margin-top: 20px;
     }
 
-    .footer-links a:hover {
-      color: white;
+    .tag {
+      padding: 7px 10px;
+
+      border-radius: 8px;
+
+      background:
+        rgba(255,255,255,0.055);
+
+      border:
+        1px solid rgba(255,255,255,0.07);
+
+      color: #c1c5d0;
+
+      font-size: 11px;
+      font-weight: 700;
     }
 
-    /* =========================================================
-       STICKY MOBILE CTA
-    ========================================================= */
+    .project-links {
+      margin-top: 25px;
 
-    .mobile-sticky {
-      position: fixed;
-
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-
-      z-index: 950;
-
-      display: none;
+      display: flex;
+      gap: 12px;
     }
 
-    .mobile-sticky a {
-      width: 100%;
+    .project-link {
+      flex: 1;
 
-      min-height: 54px;
+      min-height: 48px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      border-radius: 14px;
+      border-radius: 11px;
+
+      font-size: 14px;
+      font-weight: 800;
+
+      border:
+        1px solid rgba(255,255,255,0.13);
+    }
+
+    .project-link.primary {
+      border: 0;
 
       background:
         linear-gradient(
-          90deg,
-          #6b84ff,
-          #975dff
+          135deg,
+          #687aff,
+          #a44fff
         );
-
-      color: white;
-
-      font-size: 14px;
-      font-weight: 900;
-
-      box-shadow:
-        0 15px 40px rgba(55, 48, 190, 0.35);
     }
 
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
+    .coming-project {
+      margin-top: 26px;
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .estimator-shell {
+      padding: 35px;
+
+      border:
+        1px dashed rgba(255,255,255,0.13);
+
+      border-radius: 22px;
+
+      text-align: center;
+
+      color: #7f8696;
+
+      background:
+        rgba(255,255,255,0.015);
+    }
+
+    .coming-project strong {
+      display: block;
+
+      color: #b8bdca;
+
+      font-size: 18px;
+
+      margin-bottom: 4px;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 16px;
+
+      margin-top: 45px;
+    }
+
+    .process-card {
+      padding: 27px;
+
+      min-height: 230px;
+
+      border:
+        1px solid rgba(255,255,255,0.09);
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.025);
+    }
+
+    .process-card .number {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          135deg,
+          #6076ff,
+          #9c50ff
+        );
+    }
+
+    .process-card h3 {
+      margin-top: 30px;
+
+      font-size: 21px;
+    }
+
+    .process-card p {
+      margin-top: 10px;
+
+      color: #8f96a7;
+
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-bottom: 110px;
+    }
+
+    .cta-box {
+      padding: 65px;
+
+      border-radius: 28px;
+
+      border:
+        1px solid rgba(143, 99, 255, 0.3);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(86, 105, 255, 0.14),
+          rgba(152, 70, 255, 0.14)
+        );
+    }
+
+    .cta-box h2 {
+      max-width: 700px;
+
+      font-size: clamp(38px, 5vw, 60px);
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+    }
+
+    .cta-box p {
+      margin-top: 18px;
+
+      max-width: 650px;
+
+      color: #aaaec1;
+    }
+
+    .cta-box .button {
+      margin-top: 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0 50px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 25px;
+    }
+
+    .footer-inner p {
+      color: #767d8d;
+
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 20px;
+
+      color: #8c93a4;
+
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding: 75px 0 70px;
+      }
+
+      .hero-grid {
         grid-template-columns: 1fr;
+
+        gap: 45px;
       }
 
       .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
       }
 
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .process-card::after {
-        display: none;
-      }
-
-      .pricing-grid,
-      .maintenance-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .price-card.featured,
-      .price-card.featured:hover {
-        transform: none;
-      }
-
-      .estimate-panel {
-        position: relative;
-        top: auto;
-      }
-
-      .visual-wrap {
-        max-width: 680px;
-      }
-
-      .desktop-nav {
-        display: none;
-      }
-
-      .menu-button {
-        display: flex;
-      }
-    }
-
-    @media (max-width: 760px) {
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
 
-      .big-stats {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 34px 20px;
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .section {
-        padding: 78px 0;
-      }
-
-      .hero {
-        padding-top: 125px;
-        padding-bottom: 75px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2.8px;
-      }
-
-      .hero-stats {
-        gap: 20px;
-      }
-
-      .floating-badge {
-        display: none;
-      }
-
-      .browser-card {
-        transform: none;
-
-        animation:
-          floatMobile 6s ease-in-out infinite;
-      }
-
-      @keyframes floatMobile {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .cursor-glow {
-        display: none;
-      }
-
-      .mobile-sticky {
-        display: block;
-      }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 620px) {
+
       .container {
-        width: min(100% - 24px, 1180px);
+        width: min(100% - 26px, 1180px);
       }
 
-      .brand-main {
-        font-size: 13px;
-      }
-
-      .brand-sub {
-        font-size: 8px;
-        letter-spacing: 1.8px;
+      .nav {
+        min-height: 68px;
       }
 
       .brand-mark {
@@ -2516,149 +1038,152 @@
         height: 39px;
       }
 
-      .option-grid,
+      .brand-text strong {
+        font-size: 14px;
+      }
+
+      .brand-text span {
+        font-size: 9px;
+      }
+
+      h1 {
+        font-size: 54px;
+
+        letter-spacing: -2.5px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-card {
+        padding: 17px;
+      }
+
+      .browser-content {
+        min-height: 320px;
+
+        padding: 27px 21px;
+      }
+
+      .browser-content h2 {
+        font-size: 36px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+
+        border-bottom:
+          1px solid rgba(255,255,255,0.08);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
       .services-grid,
       .process-grid {
         grid-template-columns: 1fr;
       }
 
-      .estimator-builder,
-      .estimate-panel {
-        padding: 22px;
+      .project-preview {
+        min-height: 390px;
+
+        padding: 25px;
+      }
+
+      .preview-content h3 {
+        font-size: 42px;
+      }
+
+      .project-info {
+        padding: 23px;
+      }
+
+      .project-links {
+        flex-direction: column;
       }
 
       .cta-box {
-        padding: 52px 22px;
+        padding: 38px 25px;
       }
 
-      .project-preview {
-        height: 285px;
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .trust-row {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .mock-site {
-        min-height: 385px;
-        padding: 36px 24px 28px;
-      }
-
-      .mock-grid {
-        margin-top: 36px;
-      }
-
-      .mock-card {
-        height: 72px;
-      }
-
-      footer {
-        padding-bottom: 100px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- BACKGROUND EFFECTS -->
+  <header>
 
-  <div class="ambient">
-    <div class="orb orb-one"></div>
-    <div class="orb orb-two"></div>
-    <div class="orb orb-three"></div>
-  </div>
+    <div class="container nav">
 
-  <div class="cursor-glow" id="cursorGlow"></div>
+      <a class="brand" href="#top">
 
+        <div class="brand-mark">
+          FD
+        </div>
 
-  <!-- HEADER -->
+        <div class="brand-text">
 
-  <header id="siteHeader">
+          <strong>
+            Forged Digital Creations
+          </strong>
 
-    <div class="container">
-
-      <nav>
-
-        <a href="#" class="brand">
-
-          <div class="brand-mark">
-            F
-          </div>
-
-          <div class="brand-text">
-
-            <span class="brand-main">
-              FORGED DIGITAL
-            </span>
-
-            <span class="brand-sub">
-              CREATIONS
-            </span>
-
-          </div>
-
-        </a>
-
-
-        <div class="desktop-nav">
-
-          <a href="#services">
-            Services
-          </a>
-
-          <a href="#estimator">
-            Estimate
-          </a>
-
-          <a href="#work">
-            Work
-          </a>
-
-          <a href="#process">
-            Process
-          </a>
-
-          <a href="#pricing">
-            Pricing
-          </a>
-
-          <a
-            href="quote.html"
-            class="nav-cta"
-          >
-            Start a Project
-          </a>
+          <span>
+            Web Design Studio
+          </span>
 
         </div>
 
+      </a>
 
-        <button
-          class="menu-button"
-          id="menuButton"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
+
+      <nav>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#work">
+          Our Work
+        </a>
+
+        <a href="#process">
+          Process
+        </a>
+
+        <a
+          class="nav-button"
+          href="quote.html"
         >
-
-          <span class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-
-        </button>
+          Start a Project
+        </a>
 
       </nav>
 
@@ -2667,1183 +1192,90 @@
   </header>
 
 
-  <!-- MOBILE MENU -->
-
-  <div
-    class="mobile-menu"
-    id="mobileMenu"
-  >
-
-    <div class="mobile-menu-inner">
-
-      <a href="#services">
-        Services
-      </a>
-
-      <a href="#estimator">
-        Instant Estimate
-      </a>
-
-      <a href="#work">
-        Selected Work
-      </a>
-
-      <a href="#process">
-        Our Process
-      </a>
-
-      <a href="#pricing">
-        Pricing
-      </a>
-
-      <a href="#faq">
-        FAQ
-      </a>
-
-      <a href="quote.html">
-        Start a Project
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <main>
+  <main id="top">
 
     <!-- HERO -->
 
     <section class="hero">
 
-      <div class="container">
+      <div class="container hero-grid">
 
-        <div class="hero-grid">
+        <div>
 
-          <div>
-
-            <div class="eyebrow">
-
-              <span class="pulse"></span>
-
-              Custom websites forged for real businesses
-
-            </div>
-
-
-            <h1>
-
-              We forge websites that
-
-              <span class="gradient-text">
-                make businesses look expensive.
-              </span>
-
-            </h1>
-
-
-            <p>
-
-              Forged Digital Creations builds modern,
-              fast, conversion-focused websites designed
-              to make your business look established,
-              professional, and ready to compete.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-              <a
-                href="#estimator"
-                class="btn btn-primary"
-              >
-                Build My Website
-                <span>→</span>
-              </a>
-
-              <a
-                href="#work"
-                class="btn btn-secondary"
-              >
-                See Our Work
-              </a>
-
-            </div>
-
-
-            <div class="hero-stats">
-
-              <div class="stat">
-
-                <strong>
-                  100%
-                </strong>
-
-                <span>
-                  Mobile Friendly
-                </span>
-
-              </div>
-
-
-              <div class="stat">
-
-                <strong>
-                  Custom
-                </strong>
-
-                <span>
-                  Designed Around You
-                </span>
-
-              </div>
-
-
-              <div class="stat">
-
-                <strong>
-                  Fast
-                </strong>
-
-                <span>
-                  Performance Focused
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="visual-wrap">
-
-            <div class="visual-glow"></div>
-
-
-            <div class="browser-card">
-
-              <div class="browser-top">
-
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-
-                <div class="browser-url"></div>
-
-              </div>
-
-
-              <div class="mock-site">
-
-                <div class="mock-brand">
-
-                  <div class="mock-brand-icon"></div>
-
-                  <div class="mock-brand-line"></div>
-
-                </div>
-
-
-                <div class="mock-tag"></div>
-
-                <div class="mock-title"></div>
-
-                <div class="mock-title short"></div>
-
-                <div class="mock-copy"></div>
-
-                <div class="mock-copy small"></div>
-
-
-                <div class="mock-buttons">
-
-                  <div class="mock-button"></div>
-
-                  <div class="mock-button alt"></div>
-
-                </div>
-
-
-                <div class="mock-grid">
-
-                  <div class="mock-card"></div>
-
-                  <div class="mock-card"></div>
-
-                  <div class="mock-card"></div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="floating-badge badge-one">
-              ⚡ Fast Loading
-            </div>
-
-            <div class="floating-badge badge-two">
-              📱 Built for Mobile
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- TRUST STRIP -->
-
-    <section class="trust-strip">
-
-      <div class="container">
-
-        <div class="trust-row">
-
-          <span>
-            Custom Design
+          <span class="eyebrow">
+            Websites Built To Work
           </span>
 
-          <span>
-            Mobile First
-          </span>
-
-          <span>
-            SEO Ready
-          </span>
-
-          <span>
-            Fast Hosting
-          </span>
-
-          <span>
-            Built to Convert
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section
-      class="section"
-      id="services"
-    >
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-label">
-            What We Build
-          </span>
-
-          <h2 class="section-title">
-            More than a pretty homepage.
-          </h2>
-
-          <p class="section-copy">
-
-            Your website should build trust,
-            explain what you do,
-            and make it ridiculously easy
-            for customers to take the next step.
-
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-          <div class="service-card reveal">
-
-            <div class="service-icon">
-              ✦
-            </div>
-
-            <h3>
-              Custom Websites
-            </h3>
-
-            <p>
-
-              Modern websites designed specifically around
-              your brand, customers, services, and goals.
-
-            </p>
-
-            <a
-              href="#estimator"
-              class="service-link"
-            >
-              Price a project →
-            </a>
-
-          </div>
-
-
-          <div class="service-card reveal">
-
-            <div class="service-icon">
-              📱
-            </div>
-
-            <h3>
-              Mobile Optimization
-            </h3>
-
-            <p>
-
-              Every layout is designed to feel polished
-              on phones, tablets, laptops, and desktop screens.
-
-            </p>
-
-          </div>
-
-
-          <div class="service-card reveal">
-
-            <div class="service-icon">
-              ⚡
-            </div>
-
-            <h3>
-              Speed & Performance
-            </h3>
-
-            <p>
-
-              Lightweight design and clean code help pages
-              load quickly and keep visitors moving.
-
-            </p>
-
-          </div>
-
-
-          <div class="service-card reveal">
-
-            <div class="service-icon">
-              🔎
-            </div>
-
-            <h3>
-              SEO Foundations
-            </h3>
-
-            <p>
-
-              Proper titles, descriptions, page structure,
-              and search-friendly foundations from day one.
-
-            </p>
-
-          </div>
-
-
-          <div class="service-card reveal">
-
-            <div class="service-icon">
-              📍
-            </div>
-
-            <h3>
-              Google Business Setup
-            </h3>
-
-            <p>
-
-              Help connecting your website and Google presence
-              so local customers can find the business easier.
-
-            </p>
-
-          </div>
-
-
-          <div class="service-card reveal">
-
-            <div class="service-icon">
-              🛠
-            </div>
-
-            <h3>
-              Website Management
-            </h3>
-
-            <p>
-
-              Need edits after launch?
-              We can handle updates, additions,
-              new pages, and ongoing management.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- INTERACTIVE ESTIMATOR -->
-
-    <section
-      class="section estimator-section"
-      id="estimator"
-    >
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-label">
-            Instant Estimate
-          </span>
-
-          <h2 class="section-title">
-            Build your project.
-            <span class="gradient-text">
-              Watch the estimate change.
+          <h1>
+            Your business deserves a
+            <span class="accent">
+              better website.
             </span>
-          </h2>
+          </h1>
 
-          <p class="section-copy">
-
-            Pick what your business needs.
-            This gives you a starting estimate before
-            you even send us a message.
-
+          <p>
+            Forged Digital Creations builds modern,
+            mobile-friendly websites designed to make
+            local businesses look professional, build
+            trust and turn visitors into customers.
           </p>
 
-        </div>
-
-
-        <div class="estimator-shell">
-
-          <!-- BUILDER -->
-
-          <div class="estimator-builder reveal">
-
-            <div class="estimator-block">
-
-              <h3>
-                What are we building?
-              </h3>
-
-
-              <div class="option-grid">
-
-                <label
-                  class="option-card selected"
-                  data-radio-card
-                >
-
-                  <input
-                    type="radio"
-                    name="siteType"
-                    value="399"
-                    data-name="Starter business website"
-                    checked
-                  >
-
-                  <div>
-
-                    <strong>
-                      Starter Site
-                    </strong>
-
-                    <span>
-                      Simple professional presence
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-radio-card
-                >
-
-                  <input
-                    type="radio"
-                    name="siteType"
-                    value="699"
-                    data-name="Business website"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Business Site
-                    </strong>
-
-                    <span>
-                      More pages and functionality
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-radio-card
-                >
-
-                  <input
-                    type="radio"
-                    name="siteType"
-                    value="999"
-                    data-name="Advanced custom website"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Advanced Site
-                    </strong>
-
-                    <span>
-                      Larger custom build
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-radio-card
-                >
-
-                  <input
-                    type="radio"
-                    name="siteType"
-                    value="799"
-                    data-name="Website redesign"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Redesign
-                    </strong>
-
-                    <span>
-                      Upgrade an existing website
-                    </span>
-
-                  </div>
-
-                </label>
-
-              </div>
-
-            </div>
-
-
-            <div class="estimator-block">
-
-              <h3>
-                How many pages?
-              </h3>
-
-
-              <div class="page-selector">
-
-                <button
-                  class="page-control"
-                  id="minusPage"
-                  type="button"
-                  aria-label="Remove page"
-                >
-                  −
-                </button>
-
-
-                <div class="page-display">
-
-                  <strong id="pageCount">
-                    1
-                  </strong>
-
-                  <span>
-                    Pages
-                  </span>
-
-                </div>
-
-
-                <button
-                  class="page-control"
-                  id="plusPage"
-                  type="button"
-                  aria-label="Add page"
-                >
-                  +
-                </button>
-
-              </div>
-
-            </div>
-
-
-            <div class="estimator-block">
-
-              <h3>
-                Add functionality
-              </h3>
-
-
-              <div class="option-grid">
-
-                <label
-                  class="option-card"
-                  data-checkbox-card
-                >
-
-                  <input
-                    type="checkbox"
-                    value="100"
-                    data-name="Quote or booking form"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Quote / Booking Form
-                    </strong>
-
-                    <span>
-                      +$100
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-checkbox-card
-                >
-
-                  <input
-                    type="checkbox"
-                    value="125"
-                    data-name="Google Business assistance"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Google Business
-                    </strong>
-
-                    <span>
-                      +$125
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-checkbox-card
-                >
-
-                  <input
-                    type="checkbox"
-                    value="75"
-                    data-name="Domain setup"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Domain Setup
-                    </strong>
-
-                    <span>
-                      +$75
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-checkbox-card
-                >
-
-                  <input
-                    type="checkbox"
-                    value="150"
-                    data-name="Expanded SEO setup"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Expanded SEO
-                    </strong>
-
-                    <span>
-                      +$150
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-checkbox-card
-                >
-
-                  <input
-                    type="checkbox"
-                    value="125"
-                    data-name="Gallery or portfolio system"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Gallery / Portfolio
-                    </strong>
-
-                    <span>
-                      +$125
-                    </span>
-
-                  </div>
-
-                </label>
-
-
-                <label
-                  class="option-card"
-                  data-checkbox-card
-                >
-
-                  <input
-                    type="checkbox"
-                    value="175"
-                    data-name="Advanced custom feature"
-                  >
-
-                  <div>
-
-                    <strong>
-                      Custom Feature
-                    </strong>
-
-                    <span>
-                      +$175
-                    </span>
-
-                  </div>
-
-                </label>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- LIVE PRICE -->
-
-          <aside class="estimate-panel reveal">
-
-            <div class="estimate-small">
-              Estimated project
-            </div>
-
-
-            <div
-              class="estimate-price gradient-text"
-              id="estimatePrice"
-            >
-              $399
-            </div>
-
-
-            <p class="estimate-note">
-
-              This is a starting estimate.
-              Final pricing depends on project scope,
-              content, and specific requirements.
-
-            </p>
-
-
-            <ul
-              class="estimate-list"
-              id="estimateList"
-            >
-
-              <li>
-                Starter business website
-              </li>
-
-              <li>
-                1 page
-              </li>
-
-              <li class="estimate-empty">
-                Select extras to customize
-              </li>
-
-            </ul>
-
+          <div class="hero-buttons">
 
             <a
+              class="button button-primary"
               href="quote.html"
-              class="btn btn-primary"
-              id="estimateButton"
             >
-              Start This Project →
+              Start Your Website →
             </a>
 
-          </aside>
+            <a
+              class="button button-secondary"
+              href="#work"
+            >
+              View Our Work
+            </a>
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PORTFOLIO -->
-
-    <section
-      class="section"
-      id="work"
-    >
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-label">
-            Selected Work
-          </span>
-
-          <h2 class="section-title">
-
-            First impressions happen fast.
-
-            <span class="gradient-text">
-              We make them count.
-            </span>
-
-          </h2>
-
-          <p class="section-copy">
-
-            A strong website changes how customers perceive
-            a business before they ever make contact.
-
-          </p>
+          </div>
 
         </div>
 
 
-        <div class="portfolio-grid">
+        <div class="hero-card">
 
-          <!-- PROJECT 1 -->
+          <div class="browser">
 
-          <article class="project reveal">
+            <div class="browser-top">
 
-            <div class="project-preview project-blue">
-
-              <div class="mini-browser">
-
-                <div class="mini-browser-top">
-
-                  <span></span>
-                  <span></span>
-                  <span></span>
-
-                </div>
-
-                <div class="mini-page">
-
-                  <div class="mini-logo"></div>
-
-                  <div class="mini-heading"></div>
-
-                  <div class="mini-heading short"></div>
-
-                  <div class="mini-line"></div>
-
-                  <div class="mini-cta"></div>
-
-                </div>
-
-              </div>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
 
             </div>
 
+            <div class="browser-content">
 
-            <div class="project-info">
-
-              <span class="project-tag">
-                Automotive
+              <span class="mini-label">
+                Built For Your Business
               </span>
 
-              <h3>
-                Twin Turbo Detailers
-              </h3>
+              <h2>
+                Look professional.
+                <br>
+                Get more customers.
+              </h2>
 
               <p>
-
-                A mobile detailing website designed around
-                strong visuals, instant estimates,
-                and availability requests.
-
+                Clean design, mobile optimization,
+                quote forms and custom pages built
+                around what your business actually needs.
               </p>
 
-
-              <div class="project-meta">
-
-                <span>
-                  Mobile First
-                </span>
-
-                <span>
-                  Quote Tool
-                </span>
-
-                <span>
-                  Local Business
-                </span>
-
+              <div class="mock-button">
+                Get Started →
               </div>
 
             </div>
-
-          </article>
-
-
-          <!-- PROJECT 2 -->
-
-          <article class="project reveal">
-
-            <div class="project-preview project-purple">
-
-              <div class="mini-browser">
-
-                <div class="mini-browser-top">
-
-                  <span></span>
-                  <span></span>
-                  <span></span>
-
-                </div>
-
-                <div class="mini-page">
-
-                  <div class="mini-logo"></div>
-
-                  <div class="mini-heading"></div>
-
-                  <div class="mini-heading short"></div>
-
-                  <div class="mini-line"></div>
-
-                  <div class="mini-cta"></div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="project-info">
-
-              <span class="project-tag">
-                Exterior Cleaning
-              </span>
-
-              <h3>
-                Freshline Exterior Cleaning
-              </h3>
-
-              <p>
-
-                A service-driven website built to showcase
-                cleaning services, quote tools,
-                service areas, and local branding.
-
-              </p>
-
-
-              <div class="project-meta">
-
-                <span>
-                  Service Business
-                </span>
-
-                <span>
-                  Quote System
-                </span>
-
-                <span>
-                  SEO Ready
-                </span>
-
-              </div>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROCESS -->
-
-    <section
-      class="section"
-      id="process"
-    >
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-label">
-            How It Works
-          </span>
-
-          <h2 class="section-title">
-            From idea to launch.
-          </h2>
-
-          <p class="section-copy">
-
-            We keep the process simple so you can focus
-            on running your business while we handle the build.
-
-          </p>
-
-        </div>
-
-
-        <div class="process-grid">
-
-          <div class="process-card reveal">
-
-            <div class="process-number">
-              STEP 01
-            </div>
-
-            <h3>
-              Discovery
-            </h3>
-
-            <p>
-
-              Tell us about your business,
-              customers, services, style,
-              and what the site needs to accomplish.
-
-            </p>
-
-          </div>
-
-
-          <div class="process-card reveal">
-
-            <div class="process-number">
-              STEP 02
-            </div>
-
-            <h3>
-              Design
-            </h3>
-
-            <p>
-
-              We shape the layout,
-              colors, visual direction,
-              messaging, and customer flow.
-
-            </p>
-
-          </div>
-
-
-          <div class="process-card reveal">
-
-            <div class="process-number">
-              STEP 03
-            </div>
-
-            <h3>
-              Build
-            </h3>
-
-            <p>
-
-              The approved direction becomes
-              a fast, responsive,
-              fully functional website.
-
-            </p>
-
-          </div>
-
-
-          <div class="process-card reveal">
-
-            <div class="process-number">
-              STEP 04
-            </div>
-
-            <h3>
-              Launch
-            </h3>
-
-            <p>
-
-              We connect the domain,
-              test the experience,
-              and get your new site live.
-
-            </p>
 
           </div>
 
@@ -3856,69 +1288,46 @@
 
     <!-- STATS -->
 
-    <section class="stats-section">
+    <div class="stats">
 
       <div class="container">
 
-        <div class="big-stats">
+        <div class="stats-grid">
 
-          <div class="big-stat reveal">
-
-            <strong
-              data-counter="100"
-              data-suffix="%"
-            >
-              0%
-            </strong>
-
-            <span>
-              Responsive
-            </span>
-
-          </div>
-
-
-          <div class="big-stat reveal">
-
-            <strong
-              data-counter="24"
-              data-suffix="/7"
-            >
-              0/7
-            </strong>
-
-            <span>
-              Online Presence
-            </span>
-
-          </div>
-
-
-          <div class="big-stat reveal">
-
-            <strong
-              data-counter="1"
-              data-prefix="<"
-              data-suffix=" sec"
-            >
-              0
-            </strong>
-
-            <span>
-              First Impression
-            </span>
-
-          </div>
-
-
-          <div class="big-stat reveal">
+          <div class="stat">
 
             <strong>
-              Custom
+              Mobile First
             </strong>
 
             <span>
-              Every Build
+              Designed for phones and desktops
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <strong>
+              Custom Built
+            </strong>
+
+            <span>
+              Made around your business
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <strong>
+              Ready To Grow
+            </strong>
+
+            <span>
+              Easy to expand later
             </span>
 
           </div>
@@ -3927,220 +1336,143 @@
 
       </div>
 
-    </section>
+    </div>
 
 
-    <!-- PRICING -->
+    <!-- SERVICES -->
 
-    <section
-      class="section"
-      id="pricing"
-    >
+    <section id="services">
 
       <div class="container">
 
-        <div class="section-heading reveal">
+        <span class="section-label">
+          What We Build
+        </span>
 
-          <span class="section-label">
-            Website Packages
-          </span>
+        <h2 class="section-title">
+          More than a page with your phone number on it.
+        </h2>
 
-          <h2 class="section-title">
-            Pick your forge.
-          </h2>
+        <p class="section-description">
+          Your website should answer customer questions,
+          establish trust and make it easy for people to
+          contact your business.
+        </p>
 
-          <p class="section-copy">
 
-            Every project is different,
-            but these packages give you a clear starting point.
+        <div class="services-grid">
 
-          </p>
+          <article class="service-card">
 
-        </div>
+            <span class="service-number">
+              01
+            </span>
 
+            <h3>
+              Custom Website Design
+            </h3>
 
-        <div class="pricing-grid">
+            <p>
+              A unique website built around your
+              branding, services and customers instead
+              of a generic template.
+            </p>
 
-          <!-- IGNITE -->
+          </article>
 
-          <div class="price-card reveal">
 
-            <div class="price-name">
-              Ignite
-            </div>
+          <article class="service-card">
 
-            <div class="price">
-              $399
-            </div>
+            <span class="service-number">
+              02
+            </span>
 
-            <div class="price-sub">
+            <h3>
+              Mobile Optimization
+            </h3>
 
-              A sharp entry-level website
-              for a small business that needs
-              a professional online presence.
+            <p>
+              Your site is designed to look clean and
+              work properly on phones, tablets and
+              desktop computers.
+            </p>
 
-            </div>
+          </article>
 
 
-            <ul class="feature-list">
+          <article class="service-card">
 
-              <li>
-                1-page custom website
-              </li>
+            <span class="service-number">
+              03
+            </span>
 
-              <li>
-                Mobile responsive design
-              </li>
+            <h3>
+              Quote & Contact Forms
+            </h3>
 
-              <li>
-                Contact section
-              </li>
+            <p>
+              Make it easier for customers to request
+              estimates, appointments and more
+              information.
+            </p>
 
-              <li>
-                Basic SEO foundation
-              </li>
+          </article>
 
-              <li>
-                Domain connection help
-              </li>
 
-            </ul>
+          <article class="service-card">
 
+            <span class="service-number">
+              04
+            </span>
 
-            <a
-              href="quote.html?package=ignite"
-              class="btn btn-secondary"
-            >
-              Choose Ignite
-            </a>
+            <h3>
+              Service Pages
+            </h3>
 
-          </div>
+            <p>
+              Clearly show what your business offers
+              with organized pages built around your
+              individual services.
+            </p>
 
+          </article>
 
-          <!-- FORGE -->
 
-          <div class="price-card featured reveal">
+          <article class="service-card">
 
-            <div class="popular">
-              Most Popular
-            </div>
+            <span class="service-number">
+              05
+            </span>
 
-            <div class="price-name">
-              Forge
-            </div>
+            <h3>
+              Google Business Setup
+            </h3>
 
-            <div class="price">
-              $699
-            </div>
+            <p>
+              Help connecting your online presence so
+              local customers can find your business
+              more easily.
+            </p>
 
-            <div class="price-sub">
+          </article>
 
-              A complete business site
-              with more content,
-              stronger functionality,
-              and room to grow.
 
-            </div>
+          <article class="service-card">
 
+            <span class="service-number">
+              06
+            </span>
 
-            <ul class="feature-list">
+            <h3>
+              Website Management
+            </h3>
 
-              <li>
-                Multi-section or multi-page site
-              </li>
+            <p>
+              Add new services, pricing, photos and
+              information as your business grows.
+            </p>
 
-              <li>
-                Custom visual design
-              </li>
-
-              <li>
-                Quote or booking forms
-              </li>
-
-              <li>
-                Mobile optimization
-              </li>
-
-              <li>
-                SEO foundation
-              </li>
-
-              <li>
-                Google Business assistance
-              </li>
-
-            </ul>
-
-
-            <a
-              href="quote.html?package=forge"
-              class="btn btn-primary"
-            >
-              Choose Forge
-            </a>
-
-          </div>
-
-
-          <!-- FOUNDRY -->
-
-          <div class="price-card reveal">
-
-            <div class="price-name">
-              Foundry
-            </div>
-
-            <div class="price">
-              $999+
-            </div>
-
-            <div class="price-sub">
-
-              For businesses that need
-              a larger custom site,
-              advanced functionality,
-              and launch support.
-
-            </div>
-
-
-            <ul class="feature-list">
-
-              <li>
-                Advanced custom website
-              </li>
-
-              <li>
-                Multiple pages
-              </li>
-
-              <li>
-                Custom forms and features
-              </li>
-
-              <li>
-                Google Business setup
-              </li>
-
-              <li>
-                Domain configuration
-              </li>
-
-              <li>
-                Launch assistance
-              </li>
-
-            </ul>
-
-
-            <a
-              href="quote.html?package=foundry"
-              class="btn btn-secondary"
-            >
-              Choose Foundry
-            </a>
-
-          </div>
+          </article>
 
         </div>
 
@@ -4149,155 +1481,259 @@
     </section>
 
 
-    <!-- MAINTENANCE -->
+    <!-- PORTFOLIO -->
 
-    <section
-      class="section"
-      id="maintenance"
-    >
+    <section id="work">
 
       <div class="container">
 
-        <div class="section-heading reveal">
+        <span class="section-label">
+          Recent Work
+        </span>
 
-          <span class="section-label">
-            After Launch
-          </span>
+        <h2 class="section-title">
+          Websites made for real businesses.
+        </h2>
 
-          <h2 class="section-title">
-            Don't want to manage it yourself?
-          </h2>
+        <p class="section-description">
+          Every project is designed around the
+          business instead of forcing the business
+          into the same recycled layout.
+        </p>
 
-          <p class="section-copy">
 
-            We can keep the site maintained,
-            updated, and moving forward after launch.
+        <div class="portfolio-grid">
 
-          </p>
+
+          <!-- FRESHLINE -->
+
+          <article class="project">
+
+            <div class="project-preview freshline-preview">
+
+              <div class="preview-top">
+
+                <div class="preview-logo">
+                  FRESH<span>LINE</span>
+                </div>
+
+                <div class="preview-badge">
+                  Exterior Cleaning
+                </div>
+
+              </div>
+
+
+              <div class="preview-content">
+
+                <small>
+                  East Idaho Exterior Cleaning
+                </small>
+
+                <h3>
+                  Bring New Life To Your Property
+                </h3>
+
+                <p>
+                  Professional pressure washing,
+                  gutter cleaning, stain treatment
+                  and exterior cleaning.
+                </p>
+
+                <div class="preview-button">
+                  Get A Free Quote →
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <span class="project-type">
+                Exterior Cleaning Website
+              </span>
+
+              <h3>
+                Freshline Exterior Cleaning
+              </h3>
+
+              <p>
+                A bold local service website with
+                clear calls to action, multiple service
+                offerings and a dedicated quote request
+                system.
+              </p>
+
+              <div class="project-features">
+
+                <span class="tag">
+                  Mobile Responsive
+                </span>
+
+                <span class="tag">
+                  Quote Form
+                </span>
+
+                <span class="tag">
+                  Service Pages
+                </span>
+
+                <span class="tag">
+                  Local Business
+                </span>
+
+              </div>
+
+
+              <div class="project-links">
+
+                <a
+                  class="project-link primary"
+                  href="https://nerex13.github.io/Freshline/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View Live Website ↗
+                </a>
+
+                <a
+                  class="project-link"
+                  href="https://nerex13.github.io/Freshline/quote.html"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View Quote Page
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- TWIN TURBO -->
+
+          <article class="project">
+
+            <div class="project-preview twin-preview">
+
+              <div class="preview-top">
+
+                <div class="preview-logo">
+                  TWIN <span>TURBO</span>
+                </div>
+
+                <div class="preview-badge">
+                  Mobile Detailing
+                </div>
+
+              </div>
+
+
+              <div class="preview-content">
+
+                <small>
+                  Professional Auto Detailing
+                </small>
+
+                <h3>
+                  Precision Shine. Every Time.
+                </h3>
+
+                <p>
+                  Professional mobile interior
+                  detailing brought directly to
+                  your driveway.
+                </p>
+
+                <div class="preview-button">
+                  Get Free Estimate →
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <span class="project-type">
+                Mobile Detailing Website
+              </span>
+
+              <h3>
+                Twin Turbo Detailers
+              </h3>
+
+              <p>
+                A premium dark-themed detailing website
+                featuring service pricing, before-and-after
+                results and an estimate and availability
+                request system.
+              </p>
+
+
+              <div class="project-features">
+
+                <span class="tag">
+                  Mobile Responsive
+                </span>
+
+                <span class="tag">
+                  Pricing Options
+                </span>
+
+                <span class="tag">
+                  Availability Form
+                </span>
+
+                <span class="tag">
+                  Results Gallery
+                </span>
+
+              </div>
+
+
+              <div class="project-links">
+
+                <a
+                  class="project-link primary"
+                  href="https://nerex13.github.io/Twin-turbo-datailing./index.html"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View Live Website ↗
+                </a>
+
+                <a
+                  class="project-link"
+                  href="https://nerex13.github.io/Twin-turbo-datailing./index.html#results"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View Results
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
 
         </div>
 
 
-        <div class="maintenance-grid">
+        <div class="coming-project">
 
-          <div class="maintenance-card reveal">
+          <strong>
+            More projects coming soon.
+          </strong>
 
-            <div class="maintenance-name">
-              Care
-            </div>
-
-            <div class="maintenance-price">
-              $49
-              <small>
-                / month
-              </small>
-            </div>
-
-            <p>
-              Basic maintenance for businesses
-              that only need occasional updates.
-            </p>
-
-            <ul class="feature-list">
-
-              <li>
-                Small text edits
-              </li>
-
-              <li>
-                Basic site checks
-              </li>
-
-              <li>
-                Minor content updates
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="maintenance-card featured reveal">
-
-            <div class="maintenance-name">
-              Growth
-            </div>
-
-            <div class="maintenance-price">
-              $99
-              <small>
-                / month
-              </small>
-            </div>
-
-            <p>
-              For businesses that want their website
-              actively maintained as they grow.
-            </p>
-
-            <ul class="feature-list">
-
-              <li>
-                Regular content updates
-              </li>
-
-              <li>
-                New photos and sections
-              </li>
-
-              <li>
-                SEO upkeep
-              </li>
-
-              <li>
-                Priority edits
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="maintenance-card reveal">
-
-            <div class="maintenance-name">
-              Managed
-            </div>
-
-            <div class="maintenance-price">
-              $149+
-              <small>
-                / month
-              </small>
-            </div>
-
-            <p>
-              Hands-off website management
-              for businesses that want us
-              handling the digital side.
-            </p>
-
-            <ul class="feature-list">
-
-              <li>
-                Ongoing site management
-              </li>
-
-              <li>
-                Larger monthly changes
-              </li>
-
-              <li>
-                Content additions
-              </li>
-
-              <li>
-                Priority support
-              </li>
-
-            </ul>
-
-          </div>
+          Our portfolio grows alongside the
+          businesses we work with.
 
         </div>
 
@@ -4306,183 +1742,95 @@
     </section>
 
 
-    <!-- FAQ -->
+    <!-- PROCESS -->
 
-    <section
-      class="section"
-      id="faq"
-    >
+    <section id="process">
 
       <div class="container">
 
-        <div class="section-heading reveal">
+        <span class="section-label">
+          The Process
+        </span>
 
-          <span class="section-label">
-            FAQ
-          </span>
-
-          <h2 class="section-title">
-            Questions before we start?
-          </h2>
-
-        </div>
+        <h2 class="section-title">
+          From idea to live website.
+        </h2>
 
 
-        <div class="faq-wrap">
+        <div class="process-grid">
 
-          <div class="faq-item reveal">
+          <article class="process-card">
 
-            <button class="faq-question">
-
-              <span>
-                Do I own my website?
-              </span>
-
-              <span class="faq-plus">
-                +
-              </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-              <p>
-
-                Yes. Once the project is paid for,
-                the website is yours.
-                We can also continue managing it
-                if you choose a maintenance plan.
-
-              </p>
-
+            <div class="number">
+              1
             </div>
 
-          </div>
+            <h3>
+              Tell Us About Your Business
+            </h3>
+
+            <p>
+              Tell us what you do, what services
+              you offer and what you want the site
+              to accomplish.
+            </p>
+
+          </article>
 
 
-          <div class="faq-item reveal">
+          <article class="process-card">
 
-            <button class="faq-question">
-
-              <span>
-                Do I need to already own a domain?
-              </span>
-
-              <span class="faq-plus">
-                +
-              </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-              <p>
-
-                No. You can already have one,
-                purchase one yourself,
-                or have us help you choose
-                and connect one.
-
-              </p>
-
+            <div class="number">
+              2
             </div>
 
-          </div>
+            <h3>
+              We Build The Design
+            </h3>
+
+            <p>
+              Your website is designed around your
+              branding, customers and business goals.
+            </p>
+
+          </article>
 
 
-          <div class="faq-item reveal">
+          <article class="process-card">
 
-            <button class="faq-question">
-
-              <span>
-                Can you update the website after launch?
-              </span>
-
-              <span class="faq-plus">
-                +
-              </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-              <p>
-
-                Absolutely.
-                You can request one-off changes
-                or choose an ongoing maintenance plan.
-
-              </p>
-
+            <div class="number">
+              3
             </div>
 
-          </div>
+            <h3>
+              Review & Adjust
+            </h3>
+
+            <p>
+              You review the website and we make
+              adjustments before launch.
+            </p>
+
+          </article>
 
 
-          <div class="faq-item reveal">
+          <article class="process-card">
 
-            <button class="faq-question">
-
-              <span>
-                Can you help me get found on Google?
-              </span>
-
-              <span class="faq-plus">
-                +
-              </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-              <p>
-
-                We can build the site with proper SEO foundations,
-                help connect it to Google,
-                and assist with your Google Business presence.
-                Search rankings depend on competition,
-                location, content, and time.
-
-              </p>
-
+            <div class="number">
+              4
             </div>
 
-          </div>
+            <h3>
+              Go Live
+            </h3>
 
+            <p>
+              Once everything looks right, your
+              website goes live and is ready for
+              customers.
+            </p>
 
-          <div class="faq-item reveal">
-
-            <button class="faq-question">
-
-              <span>
-                Can I add more pages later?
-              </span>
-
-              <span class="faq-plus">
-                +
-              </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-              <p>
-
-                Yes. The site can grow with your business.
-                Services, galleries, booking pages,
-                quote systems, and other features
-                can be added later.
-
-              </p>
-
-            </div>
-
-          </div>
+          </article>
 
         </div>
 
@@ -4491,44 +1839,29 @@
     </section>
 
 
-    <!-- FINAL CTA -->
+    <!-- CTA -->
 
-    <section class="section cta-section">
+    <section class="cta">
 
       <div class="container">
 
-        <div class="cta-box reveal">
-
-          <span class="section-label">
-            Start a Project
-          </span>
+        <div class="cta-box">
 
           <h2>
-
-            Ready to forge
-
-            <span class="gradient-text">
-              something better?
-            </span>
-
+            Ready to give your business a stronger online presence?
           </h2>
 
           <p>
-
-            Tell us about your business,
-            what you need,
-            and what kind of website you want.
-            We'll turn it into something built
-            to impress customers and grow with you.
-
+            Tell us what your business needs and
+            we can start building a website designed
+            specifically for you.
           </p>
 
-
           <a
+            class="button button-primary"
             href="quote.html"
-            class="btn btn-primary"
           >
-            Get a Website Quote →
+            Request a Website Quote →
           </a>
 
         </div>
@@ -4540,675 +1873,56 @@
   </main>
 
 
-  <!-- FOOTER -->
-
   <footer>
 
-    <div class="container">
+    <div class="container footer-inner">
 
-      <div class="footer-row">
+      <div class="brand">
 
-        <div>
+        <div class="brand-mark">
+          FD
+        </div>
 
-          <span class="footer-brand">
+        <div class="brand-text">
+
+          <strong>
             Forged Digital Creations
+          </strong>
+
+          <span>
+            Web Design Studio
           </span>
 
-          © 2026
-
         </div>
 
-
-        <div class="footer-links">
-
-          <a href="#services">
-            Services
-          </a>
-
-          <a href="#work">
-            Work
-          </a>
-
-          <a href="#pricing">
-            Pricing
-          </a>
-
-          <a href="#faq">
-            FAQ
-          </a>
-
-        </div>
+      </div>
 
 
-        <div>
-          Forged to stand out. Built to perform.
-        </div>
+      <p>
+        © 2026 Forged Digital Creations.
+        All rights reserved.
+      </p>
+
+
+      <div class="footer-links">
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#work">
+          Portfolio
+        </a>
+
+        <a href="quote.html">
+          Contact
+        </a>
 
       </div>
 
     </div>
 
   </footer>
-
-
-  <!-- MOBILE STICKY CTA -->
-
-  <div class="mobile-sticky">
-
-    <a href="quote.html">
-      Start Your Website →
-    </a>
-
-  </div>
-
-
-  <script>
-    /* =========================================================
-       SCROLL REVEALS
-    ========================================================= */
-
-    const revealElements =
-      document.querySelectorAll(".reveal");
-
-    const revealObserver =
-      new IntersectionObserver(
-        (entries) => {
-
-          entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add("visible");
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-    revealElements.forEach((element) => {
-
-      revealObserver.observe(element);
-
-    });
-
-
-    /* =========================================================
-       HEADER SCROLL
-    ========================================================= */
-
-    const siteHeader =
-      document.getElementById("siteHeader");
-
-    window.addEventListener("scroll", () => {
-
-      if (window.scrollY > 30) {
-
-        siteHeader.classList.add("scrolled");
-
-      } else {
-
-        siteHeader.classList.remove("scrolled");
-
-      }
-
-    });
-
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    const menuButton =
-      document.getElementById("menuButton");
-
-    const mobileMenu =
-      document.getElementById("mobileMenu");
-
-    function closeMenu() {
-
-      menuButton.classList.remove("active");
-      mobileMenu.classList.remove("open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      document.body.classList.remove("menu-open");
-
-    }
-
-    menuButton.addEventListener("click", () => {
-
-      const open =
-        mobileMenu.classList.toggle("open");
-
-      menuButton.classList.toggle(
-        "active",
-        open
-      );
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        open ? "true" : "false"
-      );
-
-      document.body.classList.toggle(
-        "menu-open",
-        open
-      );
-
-    });
-
-    mobileMenu
-      .querySelectorAll("a")
-      .forEach((link) => {
-
-        link.addEventListener(
-          "click",
-          closeMenu
-        );
-
-      });
-
-
-    /* =========================================================
-       CURSOR GLOW
-    ========================================================= */
-
-    const cursorGlow =
-      document.getElementById("cursorGlow");
-
-    window.addEventListener(
-      "mousemove",
-      (event) => {
-
-        cursorGlow.style.left =
-          event.clientX + "px";
-
-        cursorGlow.style.top =
-          event.clientY + "px";
-
-      }
-    );
-
-
-    /* =========================================================
-       ESTIMATOR
-    ========================================================= */
-
-    const radioCards =
-      document.querySelectorAll(
-        "[data-radio-card]"
-      );
-
-    const checkboxCards =
-      document.querySelectorAll(
-        "[data-checkbox-card]"
-      );
-
-    const estimatePrice =
-      document.getElementById(
-        "estimatePrice"
-      );
-
-    const estimateList =
-      document.getElementById(
-        "estimateList"
-      );
-
-    const estimateButton =
-      document.getElementById(
-        "estimateButton"
-      );
-
-    const pageCountElement =
-      document.getElementById(
-        "pageCount"
-      );
-
-    const plusPage =
-      document.getElementById(
-        "plusPage"
-      );
-
-    const minusPage =
-      document.getElementById(
-        "minusPage"
-      );
-
-    let pageCount = 1;
-
-
-    function updateSelectedCards() {
-
-      radioCards.forEach((card) => {
-
-        const input =
-          card.querySelector("input");
-
-        card.classList.toggle(
-          "selected",
-          input.checked
-        );
-
-      });
-
-
-      checkboxCards.forEach((card) => {
-
-        const input =
-          card.querySelector("input");
-
-        card.classList.toggle(
-          "selected",
-          input.checked
-        );
-
-      });
-
-    }
-
-
-    function calculateEstimate() {
-
-      const selectedSite =
-        document.querySelector(
-          'input[name="siteType"]:checked'
-        );
-
-      let total =
-        Number(selectedSite.value);
-
-      const selectedFeatures = [];
-
-      selectedFeatures.push(
-        selectedSite.dataset.name
-      );
-
-
-      /*
-        The first page is included.
-        Additional pages add $125 each.
-      */
-
-      if (pageCount > 1) {
-
-        total +=
-          (pageCount - 1) * 125;
-
-      }
-
-
-      selectedFeatures.push(
-        pageCount +
-        (pageCount === 1
-          ? " page"
-          : " pages")
-      );
-
-
-      checkboxCards.forEach((card) => {
-
-        const input =
-          card.querySelector("input");
-
-        if (input.checked) {
-
-          total +=
-            Number(input.value);
-
-          selectedFeatures.push(
-            input.dataset.name
-          );
-
-        }
-
-      });
-
-
-      estimatePrice.textContent =
-        "$" + total.toLocaleString();
-
-
-      estimateList.innerHTML = "";
-
-
-      selectedFeatures.forEach(
-        (feature) => {
-
-          const li =
-            document.createElement("li");
-
-          li.textContent =
-            feature;
-
-          estimateList.appendChild(li);
-
-        }
-      );
-
-
-      if (selectedFeatures.length <= 2) {
-
-        const emptyLi =
-          document.createElement("li");
-
-        emptyLi.textContent =
-          "Select extras to customize";
-
-        emptyLi.classList.add(
-          "estimate-empty"
-        );
-
-        estimateList.appendChild(
-          emptyLi
-        );
-
-      }
-
-
-      const projectDetails =
-        selectedFeatures.join(", ");
-
-
-      estimateButton.href =
-        "quote.html?estimate=" +
-        encodeURIComponent(total) +
-        "&project=" +
-        encodeURIComponent(projectDetails);
-
-
-      updateSelectedCards();
-
-    }
-
-
-    radioCards.forEach((card) => {
-
-      const input =
-        card.querySelector("input");
-
-      card.addEventListener(
-        "click",
-        () => {
-
-          input.checked = true;
-
-          calculateEstimate();
-
-        }
-      );
-
-    });
-
-
-    checkboxCards.forEach((card) => {
-
-      const input =
-        card.querySelector("input");
-
-      card.addEventListener(
-        "click",
-        (event) => {
-
-          if (
-            event.target.tagName !== "INPUT"
-          ) {
-
-            input.checked =
-              !input.checked;
-
-          }
-
-          calculateEstimate();
-
-        }
-      );
-
-    });
-
-
-    plusPage.addEventListener(
-      "click",
-      () => {
-
-        if (pageCount < 10) {
-
-          pageCount++;
-
-          pageCountElement.textContent =
-            pageCount;
-
-          calculateEstimate();
-
-        }
-
-      }
-    );
-
-
-    minusPage.addEventListener(
-      "click",
-      () => {
-
-        if (pageCount > 1) {
-
-          pageCount--;
-
-          pageCountElement.textContent =
-            pageCount;
-
-          calculateEstimate();
-
-        }
-
-      }
-    );
-
-
-    calculateEstimate();
-
-
-    /* =========================================================
-       FAQ
-    ========================================================= */
-
-    const faqItems =
-      document.querySelectorAll(
-        ".faq-item"
-      );
-
-    faqItems.forEach((item) => {
-
-      const button =
-        item.querySelector(
-          ".faq-question"
-        );
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          const wasOpen =
-            item.classList.contains(
-              "open"
-            );
-
-
-          faqItems.forEach(
-            (otherItem) => {
-
-              otherItem.classList.remove(
-                "open"
-              );
-
-            }
-          );
-
-
-          if (!wasOpen) {
-
-            item.classList.add("open");
-
-          }
-
-        }
-      );
-
-    });
-
-
-    /* =========================================================
-       ANIMATED COUNTERS
-    ========================================================= */
-
-    const counters =
-      document.querySelectorAll(
-        "[data-counter]"
-      );
-
-    const counterObserver =
-      new IntersectionObserver(
-        (entries, observer) => {
-
-          entries.forEach((entry) => {
-
-            if (!entry.isIntersecting) {
-              return;
-            }
-
-            const element =
-              entry.target;
-
-            const target =
-              Number(
-                element.dataset.counter
-              );
-
-            const prefix =
-              element.dataset.prefix || "";
-
-            const suffix =
-              element.dataset.suffix || "";
-
-            const duration = 900;
-
-            const start =
-              performance.now();
-
-
-            function animateCounter(now) {
-
-              const progress =
-                Math.min(
-                  (now - start) /
-                  duration,
-                  1
-                );
-
-              const eased =
-                1 -
-                Math.pow(
-                  1 - progress,
-                  3
-                );
-
-              const current =
-                Math.round(
-                  target * eased
-                );
-
-              element.textContent =
-                prefix +
-                current +
-                suffix;
-
-
-              if (progress < 1) {
-
-                requestAnimationFrame(
-                  animateCounter
-                );
-
-              }
-
-            }
-
-
-            requestAnimationFrame(
-              animateCounter
-            );
-
-            observer.unobserve(
-              element
-            );
-
-          });
-
-        },
-        {
-          threshold: 0.6
-        }
-      );
-
-
-    counters.forEach((counter) => {
-
-      counterObserver.observe(counter);
-
-    });
-
-
-    /* =========================================================
-       SLIGHT HERO PARALLAX
-    ========================================================= */
-
-    const browserCard =
-      document.querySelector(
-        ".browser-card"
-      );
-
-    if (
-      browserCard &&
-      window.innerWidth > 900
-    ) {
-
-      window.addEventListener(
-        "mousemove",
-        (event) => {
-
-          const x =
-            (
-              event.clientX /
-              window.innerWidth -
-              0.5
-            ) * 4;
-
-          const y =
-            (
-              event.clientY /
-              window.innerHeight -
-              0.5
-            ) * 3;
-
-          browserCard.style.marginLeft =
-            x + "px";
-
-          browserCard.style.marginTop =
-            y + "px";
-
-        }
-      );
-
-    }
-
-  </script>
 
 </body>
 </html>
