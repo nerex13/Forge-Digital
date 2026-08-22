@@ -70,7 +70,7 @@
       position: fixed;
       inset: 0;
 
-      z-index: -5;
+      z-index: -8;
       pointer-events: none;
 
       opacity: 0.21;
@@ -96,14 +96,14 @@
       position: fixed;
       inset: 0;
 
-      z-index: -4;
+      z-index: -2;
       pointer-events: none;
 
       background:
         radial-gradient(
           circle at center,
-          transparent 30%,
-          rgba(0,0,0,0.22) 100%
+          transparent 28%,
+          rgba(0,0,0,0.24) 100%
         );
     }
 
@@ -130,6 +130,40 @@
 
 
     /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+    .scroll-progress {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      z-index: 5000;
+
+      width: 0%;
+      height: 2px;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          90deg,
+          #5f7dff,
+          #9d5dff,
+          #ff784f
+        );
+
+      box-shadow:
+        0 0 12px rgba(123,104,255,0.8),
+        0 0 24px rgba(255,100,63,0.35);
+
+      transition:
+        width 0.05s linear;
+    }
+
+
+    /* =========================================================
        AMBIENT BACKGROUND
     ========================================================= */
 
@@ -139,7 +173,7 @@
 
       overflow: hidden;
 
-      z-index: -3;
+      z-index: -7;
 
       pointer-events: none;
     }
@@ -208,6 +242,240 @@
 
 
     /* =========================================================
+       LASER FIELD
+    ========================================================= */
+
+    .laser-field {
+      position: fixed;
+      inset: 0;
+
+      z-index: -6;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+      opacity: 0.74;
+    }
+
+    .laser {
+      position: absolute;
+
+      width: 150vw;
+      height: 1px;
+
+      left: -25vw;
+
+      transform-origin: center;
+
+      opacity: 0.25;
+
+      filter:
+        drop-shadow(
+          0 0 5px currentColor
+        )
+        drop-shadow(
+          0 0 13px currentColor
+        );
+
+      will-change: transform;
+    }
+
+    .laser::before {
+      content: "";
+
+      position: absolute;
+      inset: -3px 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          currentColor 22%,
+          #ffffff 50%,
+          currentColor 78%,
+          transparent
+        );
+
+      opacity: 0.35;
+
+      filter: blur(3px);
+    }
+
+    .laser-one {
+      top: 18%;
+
+      color: #6f83ff;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(111,131,255,0.8),
+          transparent
+        );
+
+      transform:
+        rotate(-13deg)
+        translateX(
+          calc(
+            var(--scroll-shift, 0px) * 0.7
+          )
+        );
+    }
+
+    .laser-two {
+      top: 43%;
+
+      color: #9e5eff;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(158,94,255,0.72),
+          transparent
+        );
+
+      transform:
+        rotate(17deg)
+        translateX(
+          calc(
+            var(--scroll-shift, 0px) * -0.95
+          )
+        );
+    }
+
+    .laser-three {
+      top: 68%;
+
+      color: #536fff;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(83,111,255,0.72),
+          transparent
+        );
+
+      transform:
+        rotate(-8deg)
+        translateX(
+          calc(
+            var(--scroll-shift, 0px) * 1.15
+          )
+        );
+    }
+
+    .laser-four {
+      top: 88%;
+
+      color: #b15dff;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(177,93,255,0.62),
+          transparent
+        );
+
+      transform:
+        rotate(11deg)
+        translateX(
+          calc(
+            var(--scroll-shift, 0px) * -0.68
+          )
+        );
+    }
+
+    .laser-hotspot {
+      position: absolute;
+
+      width: 340px;
+      height: 340px;
+
+      border-radius: 50%;
+
+      filter: blur(85px);
+
+      opacity:
+        var(
+          --laser-opacity,
+          0.08
+        );
+
+      transition:
+        opacity 0.2s linear;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(124,92,255,0.4),
+          transparent 70%
+        );
+    }
+
+    .laser-hotspot.one {
+      top: 28%;
+      left: 8%;
+    }
+
+    .laser-hotspot.two {
+      top: 62%;
+      right: 4%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(85,118,255,0.35),
+          transparent 70%
+        );
+    }
+
+
+    /* =========================================================
+       SCANLINES
+    ========================================================= */
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+
+      z-index: -3;
+
+      pointer-events: none;
+
+      opacity: 0.055;
+
+      background:
+        repeating-linear-gradient(
+          180deg,
+          rgba(255,255,255,0.14) 0,
+          rgba(255,255,255,0.14) 1px,
+          transparent 1px,
+          transparent 5px
+        );
+
+      animation:
+        scanMove 12s linear infinite;
+    }
+
+    @keyframes scanMove {
+      from {
+        transform:
+          translateY(-20px);
+      }
+
+      to {
+        transform:
+          translateY(20px);
+      }
+    }
+
+
+    /* =========================================================
        GLOBAL
     ========================================================= */
 
@@ -237,8 +505,33 @@
     }
 
     .section {
+      position: relative;
+
       padding:
         105px 0;
+    }
+
+    .section::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 50%;
+
+      width: min(900px, 80%);
+      height: 1px;
+
+      transform:
+        translateX(-50%);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(130,126,255,0.18),
+          transparent
+        );
     }
 
     .section-head {
@@ -324,9 +617,27 @@
       box-shadow:
         0 0 12px
         rgba(139,145,255,0.8);
+
+      animation:
+        statusPulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes statusPulse {
+      0%,
+      100% {
+        opacity: 0.65;
+        transform: scale(0.9);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.18);
+      }
     }
 
     .button {
+      position: relative;
+
       min-height: 54px;
 
       display: inline-flex;
@@ -338,6 +649,8 @@
       padding:
         0 24px;
 
+      overflow: hidden;
+
       border-radius: 13px;
 
       font-weight: 900;
@@ -347,6 +660,35 @@
         box-shadow 0.2s ease,
         border-color 0.2s ease,
         background 0.2s ease;
+    }
+
+    .button::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: -70%;
+
+      width: 45%;
+
+      transform: skewX(-22deg);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,0.16),
+          transparent
+        );
+
+      transition:
+        left 0.45s ease;
+    }
+
+    .button:hover::before {
+      left: 125%;
     }
 
     .button:hover {
@@ -680,14 +1022,16 @@
     ========================================================= */
 
     .hero {
-      min-height: 820px;
+      position: relative;
+
+      min-height: 940px;
 
       display: flex;
       align-items: center;
 
       padding:
-        150px 0
-        90px;
+        125px 0
+        95px;
     }
 
     .hero-grid {
@@ -701,6 +1045,507 @@
 
       align-items: center;
     }
+
+    .hero-copy-side {
+      position: relative;
+
+      z-index: 3;
+    }
+
+
+    /* =========================================================
+       FORGE LOGO
+    ========================================================= */
+
+    .forge-logo-stage {
+      position: relative;
+
+      width: min(360px, 80vw);
+      height: 300px;
+
+      margin-bottom: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .forge-backglow {
+      position: absolute;
+
+      width: 250px;
+      height: 250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,88,41,0.16),
+          rgba(132,72,255,0.12) 45%,
+          transparent 72%
+        );
+
+      filter: blur(18px);
+
+      animation:
+        forgeGlow 3.2s ease-in-out infinite;
+    }
+
+    @keyframes forgeGlow {
+      0%,
+      100% {
+        opacity: 0.7;
+        transform: scale(0.96);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+    }
+
+    .forge-flames {
+      position: absolute;
+
+      width: 240px;
+      height: 240px;
+
+      bottom: 15px;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      filter:
+        blur(1px)
+        drop-shadow(
+          0 0 18px rgba(255,89,41,0.28)
+        );
+    }
+
+    .flame {
+      position: absolute;
+
+      bottom: 0;
+      left: 50%;
+
+      border-radius:
+        50% 50% 45% 45%;
+
+      transform-origin:
+        50% 100%;
+
+      mix-blend-mode: screen;
+    }
+
+    .flame-one {
+      width: 115px;
+      height: 185px;
+
+      margin-left: -58px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(126,89,255,0) 0%,
+          rgba(154,80,255,0.45) 35%,
+          rgba(255,96,48,0.72) 73%,
+          rgba(255,187,79,0.85) 100%
+        );
+
+      clip-path:
+        polygon(
+          50% 0%,
+          66% 28%,
+          82% 44%,
+          72% 67%,
+          100% 100%,
+          0% 100%,
+          28% 68%,
+          18% 46%,
+          37% 25%
+        );
+
+      animation:
+        flameOne 1.7s ease-in-out infinite;
+    }
+
+    .flame-two {
+      width: 82px;
+      height: 145px;
+
+      margin-left: -95px;
+
+      opacity: 0.75;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(103,104,255,0.08),
+          rgba(139,86,255,0.5),
+          rgba(255,86,47,0.68),
+          rgba(255,170,71,0.76)
+        );
+
+      clip-path:
+        polygon(
+          50% 0%,
+          76% 39%,
+          67% 61%,
+          100% 100%,
+          0 100%,
+          24% 59%
+        );
+
+      animation:
+        flameTwo 1.45s ease-in-out infinite;
+    }
+
+    .flame-three {
+      width: 86px;
+      height: 150px;
+
+      margin-left: 17px;
+
+      opacity: 0.75;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(103,104,255,0.08),
+          rgba(139,86,255,0.5),
+          rgba(255,86,47,0.68),
+          rgba(255,170,71,0.76)
+        );
+
+      clip-path:
+        polygon(
+          42% 0%,
+          78% 37%,
+          71% 61%,
+          100% 100%,
+          0 100%,
+          28% 58%
+        );
+
+      animation:
+        flameThree 1.55s ease-in-out infinite;
+    }
+
+    .flame-four {
+      width: 54px;
+      height: 110px;
+
+      margin-left: -27px;
+
+      bottom: 3px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,220,125,0.15),
+          rgba(255,177,76,0.8),
+          rgba(255,238,173,0.92)
+        );
+
+      clip-path:
+        polygon(
+          52% 0%,
+          85% 42%,
+          66% 67%,
+          100% 100%,
+          0 100%,
+          31% 59%
+        );
+
+      animation:
+        flameInner 1.25s ease-in-out infinite;
+    }
+
+    @keyframes flameOne {
+      0%,
+      100% {
+        transform:
+          rotate(-2deg)
+          scaleY(0.96)
+          scaleX(1);
+      }
+
+      50% {
+        transform:
+          rotate(2.5deg)
+          scaleY(1.07)
+          scaleX(0.96);
+      }
+    }
+
+    @keyframes flameTwo {
+      0%,
+      100% {
+        transform:
+          rotate(-7deg)
+          scaleY(1);
+      }
+
+      50% {
+        transform:
+          rotate(3deg)
+          scaleY(1.1);
+      }
+    }
+
+    @keyframes flameThree {
+      0%,
+      100% {
+        transform:
+          rotate(5deg)
+          scaleY(1);
+      }
+
+      50% {
+        transform:
+          rotate(-4deg)
+          scaleY(1.08);
+      }
+    }
+
+    @keyframes flameInner {
+      0%,
+      100% {
+        transform:
+          scaleY(0.92);
+      }
+
+      50% {
+        transform:
+          scaleY(1.12);
+      }
+    }
+
+    .forge-emblem {
+      position: relative;
+
+      z-index: 5;
+
+      width: 178px;
+      height: 178px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 38px;
+
+      transform:
+        rotate(-2deg);
+
+      color: #ffffff;
+
+      font-size: 69px;
+      font-weight: 900;
+
+      letter-spacing: -7px;
+
+      text-shadow:
+        0 2px 0 rgba(0,0,0,0.4),
+        0 0 18px rgba(255,255,255,0.17);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(185,198,255,0.94),
+          rgba(108,129,255,0.94) 24%,
+          rgba(128,82,235,0.96) 62%,
+          rgba(57,27,117,0.98)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,0.34);
+
+      box-shadow:
+        0 0 0 7px rgba(255,255,255,0.018),
+        0 0 0 8px rgba(133,129,255,0.1),
+        0 20px 60px rgba(0,0,0,0.52),
+        0 0 45px rgba(121,96,255,0.46),
+        inset 0 2px 2px rgba(255,255,255,0.35),
+        inset 0 -10px 30px rgba(26,5,67,0.42);
+
+      animation:
+        emblemFloat 4s ease-in-out infinite;
+    }
+
+    .forge-emblem::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 8px;
+
+      border-radius: 30px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.22);
+
+      pointer-events: none;
+    }
+
+    .forge-emblem::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          130deg,
+          rgba(255,255,255,0.28),
+          transparent 24%,
+          transparent 70%,
+          rgba(255,123,73,0.14)
+        );
+
+      pointer-events: none;
+    }
+
+    @keyframes emblemFloat {
+      0%,
+      100% {
+        transform:
+          rotate(-2deg)
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          rotate(1deg)
+          translateY(-7px);
+      }
+    }
+
+    .forge-caption {
+      position: absolute;
+
+      left: 50%;
+      bottom: 0;
+
+      transform:
+        translateX(-50%);
+
+      width: 100%;
+
+      color: #7f8795;
+
+      text-align: center;
+
+      font-size: 9px;
+      font-weight: 900;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       EMBERS
+    ========================================================= */
+
+    .ember {
+      position: absolute;
+
+      width: 4px;
+      height: 4px;
+
+      border-radius: 50%;
+
+      background: #ff9b4d;
+
+      box-shadow:
+        0 0 8px #ff693d;
+
+      opacity: 0;
+
+      animation:
+        emberRise 3.2s linear infinite;
+    }
+
+    .ember:nth-child(1) {
+      left: 42%;
+      bottom: 65px;
+
+      animation-delay: -0.4s;
+    }
+
+    .ember:nth-child(2) {
+      left: 56%;
+      bottom: 73px;
+
+      animation-delay: -1.5s;
+    }
+
+    .ember:nth-child(3) {
+      left: 34%;
+      bottom: 57px;
+
+      animation-delay: -2.4s;
+    }
+
+    .ember:nth-child(4) {
+      left: 64%;
+      bottom: 60px;
+
+      animation-delay: -0.9s;
+    }
+
+    .ember:nth-child(5) {
+      left: 48%;
+      bottom: 42px;
+
+      animation-delay: -2s;
+    }
+
+    .ember:nth-child(6) {
+      left: 70%;
+      bottom: 70px;
+
+      animation-delay: -2.8s;
+    }
+
+    @keyframes emberRise {
+      0% {
+        opacity: 0;
+
+        transform:
+          translate3d(0,0,0)
+          scale(0.6);
+      }
+
+      18% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+
+        transform:
+          translate3d(
+            var(--ember-x, 18px),
+            -180px,
+            0
+          )
+          scale(0.2);
+      }
+    }
+
+
+    /* =========================================================
+       HERO TEXT
+    ========================================================= */
 
     .hero h1 {
       max-width: 780px;
@@ -808,8 +1653,11 @@
 
       background:
         radial-gradient(
-          circle,
-          rgba(112,84,255,0.22),
+          circle at
+          var(--mouse-x, 50%)
+          var(--mouse-y, 50%),
+          rgba(146,93,255,0.28),
+          rgba(88,104,255,0.1) 35%,
           transparent 68%
         );
 
@@ -845,7 +1693,7 @@
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.09),
           rgba(255,255,255,0.025)
         );
 
@@ -855,7 +1703,8 @@
 
       box-shadow:
         0 45px 110px
-        rgba(0,0,0,0.42);
+        rgba(0,0,0,0.42),
+        0 0 60px rgba(94,80,255,0.08);
 
       transform:
         perspective(1000px)
@@ -963,6 +1812,44 @@
           #080b12,
           #101323
         );
+    }
+
+    .browser-screen::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          112deg,
+          transparent 35%,
+          rgba(255,255,255,0.035) 48%,
+          transparent 61%
+        );
+
+      transform:
+        translateX(-100%);
+
+      animation:
+        screenSweep 8s ease-in-out infinite;
+    }
+
+    @keyframes screenSweep {
+      0%,
+      65% {
+        transform:
+          translateX(-110%);
+      }
+
+      85%,
+      100% {
+        transform:
+          translateX(110%);
+      }
     }
 
     .screen-nav {
@@ -1160,6 +2047,9 @@
       border:
         1px solid
         rgba(255,255,255,0.075);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.14);
     }
 
     .value-item {
@@ -1239,10 +2129,44 @@
         1px solid
         rgba(255,255,255,0.075);
 
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.025);
+
       transition:
         transform 0.25s ease,
         border-color 0.25s ease,
-        background 0.25s ease;
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .service-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: -40%;
+      left: -80%;
+
+      width: 70%;
+      height: 180%;
+
+      transform:
+        rotate(18deg);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,0.035),
+          transparent
+        );
+
+      transition:
+        left 0.6s ease;
+    }
+
+    .service-card:hover::before {
+      left: 130%;
     }
 
     .service-card::after {
@@ -1284,6 +2208,9 @@
           rgba(103,103,255,0.075),
           rgba(255,255,255,0.015)
         );
+
+      box-shadow:
+        0 24px 60px rgba(0,0,0,0.2);
     }
 
     .service-card:hover::after {
@@ -1397,7 +2324,8 @@
 
       box-shadow:
         0 30px 80px
-        rgba(0,0,0,0.23);
+        rgba(0,0,0,0.23),
+        0 0 45px rgba(104,92,255,0.06);
     }
 
     .project-preview {
@@ -1774,7 +2702,8 @@
 
       transition:
         transform 0.25s ease,
-        border-color 0.25s ease;
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .package:hover {
@@ -1783,6 +2712,9 @@
 
       border-color:
         rgba(133,140,255,0.23);
+
+      box-shadow:
+        0 24px 70px rgba(0,0,0,0.18);
     }
 
     .package.featured {
@@ -2075,6 +3007,18 @@
       border:
         1px solid
         rgba(255,255,255,0.07);
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .process-card:hover {
+      transform:
+        translateY(-4px);
+
+      border-color:
+        rgba(133,140,255,0.2);
     }
 
     .process-number {
@@ -2094,6 +3038,9 @@
           #6e83ff,
           #995eff
         );
+
+      box-shadow:
+        0 0 22px rgba(111,91,255,0.15);
 
       font-size: 11px;
       font-weight: 900;
@@ -2291,6 +3238,30 @@
         );
     }
 
+    .cta-box::after {
+      content: "";
+
+      position: absolute;
+
+      left: 8%;
+      right: 8%;
+      bottom: 0;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,120,75,0.42),
+          rgba(140,105,255,0.55),
+          transparent
+        );
+
+      box-shadow:
+        0 0 22px rgba(121,99,255,0.28);
+    }
+
     .cta-content {
       position: relative;
 
@@ -2481,11 +3452,34 @@
       }
 
       .hero {
-        padding-top: 145px;
+        padding-top: 125px;
+      }
+
+      .forge-logo-stage {
+        margin:
+          0 auto
+          15px;
+      }
+
+      .hero-copy-side {
+        text-align: center;
       }
 
       .hero-copy {
+        margin-left: auto;
+        margin-right: auto;
+
         max-width: 730px;
+      }
+
+      .hero-actions,
+      .hero-proof {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .hero-visual {
@@ -2567,6 +3561,10 @@
         flex-direction: column;
       }
 
+      .laser {
+        opacity: 0.16;
+      }
+
     }
 
 
@@ -2600,8 +3598,34 @@
         min-height: auto;
 
         padding:
-          125px 0
+          105px 0
           70px;
+      }
+
+      .forge-logo-stage {
+        width: 100%;
+        height: 245px;
+
+        margin-bottom: 8px;
+      }
+
+      .forge-flames {
+        width: 205px;
+        height: 205px;
+      }
+
+      .forge-emblem {
+        width: 145px;
+        height: 145px;
+
+        border-radius: 31px;
+
+        font-size: 56px;
+      }
+
+      .forge-caption {
+        font-size: 7px;
+        letter-spacing: 3px;
       }
 
       .hero h1 {
@@ -2792,6 +3816,14 @@
         align-items: flex-start;
       }
 
+      .laser-field {
+        opacity: 0.45;
+      }
+
+      .scanlines {
+        opacity: 0.035;
+      }
+
     }
 
 
@@ -2819,12 +3851,22 @@
         transform: none;
       }
 
+      .laser {
+        transform: none !important;
+      }
+
     }
   </style>
 </head>
 
 
 <body>
+
+  <div
+    class="scroll-progress"
+    id="scrollProgress"
+  ></div>
+
 
   <!-- =======================================================
        BACKGROUND
@@ -2837,6 +3879,25 @@
     <div class="orb orb-three"></div>
 
   </div>
+
+
+  <div
+    class="laser-field"
+    id="laserField"
+  >
+
+    <div class="laser laser-one"></div>
+    <div class="laser laser-two"></div>
+    <div class="laser laser-three"></div>
+    <div class="laser laser-four"></div>
+
+    <div class="laser-hotspot one"></div>
+    <div class="laser-hotspot two"></div>
+
+  </div>
+
+
+  <div class="scanlines"></div>
 
 
   <!-- =======================================================
@@ -2914,11 +3975,9 @@
         >
 
           <span class="menu-lines">
-
             <span></span>
             <span></span>
             <span></span>
-
           </span>
 
         </button>
@@ -2972,7 +4031,69 @@
 
       <div class="container hero-grid">
 
-        <div>
+
+        <div class="hero-copy-side">
+
+
+          <!-- BIG FORGED LOGO -->
+
+          <div class="forge-logo-stage">
+
+            <div class="forge-backglow"></div>
+
+
+            <div class="forge-flames">
+
+              <div class="flame flame-two"></div>
+              <div class="flame flame-three"></div>
+              <div class="flame flame-one"></div>
+              <div class="flame flame-four"></div>
+
+            </div>
+
+
+            <span
+              class="ember"
+              style="--ember-x:-16px;"
+            ></span>
+
+            <span
+              class="ember"
+              style="--ember-x:19px;"
+            ></span>
+
+            <span
+              class="ember"
+              style="--ember-x:-28px;"
+            ></span>
+
+            <span
+              class="ember"
+              style="--ember-x:31px;"
+            ></span>
+
+            <span
+              class="ember"
+              style="--ember-x:8px;"
+            ></span>
+
+            <span
+              class="ember"
+              style="--ember-x:35px;"
+            ></span>
+
+
+            <div class="forge-emblem">
+              FD
+            </div>
+
+
+            <div class="forge-caption">
+              Forged Digital Creations
+            </div>
+
+          </div>
+
 
           <div class="eyebrow">
 
@@ -3065,9 +4186,15 @@
 
         <!-- HERO MOCK WEBSITE -->
 
-        <div class="hero-visual">
+        <div
+          class="hero-visual"
+          id="heroVisual"
+        >
 
-          <div class="hero-glow"></div>
+          <div
+            class="hero-glow"
+            id="heroGlow"
+          ></div>
 
 
           <div class="browser-stack">
@@ -4657,6 +5784,198 @@
 
           element.classList.add(
             "visible"
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       SCROLL LASERS + PROGRESS BAR
+    ========================================================= */
+
+    const laserField =
+      document.getElementById(
+        "laserField"
+      );
+
+    const scrollProgress =
+      document.getElementById(
+        "scrollProgress"
+      );
+
+    let ticking =
+      false;
+
+
+    function updateScrollEffects() {
+
+      const scrollTop =
+        window.scrollY ||
+        document.documentElement.scrollTop;
+
+      const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const scrollRatio =
+        documentHeight > 0
+          ? scrollTop / documentHeight
+          : 0;
+
+
+      const laserShift =
+        Math.round(
+          scrollRatio * 260
+        );
+
+
+      document.documentElement.style.setProperty(
+        "--scroll-shift",
+        laserShift + "px"
+      );
+
+
+      document.documentElement.style.setProperty(
+        "--laser-opacity",
+        (
+          0.07 +
+          scrollRatio * 0.08
+        ).toFixed(3)
+      );
+
+
+      if (scrollProgress) {
+
+        scrollProgress.style.width =
+          Math.min(
+            scrollRatio * 100,
+            100
+          ) + "%";
+
+      }
+
+
+      if (laserField) {
+
+        laserField.style.transform =
+          "translate3d(0," +
+          Math.round(
+            scrollRatio * -35
+          ) +
+          "px,0)";
+
+      }
+
+
+      ticking =
+        false;
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (!ticking) {
+
+          window.requestAnimationFrame(
+            updateScrollEffects
+          );
+
+          ticking =
+            true;
+
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    updateScrollEffects();
+
+
+    /* =========================================================
+       HERO MOUSE GLOW
+    ========================================================= */
+
+    const heroVisual =
+      document.getElementById(
+        "heroVisual"
+      );
+
+    const heroGlow =
+      document.getElementById(
+        "heroGlow"
+      );
+
+
+    if (
+      heroVisual &&
+      heroGlow &&
+      window.matchMedia(
+        "(pointer: fine)"
+      ).matches
+    ) {
+
+      heroVisual.addEventListener(
+        "mousemove",
+        (event) => {
+
+          const rect =
+            heroVisual.getBoundingClientRect();
+
+          const x =
+            (
+              (
+                event.clientX -
+                rect.left
+              ) /
+              rect.width
+            ) * 100;
+
+          const y =
+            (
+              (
+                event.clientY -
+                rect.top
+              ) /
+              rect.height
+            ) * 100;
+
+
+          heroGlow.style.setProperty(
+            "--mouse-x",
+            x + "%"
+          );
+
+          heroGlow.style.setProperty(
+            "--mouse-y",
+            y + "%"
+          );
+
+        }
+      );
+
+
+      heroVisual.addEventListener(
+        "mouseleave",
+        () => {
+
+          heroGlow.style.setProperty(
+            "--mouse-x",
+            "50%"
+          );
+
+          heroGlow.style.setProperty(
+            "--mouse-y",
+            "50%"
           );
 
         }
