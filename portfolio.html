@@ -1,1 +1,2439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Portfolio | Forged Digital Creations</title>
+
+  <meta
+    name="description"
+    content="Explore website projects built by Forged Digital Creations for real local businesses."
+  >
+
+  <meta name="theme-color" content="#05070b">
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+
+      color: #ffffff;
+
+      background:
+        radial-gradient(
+          circle at 15% 8%,
+          rgba(73, 96, 255, 0.16),
+          transparent 31%
+        ),
+        radial-gradient(
+          circle at 84% 24%,
+          rgba(157, 67, 255, 0.15),
+          transparent 29%
+        ),
+        linear-gradient(
+          180deg,
+          #05070b,
+          #07090e 48%,
+          #040609
+        );
+    }
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      z-index: -5;
+
+      pointer-events: none;
+
+      opacity: 0.22;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background:
+        rgba(136,112,255,0.45);
+
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       AMBIENT BACKGROUND
+    ========================================================= */
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+      z-index: -4;
+    }
+
+    .orb {
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(105px);
+
+      opacity: 0.24;
+
+      animation:
+        drift 16s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 460px;
+      height: 460px;
+
+      left: -170px;
+      top: -140px;
+
+      background: #536cff;
+    }
+
+    .orb-two {
+      width: 520px;
+      height: 520px;
+
+      right: -260px;
+      top: 30%;
+
+      background: #9148ff;
+
+      animation-delay: -5s;
+    }
+
+    .orb-three {
+      width: 360px;
+      height: 360px;
+
+      left: 36%;
+      bottom: -220px;
+
+      background: #2857ff;
+
+      animation-delay: -9s;
+    }
+
+    @keyframes drift {
+      0%,
+      100% {
+        transform:
+          translate3d(0,0,0)
+          scale(1);
+      }
+
+      50% {
+        transform:
+          translate3d(35px,-28px,0)
+          scale(1.08);
+      }
+    }
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          #8298ff,
+          #ab6aff,
+          #d4d9ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 18px;
+
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      color: #b8c1ff;
+
+      background:
+        rgba(102,113,255,0.07);
+
+      border:
+        1px solid rgba(128,143,255,0.27);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #8b91ff;
+
+      box-shadow:
+        0 0 12px rgba(139,145,255,0.8);
+    }
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 0 23px;
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background:
+        linear-gradient(
+          90deg,
+          #6d84ff,
+          #965dff
+        );
+
+      box-shadow:
+        0 12px 38px
+        rgba(91,87,255,0.25);
+    }
+
+    .btn-secondary {
+      color: #d4d9e2;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.11);
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(5,7,11,0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.065);
+    }
+
+    nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      position: relative;
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      color: #ffffff;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          145deg,
+          #788dff,
+          #8f5fff 55%,
+          #5526bb
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.16);
+
+      box-shadow:
+        0 0 24px rgba(109,111,255,0.38),
+        inset 0 1px 6px rgba(255,255,255,0.2);
+    }
+
+    .brand-mark::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 4px;
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      border-radius: 9px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+
+      line-height: 1.05;
+    }
+
+    .brand-main {
+      font-size: 15px;
+      letter-spacing: 1.3px;
+    }
+
+    .brand-sub {
+      margin-top: 3px;
+
+      color: #828b99;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 2.6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #bfc5d0;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-cta {
+      min-height: 42px;
+
+      display: inline-flex;
+      align-items: center;
+
+      padding: 0 16px;
+
+      border-radius: 11px;
+
+      color: #ffffff !important;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(109,132,255,0.22),
+          rgba(150,93,255,0.22)
+        );
+
+      border:
+        1px solid rgba(132,129,255,0.28);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+
+      padding:
+        160px 0
+        95px;
+
+      text-align: center;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 1px;
+
+      left: 50%;
+      bottom: 0;
+
+      transform:
+        translateX(-50%);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(129,117,255,0.45),
+          transparent
+        );
+    }
+
+    .hero h1 {
+      max-width: 930px;
+
+      margin:
+        0 auto
+        22px;
+
+      font-size:
+        clamp(50px, 8vw, 88px);
+
+      line-height: 0.94;
+
+      letter-spacing: -4px;
+    }
+
+    .hero p {
+      max-width: 730px;
+
+      margin: 0 auto;
+
+      color: #9ba3b0;
+
+      font-size:
+        clamp(16px,2vw,19px);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 31px;
+    }
+
+    .project-count {
+      margin-top: 55px;
+
+      display: flex;
+      justify-content: center;
+
+      gap: 44px;
+
+      flex-wrap: wrap;
+    }
+
+    .count-item {
+      min-width: 140px;
+    }
+
+    .count-item strong {
+      display: block;
+
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .count-item span {
+      display: block;
+
+      color: #777f8d;
+
+      margin-top: 2px;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       PROJECT SECTION
+    ========================================================= */
+
+    .projects-section {
+      padding:
+        110px 0
+        90px;
+    }
+
+    .section-head {
+      max-width: 780px;
+
+      margin-bottom: 50px;
+    }
+
+    .section-kicker {
+      color: #8f9cff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.8px;
+
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin-top: 11px;
+
+      font-size:
+        clamp(38px,6vw,62px);
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+
+      color: #929aa7;
+
+      font-size: 17px;
+    }
+
+    .project-stack {
+      display: grid;
+
+      gap: 38px;
+    }
+
+    /* =========================================================
+       PROJECT MASTER CARD
+    ========================================================= */
+
+    .project {
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 30px;
+
+      border:
+        1px solid rgba(255,255,255,0.09);
+
+      background:
+        rgba(255,255,255,0.02);
+
+      box-shadow:
+        0 35px 100px rgba(0,0,0,0.26);
+    }
+
+    .project::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: 0.5;
+
+      background:
+        linear-gradient(
+          115deg,
+          rgba(255,255,255,0.04),
+          transparent 30%,
+          transparent 70%,
+          rgba(255,255,255,0.02)
+        );
+    }
+
+    .project-grid {
+      position: relative;
+
+      z-index: 1;
+
+      display: grid;
+
+      grid-template-columns:
+        1.02fr 0.98fr;
+
+      min-height: 640px;
+    }
+
+    .project-info {
+      padding: 50px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-index {
+      margin-bottom: 24px;
+
+      color: #7d8594;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-size:
+        clamp(42px,6vw,68px);
+
+      line-height: 0.95;
+
+      letter-spacing: -2.7px;
+    }
+
+    .project-description {
+      max-width: 540px;
+
+      margin-top: 20px;
+
+      color: #969eab;
+
+      font-size: 16px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 9px;
+
+      margin-top: 28px;
+    }
+
+    .project-tag {
+      padding: 8px 11px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+
+      color: #bdc2cc;
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .project-result {
+      margin-top: 30px;
+
+      padding-top: 23px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.065);
+    }
+
+    .project-result-label {
+      color: #707987;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: 1.6px;
+
+      text-transform: uppercase;
+    }
+
+    .project-result p {
+      max-width: 540px;
+
+      margin-top: 7px;
+
+      color: #c2c7d0;
+
+      font-size: 14px;
+    }
+
+    .project-action {
+      margin-top: 30px;
+    }
+
+    /* =========================================================
+       VISUAL PREVIEW
+    ========================================================= */
+
+    .project-visual {
+      position: relative;
+
+      min-height: 640px;
+
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 48px;
+    }
+
+    .project-visual::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 42px 42px;
+
+      opacity: 0.18;
+    }
+
+    .browser {
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+
+      max-width: 510px;
+
+      overflow: hidden;
+
+      border-radius: 22px;
+
+      border:
+        1px solid rgba(255,255,255,0.12);
+
+      box-shadow:
+        0 30px 70px rgba(0,0,0,0.35);
+
+      transform:
+        perspective(1000px)
+        rotateY(-6deg)
+        rotateX(2deg);
+
+      transition:
+        transform 0.35s ease;
+    }
+
+    .project:hover .browser {
+      transform:
+        perspective(1000px)
+        rotateY(-2deg)
+        rotateX(0deg)
+        translateY(-5px);
+    }
+
+    .browser-bar {
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 0 14px;
+
+      background:
+        rgba(10,12,17,0.95);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .browser-dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #5e6571;
+    }
+
+    .browser-address {
+      flex: 1;
+
+      height: 22px;
+
+      margin-left: 8px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 0 10px;
+
+      border-radius: 6px;
+
+      color: #606978;
+
+      background:
+        rgba(255,255,255,0.04);
+
+      font-size: 9px;
+    }
+
+    .site-preview {
+      min-height: 500px;
+
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      padding: 34px;
+    }
+
+    .preview-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 16px;
+    }
+
+    .preview-logo {
+      font-size: 16px;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+    }
+
+    .preview-navlinks {
+      display: flex;
+
+      gap: 12px;
+
+      color: #7e8795;
+
+      font-size: 8px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+    .preview-body {
+      max-width: 410px;
+    }
+
+    .preview-label {
+      margin-bottom: 12px;
+
+      font-size: 9px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .preview-headline {
+      font-size:
+        clamp(34px,4vw,48px);
+
+      line-height: 0.96;
+
+      letter-spacing: -2px;
+    }
+
+    .preview-copy {
+      margin-top: 15px;
+
+      max-width: 360px;
+
+      color: #9098a5;
+
+      font-size: 12px;
+    }
+
+    .preview-button {
+      width: fit-content;
+
+      margin-top: 22px;
+
+      padding:
+        10px 15px;
+
+      border-radius: 9px;
+
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .preview-stats {
+      display: grid;
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 8px;
+
+      margin-top: 35px;
+    }
+
+    .preview-stat {
+      padding: 12px;
+
+      border-radius: 10px;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.05);
+    }
+
+    .preview-stat strong {
+      display: block;
+
+      font-size: 11px;
+    }
+
+    .preview-stat span {
+      display: block;
+
+      margin-top: 2px;
+
+      color: #6f7784;
+
+      font-size: 7px;
+    }
+
+    /* =========================================================
+       FRESHLINE
+    ========================================================= */
+
+    .freshline .project-visual {
+      background:
+        radial-gradient(
+          circle at 72% 22%,
+          rgba(102,207,40,0.32),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 20% 75%,
+          rgba(67,136,28,0.2),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #061006,
+          #0a1609 55%,
+          #040805
+        );
+    }
+
+    .freshline .project-title span {
+      color: #6ad42e;
+    }
+
+    .freshline .browser {
+      box-shadow:
+        0 35px 90px
+        rgba(52,132,29,0.2);
+    }
+
+    .freshline .site-preview {
+      background:
+        radial-gradient(
+          circle at 85% 12%,
+          rgba(95,200,41,0.24),
+          transparent 31%
+        ),
+        linear-gradient(
+          145deg,
+          #050805,
+          #0a1108
+        );
+    }
+
+    .freshline .preview-logo span {
+      color: #68cf2e;
+    }
+
+    .freshline .preview-label {
+      color: #6fd435;
+    }
+
+    .freshline .preview-button {
+      background: #65cd2c;
+
+      color: #061000;
+    }
+
+    .freshline .project-tag {
+      border-color:
+        rgba(102,207,40,0.16);
+    }
+
+    .freshline .project-action .btn {
+      background:
+        linear-gradient(
+          90deg,
+          #62ca2a,
+          #8ae14e
+        );
+
+      color: #071004;
+
+      box-shadow:
+        0 12px 35px
+        rgba(84,180,39,0.18);
+    }
+
+    /* =========================================================
+       TWIN TURBO
+    ========================================================= */
+
+    .twin .project-grid {
+      grid-template-columns:
+        0.98fr 1.02fr;
+    }
+
+    .twin .project-info {
+      order: 2;
+    }
+
+    .twin .project-visual {
+      order: 1;
+
+      background:
+        radial-gradient(
+          circle at 30% 20%,
+          rgba(53,158,255,0.35),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(61,101,155,0.22),
+          transparent 38%
+        ),
+        linear-gradient(
+          145deg,
+          #04090f,
+          #071522 58%,
+          #04080d
+        );
+    }
+
+    .twin .project-title span {
+      color: #46a9ff;
+    }
+
+    .twin .browser {
+      transform:
+        perspective(1000px)
+        rotateY(6deg)
+        rotateX(2deg);
+
+      box-shadow:
+        0 35px 90px
+        rgba(41,131,221,0.2);
+    }
+
+    .twin:hover .browser {
+      transform:
+        perspective(1000px)
+        rotateY(2deg)
+        rotateX(0deg)
+        translateY(-5px);
+    }
+
+    .twin .site-preview {
+      background:
+        radial-gradient(
+          circle at 85% 12%,
+          rgba(44,151,255,0.24),
+          transparent 31%
+        ),
+        linear-gradient(
+          145deg,
+          #05090d,
+          #07111b
+        );
+    }
+
+    .twin .preview-logo span {
+      color: #44a8ff;
+    }
+
+    .twin .preview-label {
+      color: #4aaeff;
+    }
+
+    .twin .preview-button {
+      background: #319cff;
+
+      color: #03101c;
+    }
+
+    .twin .project-tag {
+      border-color:
+        rgba(49,156,255,0.16);
+    }
+
+    .twin .project-action .btn {
+      background:
+        linear-gradient(
+          90deg,
+          #319cff,
+          #66bdff
+        );
+
+      color: #03101c;
+
+      box-shadow:
+        0 12px 35px
+        rgba(49,156,255,0.18);
+    }
+
+    /* =========================================================
+       BUILT DIFFERENT SECTION
+    ========================================================= */
+
+    .difference {
+      padding:
+        90px 0
+        110px;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(102,85,255,0.045),
+          transparent
+        );
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+
+      margin-top: 42px;
+    }
+
+    .difference-card {
+      min-height: 235px;
+
+      padding: 27px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .difference-icon {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(109,132,255,0.18),
+          rgba(150,93,255,0.12)
+        );
+
+      border:
+        1px solid rgba(129,137,255,0.19);
+
+      color: #b8c1ff;
+
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .difference-card h3 {
+      margin-top: 24px;
+
+      font-size: 20px;
+    }
+
+    .difference-card p {
+      margin-top: 8px;
+
+      color: #858e9b;
+
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       COMING SOON
+    ========================================================= */
+
+    .coming {
+      padding:
+        90px 0
+        120px;
+    }
+
+    .coming-box {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 430px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 50px;
+
+      text-align: center;
+
+      border-radius: 28px;
+
+      border:
+        1px solid rgba(127,138,255,0.22);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.1),
+          rgba(145,85,255,0.04)
+        );
+    }
+
+    .coming-box::before {
+      content: "";
+
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(121,96,255,0.22),
+          transparent 68%
+        );
+
+      top: -250px;
+      right: -130px;
+    }
+
+    .coming-box::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: 0.16;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.04) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.04) 1px,
+          transparent 1px
+        );
+
+      background-size: 44px 44px;
+    }
+
+    .coming-content {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 760px;
+    }
+
+    .coming-number {
+      margin-bottom: 18px;
+
+      color: #8c96ff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .coming h2 {
+      font-size:
+        clamp(42px,7vw,72px);
+
+      line-height: 0.96;
+
+      letter-spacing: -3px;
+    }
+
+    .coming p {
+      max-width: 620px;
+
+      margin:
+        18px auto
+        0;
+
+      color: #919aa7;
+    }
+
+    .coming-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 28px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,0.06);
+
+      color: #737c89;
+
+      font-size: 12px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 960px) {
+      .project-grid,
+      .twin .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-info,
+      .twin .project-info {
+        order: 1;
+      }
+
+      .project-visual,
+      .twin .project-visual {
+        order: 2;
+      }
+
+      .project-visual {
+        min-height: 570px;
+      }
+
+      .difference-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .project-info {
+        padding: 34px 24px;
+      }
+
+      .project-visual {
+        min-height: 500px;
+
+        padding: 28px 18px;
+      }
+
+      .browser,
+      .twin .browser {
+        transform: none;
+      }
+
+      .project:hover .browser,
+      .twin:hover .browser {
+        transform:
+          translateY(-4px);
+      }
+
+      .difference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .coming-box {
+        padding: 38px 22px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width:
+          calc(100% - 24px);
+      }
+
+      .brand-main {
+        font-size: 12px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-cta {
+        padding: 0 12px;
+
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.6px;
+      }
+
+      .hero-actions,
+      .coming-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .coming-actions .btn {
+        width: 100%;
+      }
+
+      .project-title {
+        font-size: 42px;
+      }
+
+      .project-visual {
+        min-height: 440px;
+      }
+
+      .site-preview {
+        min-height: 410px;
+
+        padding: 24px;
+      }
+
+      .preview-navlinks {
+        display: none;
+      }
+
+      .preview-headline {
+        font-size: 37px;
+      }
+
+      .preview-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-stat:nth-child(2),
+      .preview-stat:nth-child(3) {
+        display: none;
+      }
+
+      .project-action .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+
+  <div class="ambient">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <div class="brand-mark">
+            F
+          </div>
+
+          <div class="brand-text">
+
+            <span class="brand-main">
+              FORGED DIGITAL
+            </span>
+
+            <span class="brand-sub">
+              CREATIONS
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="maintenance.html">
+            Maintenance
+          </a>
+
+          <a
+            href="quote.html"
+            class="nav-cta"
+          >
+            Start a Project
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="eyebrow">
+
+          <span class="eyebrow-dot"></span>
+
+          Selected Work
+
+        </div>
+
+
+        <h1>
+
+          Built for businesses
+          that want to
+
+          <span class="gradient-text">
+            look the part.
+          </span>
+
+        </h1>
+
+
+        <p>
+
+          Every website is designed around
+          the business behind it.
+          Different industries,
+          different customers,
+          different goals,
+          and a completely different visual identity.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="#projects"
+            class="btn btn-primary"
+          >
+            Explore Projects ↓
+          </a>
+
+          <a
+            href="quote.html"
+            class="btn btn-secondary"
+          >
+            Start Your Website
+          </a>
+
+        </div>
+
+
+        <div class="project-count">
+
+          <div class="count-item">
+
+            <strong>
+              2
+            </strong>
+
+            <span>
+              Featured Projects
+            </span>
+
+          </div>
+
+
+          <div class="count-item">
+
+            <strong>
+              2
+            </strong>
+
+            <span>
+              Different Industries
+            </span>
+
+          </div>
+
+
+          <div class="count-item">
+
+            <strong>
+              100%
+            </strong>
+
+            <span>
+              Custom Direction
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section
+      class="projects-section"
+      id="projects"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            Featured Builds
+          </div>
+
+          <h2>
+            Different businesses.
+            Different websites.
+          </h2>
+
+          <p>
+            A good website should look like
+            it belongs to the business,
+            not like the business was dropped
+            into somebody else's template.
+          </p>
+
+        </div>
+
+
+        <div class="project-stack">
+
+
+          <!-- ===================================================
+               FRESHLINE
+          ==================================================== -->
+
+          <article class="project freshline">
+
+            <div class="project-grid">
+
+
+              <div class="project-info">
+
+                <div class="project-index">
+                  Project 01 · Exterior Cleaning
+                </div>
+
+
+                <h2 class="project-title">
+
+                  Freshline
+                  <span>
+                    Exterior Cleaning
+                  </span>
+
+                </h2>
+
+
+                <p class="project-description">
+
+                  A bold service-business website
+                  created for an East Idaho exterior
+                  cleaning company.
+                  The visual direction uses deep black,
+                  bright green,
+                  strong contrast,
+                  and aggressive calls to action
+                  to make the business feel modern
+                  and established.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                  <span class="project-tag">
+                    Responsive Design
+                  </span>
+
+                  <span class="project-tag">
+                    Service Pages
+                  </span>
+
+                  <span class="project-tag">
+                    Quote System
+                  </span>
+
+                  <span class="project-tag">
+                    Local SEO Structure
+                  </span>
+
+                  <span class="project-tag">
+                    Conversion Focused
+                  </span>
+
+                </div>
+
+
+                <div class="project-result">
+
+                  <div class="project-result-label">
+                    Design Direction
+                  </div>
+
+                  <p>
+
+                    High contrast.
+                    Fast to understand.
+                    Built around getting local customers
+                    from the homepage to a quote request
+                    without unnecessary clutter.
+
+                  </p>
+
+                </div>
+
+
+                <div class="project-action">
+
+                  <a
+                    href="https://nerex13.github.io/Freshline/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn"
+                  >
+                    Visit Freshline Website ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <div class="project-visual">
+
+                <div class="browser">
+
+                  <div class="browser-bar">
+
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+
+                    <div class="browser-address">
+                      freshline exterior cleaning
+                    </div>
+
+                  </div>
+
+
+                  <div class="site-preview">
+
+                    <div class="preview-nav">
+
+                      <div class="preview-logo">
+                        FRESH<span>LINE</span>
+                      </div>
+
+                      <div class="preview-navlinks">
+                        <span>Services</span>
+                        <span>Quote</span>
+                        <span>Contact</span>
+                      </div>
+
+                    </div>
+
+
+                    <div class="preview-body">
+
+                      <div class="preview-label">
+                        East Idaho Exterior Cleaning
+                      </div>
+
+                      <div class="preview-headline">
+                        Bring New Life To Your Property
+                      </div>
+
+                      <div class="preview-copy">
+
+                        Professional pressure washing,
+                        gutter cleaning,
+                        stain treatment,
+                        and exterior cleaning.
+
+                      </div>
+
+                      <div class="preview-button">
+                        GET A FREE QUOTE →
+                      </div>
+
+
+                      <div class="preview-stats">
+
+                        <div class="preview-stat">
+
+                          <strong>
+                            Mobile
+                          </strong>
+
+                          <span>
+                            Built for every screen
+                          </span>
+
+                        </div>
+
+
+                        <div class="preview-stat">
+
+                          <strong>
+                            Local
+                          </strong>
+
+                          <span>
+                            East Idaho focused
+                          </span>
+
+                        </div>
+
+
+                        <div class="preview-stat">
+
+                          <strong>
+                            Direct
+                          </strong>
+
+                          <span>
+                            Clear quote flow
+                          </span>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- ===================================================
+               TWIN TURBO
+          ==================================================== -->
+
+          <article class="project twin">
+
+            <div class="project-grid">
+
+
+              <div class="project-info">
+
+                <div class="project-index">
+                  Project 02 · Mobile Auto Detailing
+                </div>
+
+
+                <h2 class="project-title">
+
+                  Twin Turbo
+                  <span>
+                    Detailers
+                  </span>
+
+                </h2>
+
+
+                <p class="project-description">
+
+                  A premium mobile detailing website
+                  built around a dark automotive aesthetic.
+                  Deep blacks,
+                  steel tones,
+                  electric blue accents,
+                  service pricing,
+                  and before-and-after results
+                  help turn a small detailing operation
+                  into a much more polished brand.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                  <span class="project-tag">
+                    Responsive Design
+                  </span>
+
+                  <span class="project-tag">
+                    Service Pricing
+                  </span>
+
+                  <span class="project-tag">
+                    Availability System
+                  </span>
+
+                  <span class="project-tag">
+                    Results Gallery
+                  </span>
+
+                  <span class="project-tag">
+                    Automotive Branding
+                  </span>
+
+                </div>
+
+
+                <div class="project-result">
+
+                  <div class="project-result-label">
+                    Design Direction
+                  </div>
+
+                  <p>
+
+                    Dark,
+                    premium,
+                    automotive,
+                    and built to showcase the quality
+                    of the detailing work
+                    while making it easy for customers
+                    to understand services and reach out.
+
+                  </p>
+
+                </div>
+
+
+                <div class="project-action">
+
+                  <a
+                    href="https://nerex13.github.io/Twin-turbo-datailing./index.html"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn"
+                  >
+                    Visit Twin Turbo Website ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <div class="project-visual">
+
+                <div class="browser">
+
+                  <div class="browser-bar">
+
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+
+                    <div class="browser-address">
+                      twin turbo detailers
+                    </div>
+
+                  </div>
+
+
+                  <div class="site-preview">
+
+                    <div class="preview-nav">
+
+                      <div class="preview-logo">
+                        TWIN <span>TURBO</span>
+                      </div>
+
+                      <div class="preview-navlinks">
+                        <span>Services</span>
+                        <span>Results</span>
+                        <span>Contact</span>
+                      </div>
+
+                    </div>
+
+
+                    <div class="preview-body">
+
+                      <div class="preview-label">
+                        Professional Auto Detailing
+                      </div>
+
+                      <div class="preview-headline">
+                        Precision Shine. Every Time.
+                      </div>
+
+                      <div class="preview-copy">
+
+                        Professional mobile interior
+                        detailing brought directly
+                        to the customer's driveway.
+
+                      </div>
+
+                      <div class="preview-button">
+                        GET FREE ESTIMATE →
+                      </div>
+
+
+                      <div class="preview-stats">
+
+                        <div class="preview-stat">
+
+                          <strong>
+                            Mobile
+                          </strong>
+
+                          <span>
+                            Detailing on location
+                          </span>
+
+                        </div>
+
+
+                        <div class="preview-stat">
+
+                          <strong>
+                            Visual
+                          </strong>
+
+                          <span>
+                            Before & after work
+                          </span>
+
+                        </div>
+
+
+                        <div class="preview-stat">
+
+                          <strong>
+                            Premium
+                          </strong>
+
+                          <span>
+                            Automotive identity
+                          </span>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHAT MAKES THE WORK DIFFERENT -->
+
+    <section class="difference">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            The Approach
+          </div>
+
+          <h2>
+            The same designer.
+            Completely different results.
+          </h2>
+
+          <p>
+
+            Freshline should not look like Twin Turbo.
+            Twin Turbo should not look like a restaurant.
+            Every business gets its own visual language.
+
+          </p>
+
+        </div>
+
+
+        <div class="difference-grid">
+
+
+          <article class="difference-card">
+
+            <div class="difference-icon">
+              01
+            </div>
+
+            <h3>
+              Brand First
+            </h3>
+
+            <p>
+
+              Colors,
+              typography,
+              layout,
+              and tone are shaped around
+              the business instead of copied
+              from a generic template.
+
+            </p>
+
+          </article>
+
+
+          <article class="difference-card">
+
+            <div class="difference-icon">
+              02
+            </div>
+
+            <h3>
+              Customer Focused
+            </h3>
+
+            <p>
+
+              The website is organized around
+              what a potential customer needs
+              to see before they call,
+              message,
+              or request a quote.
+
+            </p>
+
+          </article>
+
+
+          <article class="difference-card">
+
+            <div class="difference-icon">
+              03
+            </div>
+
+            <h3>
+              Built To Convert
+            </h3>
+
+            <p>
+
+              Strong calls to action,
+              clear service information,
+              mobile-first layouts,
+              and useful forms turn the site
+              into more than a digital brochure.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMING SOON -->
+
+    <section class="coming">
+
+      <div class="container">
+
+        <div class="coming-box">
+
+          <div class="coming-content">
+
+            <div class="coming-number">
+              Portfolio · Growing
+            </div>
+
+
+            <h2>
+
+              The next project
+              could be
+
+              <span class="gradient-text">
+                yours.
+              </span>
+
+            </h2>
+
+
+            <p>
+
+              More work is being added as
+              Forged Digital Creations grows.
+              Every new project adds another industry,
+              another visual direction,
+              and another example of what can be built.
+
+            </p>
+
+
+            <div class="coming-actions">
+
+              <a
+                href="quote.html"
+                class="btn btn-primary"
+              >
+                Start a Project →
+              </a>
+
+              <a
+                href="services.html"
+                class="btn btn-secondary"
+              >
+                Explore Services
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-row">
+
+        <div>
+          Forged Digital Creations © 2026
+        </div>
+
+        <div>
+          Forged to stand out. Built to perform.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
