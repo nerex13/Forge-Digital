@@ -1,1 +1,1700 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>About | Forged Digital Creations</title>
+
+  <meta
+    name="description"
+    content="Learn about Forged Digital Creations, a custom web design studio focused on building modern, mobile-friendly websites for local businesses."
+  >
+
+  <meta name="theme-color" content="#05070b">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+
+      color: #ffffff;
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(73, 96, 255, 0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(157, 67, 255, 0.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #05070b,
+          #07090e 50%,
+          #040609
+        );
+    }
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      z-index: -4;
+      pointer-events: none;
+
+      opacity: 0.22;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background: rgba(136,112,255,0.45);
+      color: #ffffff;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+      pointer-events: none;
+
+      z-index: -3;
+    }
+
+    .orb {
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(100px);
+      opacity: 0.25;
+
+      animation: drift 15s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 450px;
+      height: 450px;
+
+      left: -180px;
+      top: -130px;
+
+      background: #536cff;
+    }
+
+    .orb-two {
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      top: 35%;
+
+      background: #9148ff;
+
+      animation-delay: -5s;
+    }
+
+    .orb-three {
+      width: 350px;
+      height: 350px;
+
+      left: 38%;
+      bottom: -210px;
+
+      background: #2857ff;
+
+      animation-delay: -9s;
+    }
+
+    @keyframes drift {
+      0%,
+      100% {
+        transform:
+          translate3d(0,0,0)
+          scale(1);
+      }
+
+      50% {
+        transform:
+          translate3d(35px,-30px,0)
+          scale(1.08);
+      }
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          #8298ff,
+          #ab6aff,
+          #d4d9ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 18px;
+
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      color: #b8c1ff;
+
+      background:
+        rgba(102,113,255,0.07);
+
+      border:
+        1px solid rgba(128,143,255,0.27);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #8b91ff;
+
+      box-shadow:
+        0 0 12px rgba(139,145,255,0.8);
+    }
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 0 23px;
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          90deg,
+          #6d84ff,
+          #965dff
+        );
+
+      box-shadow:
+        0 12px 38px rgba(91,87,255,0.25);
+    }
+
+    .btn-secondary {
+      color: #d4d9e2;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.11);
+    }
+
+    header {
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(5,7,11,0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.065);
+    }
+
+    nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      position: relative;
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      color: #ffffff;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          145deg,
+          #788dff,
+          #8f5fff 55%,
+          #5526bb
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.16);
+
+      box-shadow:
+        0 0 24px rgba(109,111,255,0.38),
+        inset 0 1px 6px rgba(255,255,255,0.2);
+    }
+
+    .brand-mark::after {
+      content: "";
+
+      position: absolute;
+      inset: 4px;
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      border-radius: 9px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+
+      line-height: 1.05;
+    }
+
+    .brand-main {
+      font-size: 15px;
+      letter-spacing: 1.3px;
+    }
+
+    .brand-sub {
+      margin-top: 3px;
+
+      color: #828b99;
+
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2.6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #bfc5d0;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-cta {
+      min-height: 42px;
+
+      display: inline-flex;
+      align-items: center;
+
+      padding: 0 16px;
+
+      border-radius: 11px;
+
+      color: #ffffff !important;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(109,132,255,0.22),
+          rgba(150,93,255,0.22)
+        );
+
+      border:
+        1px solid rgba(132,129,255,0.28);
+    }
+
+    .hero {
+      padding:
+        155px 0
+        95px;
+
+      text-align: center;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+
+      margin:
+        0 auto
+        22px;
+
+      font-size:
+        clamp(50px,8vw,86px);
+
+      line-height: 0.95;
+      letter-spacing: -3.5px;
+    }
+
+    .hero p {
+      max-width: 740px;
+
+      margin: 0 auto;
+
+      color: #9ba3b0;
+
+      font-size:
+        clamp(16px,2vw,19px);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .manifesto {
+      padding:
+        40px 0
+        95px;
+    }
+
+    .manifesto-box {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 56px;
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.13),
+          rgba(145,85,255,0.05)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.26);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.2);
+    }
+
+    .manifesto-box::after {
+      content: "";
+
+      position: absolute;
+
+      width: 430px;
+      height: 430px;
+
+      right: -180px;
+      top: -220px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(128,100,255,0.25),
+          transparent 70%
+        );
+    }
+
+    .manifesto-copy {
+      position: relative;
+      z-index: 2;
+
+      max-width: 850px;
+    }
+
+    .manifesto-copy h2 {
+      font-size:
+        clamp(36px,6vw,60px);
+
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .manifesto-copy p {
+      margin-top: 20px;
+
+      color: #a1a8b4;
+
+      font-size: 17px;
+    }
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: #8f9cff;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin-top: 10px;
+
+      font-size:
+        clamp(36px,6vw,58px);
+
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+
+      color: #929aa7;
+
+      font-size: 17px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 20px;
+    }
+
+    .story-card {
+      min-height: 320px;
+
+      padding: 30px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.013)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .story-card h3 {
+      font-size: 28px;
+
+      line-height: 1.05;
+    }
+
+    .story-card p {
+      margin-top: 15px;
+
+      color: #929aa7;
+    }
+
+    .story-number {
+      margin-bottom: 28px;
+
+      color: #8391ff;
+
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+
+      text-transform: uppercase;
+    }
+
+    .principles {
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(102,85,255,0.045),
+          transparent
+        );
+    }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+    }
+
+    .principle-card {
+      min-height: 250px;
+
+      padding: 27px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+    }
+
+    .principle-icon {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(109,132,255,0.18),
+          rgba(150,93,255,0.12)
+        );
+
+      border:
+        1px solid rgba(129,137,255,0.19);
+
+      color: #b8c1ff;
+
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .principle-card h3 {
+      margin-top: 24px;
+
+      font-size: 20px;
+    }
+
+    .principle-card p {
+      margin-top: 8px;
+
+      color: #858e9b;
+
+      font-size: 13px;
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 18px;
+    }
+
+    .difference-card {
+      padding: 30px;
+
+      border-radius: 22px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+    }
+
+    .difference-card h3 {
+      font-size: 23px;
+    }
+
+    .difference-card p {
+      margin-top: 10px;
+
+      color: #8e96a3;
+    }
+
+    .difference-list {
+      display: grid;
+
+      gap: 10px;
+
+      margin-top: 20px;
+    }
+
+    .difference-list div {
+      color: #c5cad3;
+
+      font-size: 13px;
+    }
+
+    .difference-list div::before {
+      content: "→";
+
+      margin-right: 8px;
+
+      color: #8d99ff;
+
+      font-weight: 900;
+    }
+
+    .proof-strip {
+      margin-top: 50px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(4,1fr);
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+        rgba(255,255,255,0.02);
+    }
+
+    .proof-item {
+      padding: 24px;
+
+      text-align: center;
+
+      border-right:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .proof-item:last-child {
+      border-right: 0;
+    }
+
+    .proof-item strong {
+      display: block;
+
+      font-size: 22px;
+    }
+
+    .proof-item span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: #777f8d;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      font-weight: 800;
+    }
+
+    .cta-box {
+      padding: 60px;
+
+      border-radius: 27px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(104,112,255,0.15),
+          rgba(145,85,255,0.06)
+        );
+
+      border:
+        1px solid rgba(127,138,255,0.28);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.18);
+    }
+
+    .cta-box h2 {
+      max-width: 800px;
+
+      margin: 0 auto;
+
+      font-size:
+        clamp(40px,6vw,64px);
+
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+
+      margin:
+        17px auto
+        0;
+
+      color: #929aa7;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 28px;
+    }
+
+    footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,0.06);
+
+      color: #737c89;
+
+      font-size: 12px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+    }
+
+    @media (max-width: 900px) {
+      .story-grid,
+      .difference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .principle-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proof-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proof-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .proof-item:nth-child(-n+2) {
+        border-bottom:
+          1px solid rgba(255,255,255,0.07);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .manifesto-box {
+        padding: 38px 24px;
+      }
+
+      .principle-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-item,
+      .proof-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .proof-item {
+        border-bottom:
+          1px solid rgba(255,255,255,0.07);
+      }
+
+      .proof-item:last-child {
+        border-bottom: 0;
+      }
+
+      .cta-box {
+        padding: 40px 24px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .brand-main {
+        font-size: 12px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-cta {
+        padding: 0 12px;
+
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+  </div>
+
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <div class="brand-mark">
+            F
+          </div>
+
+          <div class="brand-text">
+
+            <span class="brand-main">
+              FORGED DIGITAL
+            </span>
+
+            <span class="brand-sub">
+              CREATIONS
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="portfolio.html">
+            Portfolio
+          </a>
+
+          <a
+            href="quote.html"
+            class="nav-cta"
+          >
+            Start a Project
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="eyebrow">
+
+          <span class="eyebrow-dot"></span>
+
+          About Forged
+
+        </div>
+
+
+        <h1>
+
+          Small studio.
+          Serious
+
+          <span class="gradient-text">
+            standards.
+          </span>
+
+        </h1>
+
+
+        <p>
+
+          Forged Digital Creations is built around
+          one simple idea:
+          small businesses deserve websites
+          that feel as professional as the work they do.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="portfolio.html"
+            class="btn btn-primary"
+          >
+            See The Work →
+          </a>
+
+          <a
+            href="quote.html"
+            class="btn btn-secondary"
+          >
+            Start a Project
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MANIFESTO -->
+
+    <section class="manifesto">
+
+      <div class="container">
+
+        <div class="manifesto-box">
+
+          <div class="manifesto-copy">
+
+            <div class="section-kicker">
+              Why Forged Exists
+            </div>
+
+
+            <h2>
+
+              A website should make
+              a business feel
+
+              <span class="gradient-text">
+                bigger than its limitations.
+              </span>
+
+            </h2>
+
+
+            <p>
+
+              A customer should not land on a business website
+              and wonder whether the company is legitimate,
+              active,
+              or worth contacting.
+              The website should answer those questions
+              before they ever have to ask.
+
+            </p>
+
+
+            <p>
+
+              Forged Digital Creations focuses on
+              clean design,
+              clear information,
+              strong calls to action,
+              and mobile-friendly experiences
+              that help small businesses present themselves
+              with more confidence online.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- STORY -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            The Idea
+          </div>
+
+          <h2>
+            Built from the business outward.
+          </h2>
+
+          <p>
+
+            The goal is not to make every website
+            look like Forged Digital Creations.
+            The goal is to make every website
+            look like the strongest version
+            of the business it represents.
+
+          </p>
+
+        </div>
+
+
+        <div class="story-grid">
+
+
+          <article class="story-card">
+
+            <div class="story-number">
+              01 · Start With The Business
+            </div>
+
+            <h3>
+              Understand what customers actually need to see.
+            </h3>
+
+            <p>
+
+              Before worrying about visual effects,
+              a website needs to communicate the basics:
+              what the business does,
+              where it works,
+              why customers should trust it,
+              and what they should do next.
+
+            </p>
+
+            <p>
+
+              That structure becomes the foundation
+              for the design instead of trying
+              to squeeze the business into a pre-made layout.
+
+            </p>
+
+          </article>
+
+
+          <article class="story-card">
+
+            <div class="story-number">
+              02 · Build The Identity
+            </div>
+
+            <h3>
+              Make the website feel like it belongs to the brand.
+            </h3>
+
+            <p>
+
+              A detailing company,
+              exterior cleaning business,
+              landscaping company,
+              restaurant,
+              or contractor should not all
+              look like the same website
+              with different words pasted in.
+
+            </p>
+
+            <p>
+
+              Color,
+              spacing,
+              typography,
+              layout,
+              and tone should reinforce
+              the personality of the business.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRINCIPLES -->
+
+    <section class="principles">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            Design Principles
+          </div>
+
+          <h2>
+            What every Forged project should have.
+          </h2>
+
+        </div>
+
+
+        <div class="principle-grid">
+
+
+          <article class="principle-card">
+
+            <div class="principle-icon">
+              01
+            </div>
+
+            <h3>
+              Clear
+            </h3>
+
+            <p>
+
+              Customers should understand
+              the business,
+              services,
+              and next step
+              without digging through clutter.
+
+            </p>
+
+          </article>
+
+
+          <article class="principle-card">
+
+            <div class="principle-icon">
+              02
+            </div>
+
+            <h3>
+              Distinct
+            </h3>
+
+            <p>
+
+              The visual direction should feel
+              intentional and specific to the brand,
+              not like a recycled template.
+
+            </p>
+
+          </article>
+
+
+          <article class="principle-card">
+
+            <div class="principle-icon">
+              03
+            </div>
+
+            <h3>
+              Mobile First
+            </h3>
+
+            <p>
+
+              A huge portion of local customers
+              will visit from a phone,
+              so mobile cannot be an afterthought.
+
+            </p>
+
+          </article>
+
+
+          <article class="principle-card">
+
+            <div class="principle-icon">
+              04
+            </div>
+
+            <h3>
+              Useful
+            </h3>
+
+            <p>
+
+              Forms,
+              galleries,
+              quote tools,
+              pricing,
+              and service information
+              should make the website work for the business.
+
+            </p>
+
+          </article>
+
+
+          <article class="principle-card">
+
+            <div class="principle-icon">
+              05
+            </div>
+
+            <h3>
+              Flexible
+            </h3>
+
+            <p>
+
+              The site should be able to grow
+              when the business adds services,
+              locations,
+              offers,
+              or new content.
+
+            </p>
+
+          </article>
+
+
+          <article class="principle-card">
+
+            <div class="principle-icon">
+              06
+            </div>
+
+            <h3>
+              Intentional
+            </h3>
+
+            <p>
+
+              Every section,
+              button,
+              headline,
+              and visual choice
+              should have a reason to exist.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIFFERENCE -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-kicker">
+            The Difference
+          </div>
+
+          <h2>
+            More direct.
+            More personal.
+            Less agency theater.
+          </h2>
+
+          <p>
+
+            Forged is intentionally built around
+            straightforward communication
+            and practical websites for real businesses.
+
+          </p>
+
+        </div>
+
+
+        <div class="difference-grid">
+
+
+          <article class="difference-card">
+
+            <h3>
+              What you get
+            </h3>
+
+            <div class="difference-list">
+
+              <div>
+                A website built around your business
+              </div>
+
+              <div>
+                Direct communication about the project
+              </div>
+
+              <div>
+                Clear project scope and expectations
+              </div>
+
+              <div>
+                Mobile-friendly design
+              </div>
+
+              <div>
+                Practical features that support customers
+              </div>
+
+              <div>
+                Room to expand later
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="difference-card">
+
+            <h3>
+              What you do not need
+            </h3>
+
+            <div class="difference-list">
+
+              <div>
+                A giant marketing department
+              </div>
+
+              <div>
+                Endless meetings
+              </div>
+
+              <div>
+                Overcomplicated technical language
+              </div>
+
+              <div>
+                A bloated website full of filler
+              </div>
+
+              <div>
+                Features your business will never use
+              </div>
+
+              <div>
+                An agency-sized process for a small-business project
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <div class="proof-strip">
+
+          <div class="proof-item">
+
+            <strong>
+              Custom
+            </strong>
+
+            <span>
+              Design Direction
+            </span>
+
+          </div>
+
+
+          <div class="proof-item">
+
+            <strong>
+              Mobile
+            </strong>
+
+            <span>
+              First Approach
+            </span>
+
+          </div>
+
+
+          <div class="proof-item">
+
+            <strong>
+              Practical
+            </strong>
+
+            <span>
+              Business Tools
+            </span>
+
+          </div>
+
+
+          <div class="proof-item">
+
+            <strong>
+              Direct
+            </strong>
+
+            <span>
+              Project Process
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="section-kicker">
+            Build Something Better
+          </div>
+
+
+          <h2>
+
+            Your website should feel
+            as serious as your
+
+            <span class="gradient-text">
+              business.
+            </span>
+
+          </h2>
+
+
+          <p>
+
+            Tell us what you do,
+            what you need,
+            and what you want the website to accomplish.
+            We can build from there.
+
+          </p>
+
+
+          <div class="cta-actions">
+
+            <a
+              href="quote.html"
+              class="btn btn-primary"
+            >
+              Start Your Project →
+            </a>
+
+            <a
+              href="services.html"
+              class="btn btn-secondary"
+            >
+              Explore Services
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-row">
+
+        <div>
+          Forged Digital Creations © 2026
+        </div>
+
+        <div>
+          Forged to stand out. Built to perform.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
