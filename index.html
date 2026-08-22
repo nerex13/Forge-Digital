@@ -741,9 +741,12 @@
       left: 0;
       right: 0;
       z-index: 1000;
+
       background: rgba(5,7,11,.79);
+
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
+
       border-bottom: 1px solid rgba(255,255,255,.065);
     }
 
@@ -931,10 +934,10 @@
 
     .hero {
       position: relative;
-      min-height: 960px;
+      min-height: 920px;
       display: flex;
       align-items: center;
-      padding: 125px 0 95px;
+      padding: 125px 0 90px;
       isolation: isolate;
       overflow: hidden;
 
@@ -946,7 +949,7 @@
         ),
         radial-gradient(
           ellipse at 22% 30%,
-          rgba(255,82,31,.045),
+          rgba(130,67,255,.065),
           transparent 25%
         ),
         radial-gradient(
@@ -1022,195 +1025,109 @@
     }
 
     /* =========================================================
-       FORGED LOGO + FIRE
+       FORGED HERO LOGO
     ========================================================= */
 
     .forge-logo-stage {
       position: relative;
-      width: 410px;
-      height: 335px;
-      margin-bottom: 18px;
+      width: 390px;
+      height: 235px;
+      margin-bottom: 25px;
       display: flex;
       align-items: center;
       justify-content: center;
       isolation: isolate;
     }
 
-    .fire-video-wrap {
+    .logo-aura {
       position: absolute;
       left: 50%;
-      bottom: 5px;
-      width: 335px;
-      height: 260px;
-      transform: translateX(-50%);
-      z-index: 1;
-      overflow: hidden;
-      pointer-events: none;
-
-      -webkit-mask-image:
-        radial-gradient(
-          ellipse at center 72%,
-          #000 0%,
-          #000 50%,
-          rgba(0,0,0,.85) 65%,
-          transparent 86%
-        );
-
-      mask-image:
-        radial-gradient(
-          ellipse at center 72%,
-          #000 0%,
-          #000 50%,
-          rgba(0,0,0,.85) 65%,
-          transparent 86%
-        );
-    }
-
-    .fire-video {
-      position: absolute;
-      left: 50%;
-      bottom: -20px;
-      width: 125%;
-      height: 125%;
-      transform: translateX(-50%);
-      object-fit: cover;
-      object-position: center bottom;
-
-      mix-blend-mode: screen;
-
-      filter:
-        saturate(1.5)
-        contrast(1.35)
-        brightness(1.12)
-        drop-shadow(0 0 12px rgba(255,126,35,.62))
-        drop-shadow(0 0 30px rgba(255,72,24,.38));
-
-      opacity: .96;
-    }
-
-    .fire-video-glow {
-      position: absolute;
-      width: 340px;
-      height: 255px;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
+      top: 50%;
+      width: 330px;
+      height: 205px;
+      transform: translate(-50%,-50%);
       border-radius: 50%;
       z-index: 0;
+      pointer-events: none;
 
       background:
         radial-gradient(
-          ellipse at center bottom,
-          rgba(255,244,201,.25) 0%,
-          rgba(255,181,78,.28) 19%,
-          rgba(255,85,28,.23) 39%,
-          rgba(154,72,255,.08) 61%,
-          transparent 75%
+          ellipse at center,
+          rgba(169,79,255,.28) 0%,
+          rgba(107,67,255,.17) 38%,
+          rgba(63,82,255,.08) 58%,
+          transparent 76%
         );
 
-      filter: blur(28px);
-      animation: fireGlow 2.1s ease-in-out infinite;
+      filter: blur(30px);
+
+      animation:
+        auraPulse 3.4s
+        ease-in-out
+        infinite;
     }
 
-    @keyframes fireGlow {
+    @keyframes auraPulse {
       0%,
       100% {
         transform:
-          translateX(-50%)
-          scale(.94);
+          translate(-50%,-50%)
+          scale(.95);
         opacity: .62;
       }
 
       50% {
         transform:
-          translateX(-50%)
+          translate(-50%,-50%)
           scale(1.08);
         opacity: 1;
       }
     }
 
-    .heat-haze {
-      position: absolute;
-      left: 50%;
-      top: 8px;
-      width: 150px;
-      height: 125px;
-      transform: translateX(-50%);
-      z-index: 2;
-      pointer-events: none;
-
-      background:
-        linear-gradient(
-          180deg,
-          transparent,
-          rgba(255,147,69,.03),
-          transparent
-        );
-
-      filter: blur(10px);
-      animation: haze 2.2s ease-in-out infinite;
-    }
-
-    @keyframes haze {
-      0%,
-      100% {
-        transform:
-          translateX(-52%)
-          skewX(-3deg)
-          scaleX(.94);
-        opacity: .28;
-      }
-
-      50% {
-        transform:
-          translateX(-46%)
-          skewX(4deg)
-          scaleX(1.08);
-        opacity: .7;
-      }
-    }
-
     .forge-emblem {
       position: relative;
-      z-index: 6;
-      width: 300px;
-      height: 205px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      z-index: 5;
+
+      width: 330px;
+      height: 190px;
+
       overflow: hidden;
-      border-radius: 20px;
+
+      border-radius: 24px;
 
       background: #030407;
 
       border:
         1px solid
-        rgba(143,104,255,.28);
+        rgba(159,105,255,.32);
 
       box-shadow:
         0 25px 65px rgba(0,0,0,.72),
-        0 0 30px rgba(122,62,255,.30),
-        0 0 70px rgba(114,48,255,.18),
-        0 22px 45px rgba(255,78,24,.16);
+        0 0 28px rgba(123,66,255,.34),
+        0 0 72px rgba(123,55,255,.16),
+        inset 0 0 0 1px rgba(255,255,255,.025);
 
       animation:
-        emblemFloat 4.2s ease-in-out infinite;
+        emblemFloat 4.2s
+        ease-in-out
+        infinite;
     }
 
     .forge-logo-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      transform: scale(1.04);
+      object-position: center 35%;
+
+      transform: scale(1.05);
 
       filter:
-        saturate(1.18)
-        contrast(1.1)
-        brightness(1.03)
+        saturate(1.22)
+        contrast(1.13)
+        brightness(1.05)
         drop-shadow(
-          0 0 18px
-          rgba(132,56,255,.28)
+          0 0 16px
+          rgba(132,56,255,.26)
         );
     }
 
@@ -1218,13 +1135,13 @@
       0%,
       100% {
         transform:
-          rotate(-1deg)
+          rotate(-.7deg)
           translateY(0);
       }
 
       50% {
         transform:
-          rotate(.25deg)
+          rotate(.35deg)
           translateY(-6px);
       }
     }
@@ -1232,14 +1149,14 @@
     .forge-caption {
       position: absolute;
       left: 50%;
-      bottom: 0;
+      bottom: -2px;
       transform: translateX(-50%);
       width: 100%;
       color: #747d8e;
       text-align: center;
       font-size: 8px;
       font-weight: 900;
-      letter-spacing: 4.7px;
+      letter-spacing: 4.5px;
       text-transform: uppercase;
     }
 
@@ -1248,14 +1165,16 @@
       width: 3px;
       height: 3px;
       border-radius: 50%;
-      background: #ffd078;
+
+      background:
+        #c48cff;
 
       box-shadow:
-        0 0 5px #ff9d3a,
-        0 0 11px rgba(255,74,20,.9);
+        0 0 5px #a85cff,
+        0 0 12px rgba(129,78,255,.9);
 
       opacity: 0;
-      z-index: 5;
+      z-index: 4;
 
       animation:
         emberRise
@@ -1265,43 +1184,43 @@
     }
 
     .ember:nth-of-type(1) {
-      left: 40%;
-      bottom: 55px;
+      left: 37%;
+      bottom: 30px;
       --ember-speed: 2.7s;
       animation-delay: -.3s;
     }
 
     .ember:nth-of-type(2) {
       left: 58%;
-      bottom: 58px;
+      bottom: 32px;
       --ember-speed: 3.3s;
       animation-delay: -1.1s;
     }
 
     .ember:nth-of-type(3) {
-      left: 34%;
-      bottom: 45px;
+      left: 31%;
+      bottom: 25px;
       --ember-speed: 3.8s;
       animation-delay: -2.1s;
     }
 
     .ember:nth-of-type(4) {
-      left: 64%;
-      bottom: 60px;
+      left: 65%;
+      bottom: 33px;
       --ember-speed: 2.9s;
       animation-delay: -.8s;
     }
 
     .ember:nth-of-type(5) {
-      left: 48%;
-      bottom: 42px;
+      left: 49%;
+      bottom: 24px;
       --ember-speed: 4s;
       animation-delay: -2.7s;
     }
 
     .ember:nth-of-type(6) {
-      left: 69%;
-      bottom: 50px;
+      left: 70%;
+      bottom: 29px;
       --ember-speed: 3.4s;
       animation-delay: -1.7s;
     }
@@ -1315,29 +1234,30 @@
       }
 
       10% {
-        opacity: .95;
+        opacity: .9;
       }
 
       38% {
         transform:
           translate3d(
             calc(var(--ember-x,18px) * .35),
-            -70px,
+            -45px,
             0
           )
           scale(1);
       }
 
       72% {
-        opacity: .7;
+        opacity: .52;
       }
 
       100% {
         opacity: 0;
+
         transform:
           translate3d(
             var(--ember-x,18px),
-            -205px,
+            -125px,
             0
           )
           scale(.15);
@@ -2754,7 +2674,7 @@
       }
 
       .forge-logo-stage {
-        margin: 0 auto 18px;
+        margin: 0 auto 22px;
       }
 
       .hero-copy-side {
@@ -2894,29 +2814,34 @@
 
       .hero {
         min-height: auto;
-        padding: 102px 0 75px;
+        padding: 100px 0 72px;
       }
 
       .forge-logo-stage {
         width: 100%;
-        height: 285px;
-        margin-bottom: 16px;
+        height: 205px;
+        margin-bottom: 19px;
       }
 
-      .fire-video-wrap {
-        width: 285px;
-        height: 225px;
+      .logo-aura {
+        width: 290px;
+        height: 180px;
       }
 
       .forge-emblem {
-        width: 250px;
-        height: 172px;
-        border-radius: 17px;
+        width: 290px;
+        height: 168px;
+        border-radius: 21px;
+      }
+
+      .forge-logo-image img {
+        object-position: center 32%;
       }
 
       .forge-caption {
-        font-size: 7px;
-        letter-spacing: 3.3px;
+        bottom: -1px;
+        font-size: 6.5px;
+        letter-spacing: 3px;
       }
 
       .hero h1 {
@@ -3277,20 +3202,7 @@
 
           <div class="forge-logo-stage">
 
-            <div class="fire-video-glow"></div>
-
-            <div class="fire-video-wrap">
-
-              <img
-                class="fire-video"
-                src="IMG_0569.webp"
-                alt=""
-                aria-hidden="true"
-              >
-
-            </div>
-
-            <div class="heat-haze"></div>
+            <div class="logo-aura"></div>
 
             <span
               class="ember"
