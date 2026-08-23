@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <title>Start a Project | Forged Digital Designs</title>
 
@@ -14,10 +18,6 @@
   <meta name="theme-color" content="#05070b">
 
   <style>
-    /* =========================================================
-       RESET
-    ========================================================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -40,12 +40,12 @@
       background:
         radial-gradient(
           circle at 15% 10%,
-          rgba(73, 96, 255, 0.16),
+          rgba(73,96,255,.16),
           transparent 32%
         ),
         radial-gradient(
           circle at 85% 25%,
-          rgba(157, 67, 255, 0.14),
+          rgba(157,67,255,.14),
           transparent 30%
         ),
         linear-gradient(
@@ -58,23 +58,20 @@
 
     body::before {
       content: "";
-
       position: fixed;
       inset: 0;
-
       z-index: -4;
       pointer-events: none;
-
-      opacity: 0.22;
+      opacity: .22;
 
       background-image:
         linear-gradient(
-          rgba(255, 255, 255, 0.018) 1px,
+          rgba(255,255,255,.018) 1px,
           transparent 1px
         ),
         linear-gradient(
           90deg,
-          rgba(255, 255, 255, 0.018) 1px,
+          rgba(255,255,255,.018) 1px,
           transparent 1px
         );
 
@@ -104,67 +101,53 @@
     }
 
     ::selection {
-      background: rgba(136, 112, 255, 0.45);
+      background: rgba(136,112,255,.45);
       color: #ffffff;
     }
 
-
     /* =========================================================
-       AMBIENT BACKGROUND
+       AMBIENT
     ========================================================= */
 
     .ambient {
       position: fixed;
       inset: 0;
-
       overflow: hidden;
-
       pointer-events: none;
       z-index: -3;
     }
 
     .orb {
       position: absolute;
-
       border-radius: 50%;
-
       filter: blur(100px);
-      opacity: 0.25;
-
+      opacity: .25;
       animation: drift 15s ease-in-out infinite;
     }
 
     .orb-one {
       width: 450px;
       height: 450px;
-
       left: -180px;
       top: -130px;
-
       background: #536cff;
     }
 
     .orb-two {
       width: 500px;
       height: 500px;
-
       right: -250px;
       top: 35%;
-
       background: #9148ff;
-
       animation-delay: -5s;
     }
 
     .orb-three {
       width: 350px;
       height: 350px;
-
       left: 38%;
       bottom: -210px;
-
       background: #2857ff;
-
       animation-delay: -9s;
     }
 
@@ -172,17 +155,16 @@
       0%,
       100% {
         transform:
-          translate3d(0, 0, 0)
+          translate3d(0,0,0)
           scale(1);
       }
 
       50% {
         transform:
-          translate3d(35px, -30px, 0)
+          translate3d(35px,-30px,0)
           scale(1.08);
       }
     }
-
 
     /* =========================================================
        GLOBAL
@@ -204,7 +186,6 @@
 
       -webkit-background-clip: text;
       background-clip: text;
-
       color: transparent;
     }
 
@@ -216,21 +197,19 @@
       justify-content: center;
 
       gap: 9px;
-
       padding: 0 23px;
 
       border: 0;
       border-radius: 12px;
 
       font-weight: 800;
-
       cursor: pointer;
 
       transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease,
-        opacity 0.2s ease;
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease,
+        opacity .2s ease;
     }
 
     .btn:hover {
@@ -238,7 +217,7 @@
     }
 
     .btn:disabled {
-      opacity: 0.6;
+      opacity: .6;
       cursor: wait;
       transform: none;
     }
@@ -254,19 +233,19 @@
         );
 
       box-shadow:
-        0 12px 38px rgba(91, 87, 255, 0.25);
+        0 12px 38px
+        rgba(91,87,255,.25);
     }
 
     .btn-secondary {
       color: #d4d9e2;
 
       background:
-        rgba(255, 255, 255, 0.035);
+        rgba(255,255,255,.035);
 
       border:
-        1px solid rgba(255, 255, 255, 0.11);
+        1px solid rgba(255,255,255,.11);
     }
-
 
     /* =========================================================
        HEADER
@@ -274,7 +253,6 @@
 
     header {
       position: fixed;
-
       left: 0;
       right: 0;
       top: 0;
@@ -282,13 +260,13 @@
       z-index: 1000;
 
       background:
-        rgba(5, 7, 11, 0.82);
+        rgba(5,7,11,.82);
 
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
 
       border-bottom:
-        1px solid rgba(255, 255, 255, 0.065);
+        1px solid rgba(255,255,255,.065);
     }
 
     nav {
@@ -304,60 +282,45 @@
     .brand {
       display: flex;
       align-items: center;
-
       gap: 12px;
-
       font-weight: 900;
     }
 
     .brand-mark {
-      position: relative;
-
       width: 42px;
       height: 42px;
 
-      display: grid;
-      place-items: center;
+      overflow: hidden;
 
-      border-radius: 12px;
+      border-radius: 10px;
 
-      color: #ffffff;
-
-      font-size: 20px;
-      font-weight: 900;
-
-      background:
-        linear-gradient(
-          145deg,
-          #788dff,
-          #8f5fff 55%,
-          #5526bb
-        );
+      background: #030408;
 
       border:
-        1px solid rgba(255, 255, 255, 0.16);
+        1px solid rgba(151,104,255,.35);
 
       box-shadow:
-        0 0 24px rgba(109, 111, 255, 0.38),
-        inset 0 1px 6px rgba(255, 255, 255, 0.2);
+        0 0 18px rgba(111,72,255,.45),
+        0 0 32px rgba(129,55,255,.18);
     }
 
-    .brand-mark::after {
-      content: "";
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
 
-      position: absolute;
-      inset: 4px;
+      object-fit: cover;
+      object-position: center;
 
-      border:
-        1px solid rgba(255, 255, 255, 0.14);
+      transform: scale(1.35);
 
-      border-radius: 9px;
+      filter:
+        saturate(1.15)
+        contrast(1.1);
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-
       line-height: 1.05;
     }
 
@@ -389,15 +352,14 @@
       color: #cbd0da;
 
       background:
-        rgba(255, 255, 255, 0.035);
+        rgba(255,255,255,.035);
 
       border:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid rgba(255,255,255,.09);
 
       font-size: 13px;
       font-weight: 800;
     }
-
 
     /* =========================================================
        HERO
@@ -425,10 +387,10 @@
       color: #b8c1ff;
 
       background:
-        rgba(102, 113, 255, 0.07);
+        rgba(102,113,255,.07);
 
       border:
-        1px solid rgba(128, 143, 255, 0.27);
+        1px solid rgba(128,143,255,.27);
 
       font-size: 12px;
       font-weight: 800;
@@ -445,7 +407,7 @@
       background: #8b91ff;
 
       box-shadow:
-        0 0 12px rgba(139, 145, 255, 0.8);
+        0 0 12px rgba(139,145,255,.8);
     }
 
     .quote-hero h1 {
@@ -456,9 +418,9 @@
         18px;
 
       font-size:
-        clamp(42px, 7vw, 72px);
+        clamp(42px,7vw,72px);
 
-      line-height: 0.98;
+      line-height: .98;
       letter-spacing: -3px;
     }
 
@@ -470,12 +432,11 @@
       color: #9ba3b0;
 
       font-size:
-        clamp(16px, 2vw, 19px);
+        clamp(16px,2vw,19px);
     }
 
-
     /* =========================================================
-       IMPORTED ESTIMATE
+       IMPORTED PROJECT
     ========================================================= */
 
     .imported-wrap {
@@ -498,12 +459,12 @@
       background:
         linear-gradient(
           145deg,
-          rgba(111, 99, 255, 0.12),
-          rgba(255, 255, 255, 0.025)
+          rgba(111,99,255,.12),
+          rgba(255,255,255,.025)
         );
 
       border:
-        1px solid rgba(126, 137, 255, 0.25);
+        1px solid rgba(126,137,255,.25);
     }
 
     .imported-project.show {
@@ -529,7 +490,6 @@
 
     .imported-project h3 {
       margin-top: 3px;
-
       font-size: 16px;
     }
 
@@ -547,7 +507,6 @@
 
       font-size: 13px;
     }
-
 
     /* =========================================================
        PROGRESS
@@ -586,7 +545,7 @@
       border-radius: 999px;
 
       background:
-        rgba(255, 255, 255, 0.07);
+        rgba(255,255,255,.07);
     }
 
     .progress-bar {
@@ -603,12 +562,12 @@
         );
 
       box-shadow:
-        0 0 18px rgba(116, 103, 255, 0.55);
+        0 0 18px
+        rgba(116,103,255,.55);
 
       transition:
-        width 0.35s ease;
+        width .35s ease;
     }
-
 
     /* =========================================================
        FORM SHELL
@@ -632,20 +591,20 @@
       background:
         linear-gradient(
           145deg,
-          rgba(255, 255, 255, 0.045),
-          rgba(255, 255, 255, 0.013)
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.013)
         );
 
       border:
-        1px solid rgba(255, 255, 255, 0.085);
+        1px solid rgba(255,255,255,.085);
 
       box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.25);
+        0 30px 90px
+        rgba(0,0,0,.25);
     }
 
     .step {
       display: none;
-
       padding: 38px;
     }
 
@@ -653,22 +612,18 @@
       display: block;
 
       animation:
-        stepIn 0.35s ease;
+        stepIn .35s ease;
     }
 
     @keyframes stepIn {
       from {
         opacity: 0;
-
-        transform:
-          translateY(12px);
+        transform: translateY(12px);
       }
 
       to {
         opacity: 1;
-
-        transform:
-          translateY(0);
+        transform: translateY(0);
       }
     }
 
@@ -687,7 +642,7 @@
       margin-bottom: 9px;
 
       font-size:
-        clamp(28px, 5vw, 38px);
+        clamp(28px,5vw,38px);
 
       line-height: 1.05;
       letter-spacing: -1px;
@@ -701,9 +656,8 @@
       color: #919aa7;
     }
 
-
     /* =========================================================
-       FORM FIELDS
+       FIELDS
     ========================================================= */
 
     .field-grid {
@@ -749,8 +703,7 @@
     select {
       min-height: 52px;
 
-      padding:
-        0 15px;
+      padding: 0 15px;
 
       border-radius: 12px;
 
@@ -759,15 +712,15 @@
       color: #ffffff;
 
       background:
-        rgba(255, 255, 255, 0.03);
+        rgba(255,255,255,.03);
 
       border:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid rgba(255,255,255,.09);
 
       transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
     }
 
     textarea {
@@ -818,20 +771,51 @@
     textarea:focus,
     select:focus {
       border-color:
-        rgba(130, 142, 255, 0.55);
+        rgba(130,142,255,.55);
 
       background:
-        rgba(255, 255, 255, 0.045);
+        rgba(255,255,255,.045);
 
       box-shadow:
-        0 0 0 4px rgba(111, 99, 255, 0.08);
+        0 0 0 4px
+        rgba(111,99,255,.08);
     }
 
     .field-error {
       border-color:
-        rgba(255, 102, 125, 0.7) !important;
+        rgba(255,102,125,.8) !important;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(255,80,110,.08) !important;
     }
 
+    .validation-message {
+      display: none;
+
+      margin:
+        -10px 0
+        22px;
+
+      padding: 11px 13px;
+
+      border-radius: 10px;
+
+      color: #ff9aac;
+
+      background:
+        rgba(255,71,105,.07);
+
+      border:
+        1px solid rgba(255,90,120,.16);
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .validation-message.show {
+      display: block;
+    }
 
     /* =========================================================
        CHOICE CARDS
@@ -840,7 +824,7 @@
     .choice-grid {
       display: grid;
       grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
       gap: 11px;
     }
@@ -860,46 +844,44 @@
       cursor: pointer;
 
       background:
-        rgba(255, 255, 255, 0.025);
+        rgba(255,255,255,.025);
 
       border:
-        1px solid rgba(255, 255, 255, 0.075);
+        1px solid rgba(255,255,255,.075);
 
       transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
     }
 
     .choice-card:hover {
       transform: translateY(-2px);
 
       border-color:
-        rgba(126, 139, 255, 0.27);
+        rgba(126,139,255,.27);
     }
 
     .choice-card.selected {
       background:
-        rgba(108, 112, 255, 0.11);
+        rgba(108,112,255,.11);
 
       border-color:
-        rgba(126, 139, 255, 0.5);
+        rgba(126,139,255,.5);
 
       box-shadow:
-        inset 0 0 26px rgba(105, 91, 255, 0.05);
+        inset 0 0 26px
+        rgba(105,91,255,.05);
     }
 
     .choice-card input {
       position: absolute;
-
       opacity: 0;
-
       pointer-events: none;
     }
 
     .choice-card strong {
       display: block;
-
       font-size: 14px;
     }
 
@@ -913,7 +895,6 @@
       font-size: 12px;
     }
 
-
     /* =========================================================
        COLORS
     ========================================================= */
@@ -921,7 +902,7 @@
     .color-grid {
       display: grid;
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
       gap: 10px;
 
@@ -940,26 +921,35 @@
       cursor: pointer;
 
       background:
-        rgba(255, 255, 255, 0.025);
+        rgba(255,255,255,.025);
 
       border:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255,255,255,.07);
 
       text-align: center;
+
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+    }
+
+    .color-choice:hover {
+      transform: translateY(-2px);
     }
 
     .color-choice.selected {
       border-color:
-        rgba(140, 149, 255, 0.58);
+        rgba(140,149,255,.58);
 
       background:
-        rgba(108, 112, 255, 0.09);
+        rgba(108,112,255,.09);
     }
 
     .color-choice input {
       position: absolute;
-
       opacity: 0;
+      pointer-events: none;
     }
 
     .color-dot {
@@ -973,7 +963,7 @@
       border-radius: 50%;
 
       border:
-        2px solid rgba(255, 255, 255, 0.2);
+        2px solid rgba(255,255,255,.2);
     }
 
     .color-choice span {
@@ -1057,9 +1047,8 @@
         );
     }
 
-
     /* =========================================================
-       NAV BUTTONS
+       FORM NAV
     ========================================================= */
 
     .form-nav {
@@ -1074,13 +1063,12 @@
       gap: 12px;
 
       border-top:
-        1px solid rgba(255, 255, 255, 0.06);
+        1px solid rgba(255,255,255,.06);
     }
 
     .form-nav-right {
       margin-left: auto;
     }
-
 
     /* =========================================================
        REVIEW
@@ -1089,7 +1077,7 @@
     .review-grid {
       display: grid;
       grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
       gap: 13px;
     }
@@ -1100,10 +1088,10 @@
       border-radius: 14px;
 
       background:
-        rgba(255, 255, 255, 0.026);
+        rgba(255,255,255,.026);
 
       border:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255,255,255,.07);
     }
 
     .review-card.full {
@@ -1145,12 +1133,12 @@
       background:
         linear-gradient(
           145deg,
-          rgba(104, 112, 255, 0.13),
-          rgba(145, 85, 255, 0.05)
+          rgba(104,112,255,.13),
+          rgba(145,85,255,.05)
         );
 
       border:
-        1px solid rgba(127, 138, 255, 0.28);
+        1px solid rgba(127,138,255,.28);
     }
 
     .final-estimate span {
@@ -1174,9 +1162,8 @@
       font-size: 11px;
     }
 
-
     /* =========================================================
-       SUBMIT STATUS
+       SUBMISSION
     ========================================================= */
 
     .submit-status {
@@ -1195,11 +1182,6 @@
     .submit-status.error {
       color: #ff8fa3;
     }
-
-
-    /* =========================================================
-       SUCCESS SCREEN
-    ========================================================= */
 
     .success-screen {
       display: none;
@@ -1229,26 +1211,27 @@
       background:
         linear-gradient(
           145deg,
-          rgba(109, 132, 255, 0.22),
-          rgba(149, 91, 255, 0.18)
+          rgba(109,132,255,.22),
+          rgba(149,91,255,.18)
         );
 
       border:
-        1px solid rgba(134, 143, 255, 0.3);
+        1px solid rgba(134,143,255,.3);
 
       color: #cbd1ff;
 
       font-size: 30px;
 
       box-shadow:
-        0 0 35px rgba(110, 96, 255, 0.15);
+        0 0 35px
+        rgba(110,96,255,.15);
     }
 
     .success-screen h2 {
       margin-bottom: 12px;
 
       font-size:
-        clamp(30px, 5vw, 46px);
+        clamp(30px,5vw,46px);
 
       letter-spacing: -1.5px;
     }
@@ -1281,11 +1264,6 @@
       font-size: 13px;
     }
 
-
-    /* =========================================================
-       NOTE
-    ========================================================= */
-
     .submission-note {
       max-width: 900px;
 
@@ -1300,17 +1278,15 @@
       font-size: 11px;
     }
 
-
     /* =========================================================
        FOOTER
     ========================================================= */
 
     footer {
-      padding:
-        35px 0;
+      padding: 35px 0;
 
       border-top:
-        1px solid rgba(255, 255, 255, 0.06);
+        1px solid rgba(255,255,255,.06);
 
       color: #737c89;
 
@@ -1326,7 +1302,6 @@
 
       gap: 15px;
     }
-
 
     /* =========================================================
        RESPONSIVE
@@ -1354,7 +1329,7 @@
 
       .color-grid {
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
       }
 
       .step {
@@ -1367,18 +1342,6 @@
         flex-direction: column;
       }
 
-      .form-nav {
-        flex-wrap: wrap;
-      }
-
-      .form-nav .btn {
-        flex: 1;
-      }
-
-      .form-nav-right {
-        margin-left: 0;
-      }
-
       .submit-status {
         text-align: center;
       }
@@ -1388,6 +1351,10 @@
       .container {
         width:
           calc(100% - 24px);
+      }
+
+      nav {
+        min-height: 70px;
       }
 
       .brand-main {
@@ -1410,16 +1377,48 @@
       }
 
       .quote-hero {
-        padding-bottom: 40px;
+        padding:
+          115px 0
+          40px;
       }
 
       .form-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
       }
 
-      .form-nav .btn:last-child {
-        grid-column: auto;
+      .form-nav .btn {
+        width: 100%;
+        padding: 0 14px;
+
+        font-size: 13px;
+      }
+
+      .form-nav > div:empty {
+        display: none;
+      }
+
+      .form-nav-right {
+        margin-left: 0;
+        grid-column: 1 / -1;
+      }
+
+      .step[data-step="1"] .form-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .step[data-step="1"] .form-nav .btn {
+        grid-column: 1;
+      }
+
+      .success-actions {
+        flex-direction: column;
+      }
+
+      .success-actions .btn {
+        width: 100%;
       }
     }
 
@@ -1427,9 +1426,9 @@
       *,
       *::before,
       *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
         scroll-behavior: auto !important;
       }
     }
@@ -1438,18 +1437,11 @@
 
 <body>
 
-  <!-- BACKGROUND -->
-
   <div class="ambient">
-
     <div class="orb orb-one"></div>
     <div class="orb orb-two"></div>
     <div class="orb orb-three"></div>
-
   </div>
-
-
-  <!-- HEADER -->
 
   <header>
 
@@ -1463,7 +1455,12 @@
         >
 
           <div class="brand-mark">
-            F
+
+            <img
+              src="28B8892B-8EC4-4866-A6D1-FD70BDA9896B.png"
+              alt="Forged Digital Designs"
+            >
+
           </div>
 
           <div class="brand-text">
@@ -1480,7 +1477,6 @@
 
         </a>
 
-
         <a
           href="index.html"
           class="back-link"
@@ -1494,50 +1490,34 @@
 
   </header>
 
-
   <main>
-
-    <!-- HERO -->
 
     <section class="quote-hero">
 
       <div class="container">
 
         <div class="eyebrow">
-
           <span class="eyebrow-dot"></span>
-
           Project Intake
-
         </div>
 
-
         <h1>
-
           Let's build something
-
           <span class="gradient-text">
             worth remembering.
           </span>
-
         </h1>
 
-
         <p>
-
           Tell us about your business,
           what you need,
           and what you want your website to accomplish.
           We'll use it to shape your project.
-
         </p>
 
       </div>
 
     </section>
-
-
-    <!-- IMPORTED ESTIMATE -->
 
     <div class="container">
 
@@ -1562,7 +1542,6 @@
 
             </div>
 
-
             <div
               class="imported-price gradient-text"
               id="importedPrice"
@@ -1571,7 +1550,6 @@
             </div>
 
           </div>
-
 
           <div
             class="imported-details"
@@ -1583,9 +1561,6 @@
       </div>
 
     </div>
-
-
-    <!-- PROGRESS -->
 
     <div class="container">
 
@@ -1603,7 +1578,6 @@
 
         </div>
 
-
         <div class="progress-track">
 
           <div
@@ -1616,9 +1590,6 @@
       </div>
 
     </div>
-
-
-    <!-- FORM -->
 
     <section class="form-section">
 
@@ -1639,10 +1610,7 @@
               value="New Forged Digital Designs Project Request"
             >
 
-
-            <!-- =================================================
-                 STEP 1
-            ================================================= -->
+            <!-- STEP 1 -->
 
             <section
               class="step active"
@@ -1658,13 +1626,17 @@
               </h2>
 
               <p class="step-intro">
-
                 Start with the basics.
                 This helps us understand the business
                 behind the website.
-
               </p>
 
+              <div
+                class="validation-message"
+                data-validation-message
+              >
+                Please complete the required fields before continuing.
+              </div>
 
               <div class="field-grid">
 
@@ -1688,7 +1660,6 @@
 
                 </div>
 
-
                 <div class="field">
 
                   <label
@@ -1707,7 +1678,6 @@
                   >
 
                 </div>
-
 
                 <div class="field">
 
@@ -1729,7 +1699,6 @@
 
                 </div>
 
-
                 <div class="field">
 
                   <label
@@ -1750,7 +1719,6 @@
 
                 </div>
 
-
                 <div class="field">
 
                   <label
@@ -1768,7 +1736,6 @@
                   >
 
                 </div>
-
 
                 <div class="field">
 
@@ -1790,7 +1757,6 @@
 
               </div>
 
-
               <div class="form-nav">
 
                 <div></div>
@@ -1807,10 +1773,7 @@
 
             </section>
 
-
-            <!-- =================================================
-                 STEP 2
-            ================================================= -->
+            <!-- STEP 2 -->
 
             <section
               class="step"
@@ -1826,120 +1789,102 @@
               </h2>
 
               <p class="step-intro">
-
                 Choose everything that matters.
                 You can select more than one.
-
               </p>
-
 
               <div class="choice-grid">
 
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Generate leads"
                   >
-
                   <div>
                     <strong>Generate Leads</strong>
                     <span>Get customers to call or message</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Request quotes"
                   >
-
                   <div>
                     <strong>Request Quotes</strong>
                     <span>Let customers submit project details</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Book appointments"
                   >
-
                   <div>
                     <strong>Book Appointments</strong>
                     <span>Make scheduling easier</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Showcase work"
                   >
-
                   <div>
                     <strong>Showcase Work</strong>
                     <span>Photos, projects, before and afters</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Explain services"
                   >
-
                   <div>
                     <strong>Explain Services</strong>
                     <span>Make your offers clear</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Build trust"
                   >
-
                   <div>
                     <strong>Build Trust</strong>
                     <span>Look professional and established</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Improve Google presence"
                   >
-
                   <div>
                     <strong>Improve Google Presence</strong>
                     <span>Better search foundations</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-choice>
+                <label class="choice-card">
                   <input
                     type="checkbox"
                     name="goal"
                     value="Other"
                   >
-
                   <div>
                     <strong>Something Else</strong>
                     <span>Tell us in the notes</span>
@@ -1948,10 +1893,9 @@
 
               </div>
 
-
               <div
                 class="field"
-                style="margin-top: 25px;"
+                style="margin-top:25px;"
               >
 
                 <label
@@ -1968,7 +1912,6 @@
                 ></textarea>
 
               </div>
-
 
               <div class="form-nav">
 
@@ -1992,10 +1935,7 @@
 
             </section>
 
-
-            <!-- =================================================
-                 STEP 3
-            ================================================= -->
+            <!-- STEP 3 -->
 
             <section
               class="step"
@@ -2011,98 +1951,83 @@
               </h2>
 
               <p class="step-intro">
-
                 You don't need to speak designer.
                 Just tell us what feels closest
                 to what you want.
-
               </p>
-
 
               <label class="field-label">
                 Overall Style
               </label>
 
-
               <div class="choice-grid">
 
-                <label class="choice-card" data-radio-choice>
+                <label class="choice-card">
                   <input
                     type="radio"
                     name="style"
                     value="Modern and clean"
                   >
-
                   <div>
                     <strong>Modern & Clean</strong>
                     <span>Minimal and polished</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-radio-choice>
+                <label class="choice-card">
                   <input
                     type="radio"
                     name="style"
                     value="Bold and high impact"
                   >
-
                   <div>
                     <strong>Bold & High Impact</strong>
                     <span>Big visuals and strong personality</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-radio-choice>
+                <label class="choice-card">
                   <input
                     type="radio"
                     name="style"
                     value="Premium and luxury"
                   >
-
                   <div>
                     <strong>Premium / Luxury</strong>
                     <span>Expensive, refined feel</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-radio-choice>
+                <label class="choice-card">
                   <input
                     type="radio"
                     name="style"
                     value="Friendly and approachable"
                   >
-
                   <div>
                     <strong>Friendly</strong>
                     <span>Welcoming and approachable</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-radio-choice>
+                <label class="choice-card">
                   <input
                     type="radio"
                     name="style"
                     value="Rugged and industrial"
                   >
-
                   <div>
                     <strong>Rugged / Industrial</strong>
                     <span>Strong and practical</span>
                   </div>
                 </label>
 
-
-                <label class="choice-card" data-radio-choice>
+                <label class="choice-card">
                   <input
                     type="radio"
                     name="style"
                     value="Not sure"
                   >
-
                   <div>
                     <strong>You Decide</strong>
                     <span>Recommend what fits the business</span>
@@ -2111,107 +2036,90 @@
 
               </div>
 
-
-              <div style="margin-top: 28px;">
+              <div style="margin-top:28px;">
 
                 <label class="field-label">
                   Preferred Color Direction
                 </label>
 
-
                 <div class="color-grid">
 
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="Blue"
                     >
-
                     <div class="color-dot color-blue"></div>
                     <span>Blue</span>
                   </label>
 
-
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="Purple"
                     >
-
                     <div class="color-dot color-purple"></div>
                     <span>Purple</span>
                   </label>
 
-
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="Red or orange"
                     >
-
                     <div class="color-dot color-red"></div>
                     <span>Red / Orange</span>
                   </label>
 
-
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="Green"
                     >
-
                     <div class="color-dot color-green"></div>
                     <span>Green</span>
                   </label>
 
-
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="Black or dark"
                     >
-
                     <div class="color-dot color-black"></div>
                     <span>Dark</span>
                   </label>
 
-
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="White or light"
                     >
-
                     <div class="color-dot color-light"></div>
                     <span>Light</span>
                   </label>
 
-
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="Earth tones"
                     >
-
                     <div class="color-dot color-earth"></div>
                     <span>Earth Tones</span>
                   </label>
 
-
-                  <label class="color-choice" data-color-choice>
+                  <label class="color-choice">
                     <input
                       type="radio"
                       name="colorDirection"
                       value="Recommend colors"
                     >
-
                     <div class="color-dot color-unsure"></div>
                     <span>You Decide</span>
                   </label>
@@ -2220,10 +2128,9 @@
 
               </div>
 
-
               <div
                 class="field-grid"
-                style="margin-top: 28px;"
+                style="margin-top:28px;"
               >
 
                 <div class="field">
@@ -2239,19 +2146,13 @@
                     id="logoStatus"
                     name="logoStatus"
                   >
-
-                    <option value="">
-                      Select one
-                    </option>
-
+                    <option value="">Select one</option>
                     <option>Yes</option>
                     <option>No</option>
                     <option>Yes, but I want it improved</option>
-
                   </select>
 
                 </div>
-
 
                 <div class="field">
 
@@ -2276,7 +2177,6 @@
 
               </div>
 
-
               <div class="form-nav">
 
                 <button
@@ -2299,10 +2199,7 @@
 
             </section>
 
-
-            <!-- =================================================
-                 STEP 4
-            ================================================= -->
+            <!-- STEP 4 -->
 
             <section
               class="step"
@@ -2318,13 +2215,10 @@
               </h2>
 
               <p class="step-intro">
-
                 These answers help us understand
                 what already exists and what needs
                 to be built from scratch.
-
               </p>
-
 
               <div class="field-grid">
 
@@ -2341,19 +2235,13 @@
                     id="existingSite"
                     name="existingSite"
                   >
-
-                    <option value="">
-                      Select one
-                    </option>
-
+                    <option value="">Select one</option>
                     <option>No website yet</option>
                     <option>Yes, redesign it</option>
                     <option>Yes, keep most of it</option>
-
                   </select>
 
                 </div>
-
 
                 <div class="field">
 
@@ -2376,7 +2264,6 @@
 
                 </div>
 
-
                 <div class="field">
 
                   <label
@@ -2390,20 +2277,14 @@
                     id="domainStatus"
                     name="domainStatus"
                   >
-
-                    <option value="">
-                      Select one
-                    </option>
-
+                    <option value="">Select one</option>
                     <option>I already own one</option>
                     <option>I need to buy one</option>
                     <option>I need help choosing one</option>
                     <option>I'm not sure</option>
-
                   </select>
 
                 </div>
-
 
                 <div class="field">
 
@@ -2418,110 +2299,92 @@
                     id="pageEstimate"
                     name="pageEstimate"
                   >
-
-                    <option value="">
-                      Select one
-                    </option>
-
+                    <option value="">Select one</option>
                     <option>1 page</option>
                     <option>2-3 pages</option>
                     <option>4-5 pages</option>
                     <option>6+ pages</option>
                     <option>Not sure</option>
-
                   </select>
 
                 </div>
 
               </div>
 
-
-              <div style="margin-top: 28px;">
+              <div style="margin-top:28px;">
 
                 <label class="field-label">
                   Extra Services
                 </label>
 
-
                 <div class="choice-grid">
 
-                  <label class="choice-card" data-choice>
+                  <label class="choice-card">
                     <input
                       type="checkbox"
                       name="extra"
                       value="Google Business setup"
                     >
-
                     <div>
                       <strong>Google Business</strong>
                       <span>Setup or optimization help</span>
                     </div>
                   </label>
 
-
-                  <label class="choice-card" data-choice>
+                  <label class="choice-card">
                     <input
                       type="checkbox"
                       name="extra"
                       value="Domain setup"
                     >
-
                     <div>
                       <strong>Domain Setup</strong>
                       <span>Purchase and connection help</span>
                     </div>
                   </label>
 
-
-                  <label class="choice-card" data-choice>
+                  <label class="choice-card">
                     <input
                       type="checkbox"
                       name="extra"
                       value="SEO"
                     >
-
                     <div>
                       <strong>SEO</strong>
                       <span>Stronger search foundation</span>
                     </div>
                   </label>
 
-
-                  <label class="choice-card" data-choice>
+                  <label class="choice-card">
                     <input
                       type="checkbox"
                       name="extra"
                       value="Ongoing maintenance"
                     >
-
                     <div>
                       <strong>Maintenance</strong>
                       <span>Keep us managing the site</span>
                     </div>
                   </label>
 
-
-                  <label class="choice-card" data-choice>
+                  <label class="choice-card">
                     <input
                       type="checkbox"
                       name="extra"
                       value="Quote or booking system"
                     >
-
                     <div>
                       <strong>Quote / Booking System</strong>
                       <span>Interactive customer tools</span>
                     </div>
                   </label>
 
-
-                  <label class="choice-card" data-choice>
+                  <label class="choice-card">
                     <input
                       type="checkbox"
                       name="extra"
                       value="Gallery"
                     >
-
                     <div>
                       <strong>Photo Gallery</strong>
                       <span>Portfolio or before/after work</span>
@@ -2532,10 +2395,9 @@
 
               </div>
 
-
               <div
                 class="field-grid"
-                style="margin-top: 28px;"
+                style="margin-top:28px;"
               >
 
                 <div class="field">
@@ -2551,22 +2413,16 @@
                     id="budget"
                     name="budget"
                   >
-
-                    <option value="">
-                      Select one
-                    </option>
-
+                    <option value="">Select one</option>
                     <option>Under $500</option>
                     <option>$500-$750</option>
                     <option>$750-$1,000</option>
                     <option>$1,000-$1,500</option>
                     <option>$1,500+</option>
                     <option>Not sure yet</option>
-
                   </select>
 
                 </div>
-
 
                 <div class="field">
 
@@ -2581,21 +2437,15 @@
                     id="timeline"
                     name="timeline"
                   >
-
-                    <option value="">
-                      Select one
-                    </option>
-
+                    <option value="">Select one</option>
                     <option>As soon as possible</option>
                     <option>Within 1-2 weeks</option>
                     <option>Within a month</option>
                     <option>1-3 months</option>
                     <option>No rush</option>
-
                   </select>
 
                 </div>
-
 
                 <div class="field field-full">
 
@@ -2615,7 +2465,6 @@
                 </div>
 
               </div>
-
 
               <div class="form-nav">
 
@@ -2639,10 +2488,7 @@
 
             </section>
 
-
-            <!-- =================================================
-                 STEP 5
-            ================================================= -->
+            <!-- STEP 5 -->
 
             <section
               class="step"
@@ -2658,19 +2504,15 @@
               </h2>
 
               <p class="step-intro">
-
                 Make sure everything looks right.
                 You can go back and change anything
                 before sending it.
-
               </p>
-
 
               <div
                 class="review-grid"
                 id="reviewGrid"
               ></div>
-
 
               <div
                 class="final-estimate"
@@ -2689,7 +2531,6 @@
 
                 </div>
 
-
                 <strong
                   class="gradient-text"
                   id="finalEstimate"
@@ -2698,7 +2539,6 @@
                 </strong>
 
               </div>
-
 
               <div class="form-nav">
 
@@ -2720,7 +2560,6 @@
 
               </div>
 
-
               <div
                 class="submit-status"
                 id="submitStatus"
@@ -2729,11 +2568,6 @@
             </section>
 
           </form>
-
-
-          <!-- ===================================================
-               SUCCESS
-          ==================================================== -->
 
           <div
             class="success-screen"
@@ -2744,22 +2578,17 @@
               ✓
             </div>
 
-
             <h2>
               Project request sent.
             </h2>
 
-
             <p>
-
               Your project details have been sent to
               Forged Digital Designs.
               We'll review everything you submitted
               and use it to determine the right next step
               for your website.
-
             </p>
-
 
             <div class="success-actions">
 
@@ -2771,7 +2600,6 @@
                 Copy Project Brief
               </button>
 
-
               <a
                 href="index.html"
                 class="btn btn-secondary"
@@ -2780,7 +2608,6 @@
               </a>
 
             </div>
-
 
             <div
               class="copied-message"
@@ -2791,12 +2618,9 @@
 
         </div>
 
-
         <p class="submission-note">
-
           Your progress is saved in this browser while
           you complete the questionnaire.
-
         </p>
 
       </div>
@@ -2804,7 +2628,6 @@
     </section>
 
   </main>
-
 
   <footer>
 
@@ -2826,37 +2649,48 @@
 
   </footer>
 
-
   <script>
-    /* =========================================================
-       BASIC VARIABLES
-    ========================================================= */
-
     const form =
-      document.getElementById("projectForm");
+      document.getElementById(
+        "projectForm"
+      );
 
     const steps =
       Array.from(
-        document.querySelectorAll(".step")
+        document.querySelectorAll(
+          ".step"
+        )
       );
 
     const progressBar =
-      document.getElementById("progressBar");
+      document.getElementById(
+        "progressBar"
+      );
 
     const progressText =
-      document.getElementById("progressText");
+      document.getElementById(
+        "progressText"
+      );
 
     const progressPercent =
-      document.getElementById("progressPercent");
+      document.getElementById(
+        "progressPercent"
+      );
 
     const successScreen =
-      document.getElementById("successScreen");
+      document.getElementById(
+        "successScreen"
+      );
 
     const submitProject =
-      document.getElementById("submitProject");
+      document.getElementById(
+        "submitProject"
+      );
 
     const submitStatus =
-      document.getElementById("submitStatus");
+      document.getElementById(
+        "submitStatus"
+      );
 
     let currentStep = 1;
 
@@ -2866,9 +2700,8 @@
 
     let finalBrief = "";
 
-
     /* =========================================================
-       READ URL PARAMETERS
+       URL PARAMETERS
     ========================================================= */
 
     const urlParams =
@@ -2884,7 +2717,6 @@
 
     importedPackage =
       urlParams.get("package") || "";
-
 
     const importedProject =
       document.getElementById(
@@ -2906,36 +2738,46 @@
         "importedDetails"
       );
 
-
     const packageInfo = {
-
       ignite: {
-        title: "Ignite Website Package",
-        price: "399",
+        title:
+          "Ignite Website Package",
+
+        price:
+          "399",
+
         details:
           "1-page custom website, responsive design, contact section, SEO foundations, and domain connection assistance."
       },
 
       forge: {
-        title: "Forge Website Package",
-        price: "699",
+        title:
+          "Forge Website Package",
+
+        price:
+          "699",
+
         details:
           "Custom business website with multiple sections or pages, forms, mobile optimization, SEO foundations, and Google Business assistance."
       },
 
       foundry: {
-        title: "Foundry Website Package",
-        price: "999+",
+        title:
+          "Foundry Website Package",
+
+        price:
+          "999+",
+
         details:
           "Advanced custom website with multiple pages, custom functionality, domain configuration, Google Business setup, and launch assistance."
       }
-
     };
-
 
     if (importedEstimate) {
 
-      importedProject.classList.add("show");
+      importedProject.classList.add(
+        "show"
+      );
 
       importedTitle.textContent =
         "Configured Website Project";
@@ -2956,51 +2798,60 @@
     ) {
 
       const data =
-        packageInfo[importedPackage];
+        packageInfo[
+          importedPackage
+        ];
 
-      importedProject.classList.add("show");
+      importedProject.classList.add(
+        "show"
+      );
 
       importedTitle.textContent =
         data.title;
 
       importedPrice.textContent =
-        "$" + data.price;
+        "$" +
+        data.price;
 
       importedDetails.textContent =
         data.details;
 
       importedEstimate =
-        data.price.replace("+", "");
+        data.price.replace(
+          "+",
+          ""
+        );
 
       importedProjectText =
         data.details;
-
     }
-
 
     /* =========================================================
        STEP MANAGEMENT
     ========================================================= */
 
-    function showStep(stepNumber) {
+    function showStep(
+      stepNumber
+    ) {
 
       currentStep =
         stepNumber;
 
-      steps.forEach((step) => {
+      steps.forEach(
+        (step) => {
 
-        const active =
-          Number(
-            step.dataset.step
-          ) === currentStep;
+          const active =
+            Number(
+              step.dataset.step
+            ) === currentStep;
 
-        step.classList.toggle(
-          "active",
-          active
-        );
+          step.classList.toggle(
+            "active",
+            active
+          );
 
-      });
-
+        }
+      );
 
       const percent =
         currentStep * 20;
@@ -3016,14 +2867,11 @@
       progressPercent.textContent =
         percent + "%";
 
-
       window.scrollTo({
         top: 90,
         behavior: "smooth"
       });
-
     }
-
 
     /* =========================================================
        VALIDATION
@@ -3043,8 +2891,12 @@
           "[required]"
         );
 
-      let valid = true;
+      const message =
+        activeStep.querySelector(
+          "[data-validation-message]"
+        );
 
+      let valid = true;
 
       requiredFields.forEach(
         (field) => {
@@ -3053,20 +2905,20 @@
             "field-error"
           );
 
-
-          if (!field.value.trim()) {
+          if (
+            !field.value.trim()
+          ) {
 
             field.classList.add(
               "field-error"
             );
 
             valid = false;
-
           }
 
-
           if (
-            field.type === "email" &&
+            field.type ===
+              "email" &&
             field.value.trim() &&
             !field.checkValidity()
           ) {
@@ -3076,12 +2928,18 @@
             );
 
             valid = false;
-
           }
 
         }
       );
 
+      if (message) {
+
+        message.classList.toggle(
+          "show",
+          !valid
+        );
+      }
 
       if (!valid) {
 
@@ -3093,94 +2951,106 @@
         if (firstError) {
 
           firstError.focus();
+        }
+      }
 
+      return valid;
+    }
+
+    form.addEventListener(
+      "input",
+      (event) => {
+
+        if (
+          event.target.classList.contains(
+            "field-error"
+          )
+        ) {
+
+          event.target.classList.remove(
+            "field-error"
+          );
         }
 
       }
-
-
-      return valid;
-
-    }
-
+    );
 
     /* =========================================================
        NEXT / BACK
     ========================================================= */
 
     document
-      .querySelectorAll("[data-next]")
-      .forEach((button) => {
+      .querySelectorAll(
+        "[data-next]"
+      )
+      .forEach(
+        (button) => {
 
-        button.addEventListener(
-          "click",
-          () => {
+          button.addEventListener(
+            "click",
+            () => {
 
-            if (
-              validateCurrentStep()
-            ) {
+              if (
+                validateCurrentStep()
+              ) {
+
+                saveForm();
+
+                showStep(
+                  currentStep + 1
+                );
+              }
+
+            }
+          );
+
+        }
+      );
+
+    document
+      .querySelectorAll(
+        "[data-back]"
+      )
+      .forEach(
+        (button) => {
+
+          button.addEventListener(
+            "click",
+            () => {
 
               saveForm();
 
               showStep(
-                currentStep + 1
+                currentStep - 1
               );
 
             }
+          );
 
-          }
-        );
-
-      });
-
-
-    document
-      .querySelectorAll("[data-back]")
-      .forEach((button) => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            saveForm();
-
-            showStep(
-              currentStep - 1
-            );
-
-          }
-        );
-
-      });
-
-
-    /* =========================================================
-       CHOICE CARDS
-    ========================================================= */
-
-    const checkboxChoices =
-      document.querySelectorAll(
-        "[data-choice]"
+        }
       );
 
-    checkboxChoices.forEach(
-      (card) => {
+    /* =========================================================
+       CHOICE VISUALS
+       FIXED: let the label handle the toggle naturally
+    ========================================================= */
 
-        const input =
-          card.querySelector("input");
+    function updateChoiceVisuals() {
 
-        card.addEventListener(
-          "click",
-          (event) => {
+      document
+        .querySelectorAll(
+          ".choice-card, .color-choice"
+        )
+        .forEach(
+          (card) => {
 
-            if (
-              event.target.tagName !==
-              "INPUT"
-            ) {
+            const input =
+              card.querySelector(
+                "input"
+              );
 
-              input.checked =
-                !input.checked;
-
+            if (!input) {
+              return;
             }
 
             card.classList.toggle(
@@ -3188,98 +3058,29 @@
               input.checked
             );
 
-            saveForm();
-
           }
         );
+    }
 
-      }
-    );
+    document
+      .querySelectorAll(
+        ".choice-card input, .color-choice input"
+      )
+      .forEach(
+        (input) => {
 
+          input.addEventListener(
+            "change",
+            () => {
 
-    const radioChoices =
-      document.querySelectorAll(
-        "[data-radio-choice]"
+              updateChoiceVisuals();
+              saveForm();
+
+            }
+          );
+
+        }
       );
-
-    radioChoices.forEach(
-      (card) => {
-
-        const input =
-          card.querySelector("input");
-
-        card.addEventListener(
-          "click",
-          () => {
-
-            input.checked = true;
-
-            radioChoices.forEach(
-              (other) => {
-
-                const otherInput =
-                  other.querySelector(
-                    "input"
-                  );
-
-                other.classList.toggle(
-                  "selected",
-                  otherInput.checked
-                );
-
-              }
-            );
-
-            saveForm();
-
-          }
-        );
-
-      }
-    );
-
-
-    const colorChoices =
-      document.querySelectorAll(
-        "[data-color-choice]"
-      );
-
-    colorChoices.forEach(
-      (card) => {
-
-        const input =
-          card.querySelector("input");
-
-        card.addEventListener(
-          "click",
-          () => {
-
-            input.checked = true;
-
-            colorChoices.forEach(
-              (other) => {
-
-                const otherInput =
-                  other.querySelector(
-                    "input"
-                  );
-
-                other.classList.toggle(
-                  "selected",
-                  otherInput.checked
-                );
-
-              }
-            );
-
-            saveForm();
-
-          }
-        );
-
-      }
-    );
-
 
     /* =========================================================
        SAVE FORM
@@ -3290,8 +3091,9 @@
       const data = {};
 
       const formData =
-        new FormData(form);
-
+        new FormData(
+          form
+        );
 
       for (
         const [
@@ -3307,7 +3109,9 @@
           continue;
         }
 
-        if (data[key]) {
+        if (
+          data[key]
+        ) {
 
           if (
             !Array.isArray(
@@ -3316,26 +3120,29 @@
           ) {
 
             data[key] =
-              [data[key]];
-
+              [
+                data[key]
+              ];
           }
 
-          data[key].push(value);
+          data[key].push(
+            value
+          );
 
         } else {
 
-          data[key] = value;
-
+          data[key] =
+            value;
         }
-
       }
-
 
       try {
 
         localStorage.setItem(
           "forgedProjectForm",
-          JSON.stringify(data)
+          JSON.stringify(
+            data
+          )
         );
 
       } catch (error) {
@@ -3343,26 +3150,21 @@
         console.log(
           "Form save unavailable."
         );
-
       }
-
     }
-
 
     form.addEventListener(
       "input",
       saveForm
     );
 
-
     form.addEventListener(
       "change",
       saveForm
     );
 
-
     /* =========================================================
-       RESTORE SAVED FORM
+       RESTORE
     ========================================================= */
 
     function restoreForm() {
@@ -3381,16 +3183,15 @@
       } catch (error) {
 
         return;
-
       }
-
 
       if (!saved) {
         return;
       }
 
-
-      Object.keys(saved).forEach(
+      Object.keys(
+        saved
+      ).forEach(
         (key) => {
 
           const fields =
@@ -3406,7 +3207,6 @@
             )
               ? saved[key]
               : [saved[key]];
-
 
           fields.forEach(
             (field) => {
@@ -3427,7 +3227,6 @@
 
                 field.value =
                   saved[key];
-
               }
 
             }
@@ -3436,40 +3235,13 @@
         }
       );
 
-
       updateChoiceVisuals();
-
     }
-
-
-    function updateChoiceVisuals() {
-
-      document
-        .querySelectorAll(
-          "[data-choice], [data-radio-choice], [data-color-choice]"
-        )
-        .forEach((card) => {
-
-          const input =
-            card.querySelector(
-              "input"
-            );
-
-          card.classList.toggle(
-            "selected",
-            input.checked
-          );
-
-        });
-
-    }
-
 
     restoreForm();
 
-
     /* =========================================================
-       REVIEW SCREEN
+       REVIEW
     ========================================================= */
 
     const reviewButton =
@@ -3487,8 +3259,9 @@
         "finalEstimate"
       );
 
-
-    function getCheckedValues(name) {
+    function getCheckedValues(
+      name
+    ) {
 
       return Array.from(
         form.querySelectorAll(
@@ -3502,24 +3275,26 @@
           input.value
       )
       .join(", ");
-
     }
 
-
-    function fieldValue(id) {
+    function fieldValue(
+      id
+    ) {
 
       const element =
-        document.getElementById(id);
+        document.getElementById(
+          id
+        );
 
       return element &&
         element.value.trim()
           ? element.value.trim()
           : "Not provided";
-
     }
 
-
-    function selectedRadio(name) {
+    function selectedRadio(
+      name
+    ) {
 
       const input =
         form.querySelector(
@@ -3531,9 +3306,7 @@
       return input
         ? input.value
         : "Not selected";
-
     }
-
 
     function createReviewCard(
       label,
@@ -3548,8 +3321,11 @@
 
       card.className =
         "review-card" +
-        (full ? " full" : "");
-
+        (
+          full
+            ? " full"
+            : ""
+        );
 
       const labelElement =
         document.createElement(
@@ -3562,7 +3338,6 @@
       labelElement.textContent =
         label;
 
-
       const valueElement =
         document.createElement(
           "div"
@@ -3572,8 +3347,8 @@
         "review-value";
 
       valueElement.textContent =
-        value || "Not provided";
-
+        value ||
+        "Not provided";
 
       card.appendChild(
         labelElement
@@ -3586,20 +3361,19 @@
       reviewGrid.appendChild(
         card
       );
-
     }
-
 
     function buildReview() {
 
-      reviewGrid.innerHTML = "";
-
+      reviewGrid.innerHTML =
+        "";
 
       createReviewCard(
         "Client",
-        fieldValue("name")
+        fieldValue(
+          "name"
+        )
       );
-
 
       createReviewCard(
         "Business",
@@ -3608,39 +3382,42 @@
         )
       );
 
-
       createReviewCard(
         "Phone",
-        fieldValue("phone")
+        fieldValue(
+          "phone"
+        )
       );
-
 
       createReviewCard(
         "Email",
-        fieldValue("email")
+        fieldValue(
+          "email"
+        )
       );
-
 
       createReviewCard(
         "Business Type",
-        fieldValue("industry")
+        fieldValue(
+          "industry"
+        )
       );
-
 
       createReviewCard(
         "Location",
-        fieldValue("location")
+        fieldValue(
+          "location"
+        )
       );
-
 
       createReviewCard(
         "Website Goals",
         getCheckedValues(
           "goal"
-        ) || "Not selected",
+        ) ||
+        "Not selected",
         true
       );
-
 
       createReviewCard(
         "Definition of Success",
@@ -3650,14 +3427,12 @@
         true
       );
 
-
       createReviewCard(
         "Visual Style",
         selectedRadio(
           "style"
         )
       );
-
 
       createReviewCard(
         "Color Direction",
@@ -3666,14 +3441,12 @@
         )
       );
 
-
       createReviewCard(
         "Logo",
         fieldValue(
           "logoStatus"
         )
       );
-
 
       createReviewCard(
         "Existing Website",
@@ -3682,14 +3455,12 @@
         )
       );
 
-
       createReviewCard(
         "Existing URL",
         fieldValue(
           "existingUrl"
         )
       );
-
 
       createReviewCard(
         "Domain",
@@ -3698,7 +3469,6 @@
         )
       );
 
-
       createReviewCard(
         "Approximate Pages",
         fieldValue(
@@ -3706,34 +3476,36 @@
         )
       );
 
-
       createReviewCard(
         "Budget",
-        fieldValue("budget")
+        fieldValue(
+          "budget"
+        )
       );
-
 
       createReviewCard(
         "Timeline",
-        fieldValue("timeline")
+        fieldValue(
+          "timeline"
+        )
       );
-
 
       createReviewCard(
         "Extra Services",
         getCheckedValues(
           "extra"
-        ) || "None selected",
+        ) ||
+        "None selected",
         true
       );
-
 
       createReviewCard(
         "Additional Notes",
-        fieldValue("notes"),
+        fieldValue(
+          "notes"
+        ),
         true
       );
-
 
       if (
         importedEstimate
@@ -3749,41 +3521,36 @@
 
         finalEstimate.textContent =
           "Custom";
-
       }
-
     }
-
 
     reviewButton.addEventListener(
       "click",
       () => {
 
         saveForm();
-
         buildReview();
-
         showStep(5);
 
       }
     );
 
-
     /* =========================================================
-       CREATE PROJECT BRIEF
+       PROJECT BRIEF
     ========================================================= */
 
     function createProjectBrief() {
 
       const lines = [
-
         "FORGED DIGITAL DESIGNS",
         "PROJECT BRIEF",
         "",
         "CLIENT INFORMATION",
 
         "Name: " +
-          fieldValue("name"),
+          fieldValue(
+            "name"
+          ),
 
         "Business: " +
           fieldValue(
@@ -3791,23 +3558,32 @@
           ),
 
         "Phone: " +
-          fieldValue("phone"),
+          fieldValue(
+            "phone"
+          ),
 
         "Email: " +
-          fieldValue("email"),
+          fieldValue(
+            "email"
+          ),
 
         "Location: " +
-          fieldValue("location"),
+          fieldValue(
+            "location"
+          ),
 
         "Industry: " +
-          fieldValue("industry"),
+          fieldValue(
+            "industry"
+          ),
 
         "",
         "WEBSITE GOALS",
 
         getCheckedValues(
           "goal"
-        ) || "Not selected",
+        ) ||
+        "Not selected",
 
         "",
         "SUCCESS LOOKS LIKE",
@@ -3874,18 +3650,22 @@
         "BUDGET & TIMELINE",
 
         "Budget: " +
-          fieldValue("budget"),
+          fieldValue(
+            "budget"
+          ),
 
         "Timeline: " +
-          fieldValue("timeline"),
+          fieldValue(
+            "timeline"
+          ),
 
         "",
         "ADDITIONAL NOTES",
 
-        fieldValue("notes")
-
+        fieldValue(
+          "notes"
+        )
       ];
-
 
       if (
         importedPackage
@@ -3896,9 +3676,7 @@
           "SELECTED PACKAGE",
           importedPackage
         );
-
       }
-
 
       if (
         importedEstimate
@@ -3912,9 +3690,7 @@
               importedEstimate
             ).toLocaleString()
         );
-
       }
-
 
       if (
         importedProjectText
@@ -3925,17 +3701,15 @@
           "ESTIMATOR CONFIGURATION",
           importedProjectText
         );
-
       }
 
-
-      return lines.join("\n");
-
+      return lines.join(
+        "\n"
+      );
     }
 
-
     /* =========================================================
-       FORMSPREE SUBMISSION
+       SUBMIT TO FORMSPREE
     ========================================================= */
 
     form.addEventListener(
@@ -3944,21 +3718,12 @@
 
         event.preventDefault();
 
-
-        if (
-          !validateCurrentStep()
-        ) {
-          return;
-        }
-
-
         saveForm();
 
         buildReview();
 
         finalBrief =
           createProjectBrief();
-
 
         submitProject.disabled =
           true;
@@ -3973,22 +3738,15 @@
         submitStatus.textContent =
           "Sending your project request...";
 
-
         const formData =
-          new FormData(form);
-
-
-        /*
-          Extra fields sent to Formspree.
-          This makes the email much easier to read
-          and preserves the complete project brief.
-        */
+          new FormData(
+            form
+          );
 
         formData.append(
           "Project Brief",
           finalBrief
         );
-
 
         if (
           importedPackage
@@ -3998,9 +3756,7 @@
             "Selected Package",
             importedPackage
           );
-
         }
-
 
         if (
           importedEstimate
@@ -4013,9 +3769,7 @@
               importedEstimate
             ).toLocaleString()
           );
-
         }
-
 
         if (
           importedProjectText
@@ -4025,9 +3779,7 @@
             "Estimator Configuration",
             importedProjectText
           );
-
         }
-
 
         try {
 
@@ -4035,8 +3787,12 @@
             await fetch(
               "https://formspree.io/f/xkjweqpd",
               {
-                method: "POST",
-                body: formData,
+                method:
+                  "POST",
+
+                body:
+                  formData,
+
                 headers: {
                   Accept:
                     "application/json"
@@ -4044,15 +3800,14 @@
               }
             );
 
-
-          if (!response.ok) {
+          if (
+            !response.ok
+          ) {
 
             throw new Error(
               "Form submission failed."
             );
-
           }
-
 
           try {
 
@@ -4065,9 +3820,7 @@
             console.log(
               "Saved form could not be cleared."
             );
-
           }
-
 
           form.style.display =
             "none";
@@ -4075,7 +3828,6 @@
           successScreen.classList.add(
             "active"
           );
-
 
           progressBar.style.width =
             "100%";
@@ -4086,12 +3838,10 @@
           progressPercent.textContent =
             "100%";
 
-
           window.scrollTo({
             top: 100,
             behavior: "smooth"
           });
-
 
         } catch (error) {
 
@@ -4107,12 +3857,10 @@
 
           submitStatus.textContent =
             "Something went wrong while sending. Please try again.";
-
         }
 
       }
     );
-
 
     /* =========================================================
        COPY BRIEF
@@ -4128,18 +3876,17 @@
         "copiedMessage"
       );
 
-
     copyBrief.addEventListener(
       "click",
       async () => {
 
-        if (!finalBrief) {
+        if (
+          !finalBrief
+        ) {
 
           finalBrief =
             createProjectBrief();
-
         }
-
 
         try {
 
@@ -4154,7 +3901,6 @@
 
           copiedMessage.textContent =
             "Your browser couldn't copy it automatically.";
-
         }
 
       }
