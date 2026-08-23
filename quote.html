@@ -1,293 +1,473 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
 
   <meta
+
     name="viewport"
+
     content="width=device-width, initial-scale=1"
+
   >
 
   <title>Start a Project | Forged Digital Designs</title>
 
   <meta
+
     name="description"
+
     content="Start your website project with Forged Digital Designs. Tell us about your business, goals, design preferences, and website needs."
+
   >
 
   <meta name="theme-color" content="#05070b">
 
   <style>
+
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
     body {
+
       min-height: 100vh;
+
       overflow-x: hidden;
 
       font-family: Arial, Helvetica, sans-serif;
+
       line-height: 1.6;
 
       color: #ffffff;
 
       background:
+
         radial-gradient(
+
           circle at 15% 10%,
+
           rgba(73,96,255,.16),
+
           transparent 32%
+
         ),
+
         radial-gradient(
+
           circle at 85% 25%,
+
           rgba(157,67,255,.14),
+
           transparent 30%
+
         ),
+
         linear-gradient(
+
           180deg,
+
           #05070b,
+
           #07090e 50%,
+
           #040609
+
         );
+
     }
 
     body::before {
+
       content: "";
+
       position: fixed;
+
       inset: 0;
+
       z-index: -4;
+
       pointer-events: none;
+
       opacity: .22;
 
       background-image:
+
         linear-gradient(
+
           rgba(255,255,255,.018) 1px,
+
           transparent 1px
+
         ),
+
         linear-gradient(
+
           90deg,
+
           rgba(255,255,255,.018) 1px,
+
           transparent 1px
+
         );
 
       background-size: 55px 55px;
+
     }
 
     a {
+
       color: inherit;
+
       text-decoration: none;
+
     }
 
     button,
+
     input,
+
     textarea,
+
     select {
+
       font: inherit;
+
     }
 
     button {
+
       color: inherit;
+
     }
 
     input,
+
     textarea,
+
     select {
+
       width: 100%;
+
     }
 
     ::selection {
+
       background: rgba(136,112,255,.45);
+
       color: #ffffff;
+
     }
 
     /* =========================================================
+
        AMBIENT
+
     ========================================================= */
 
     .ambient {
+
       position: fixed;
+
       inset: 0;
+
       overflow: hidden;
+
       pointer-events: none;
+
       z-index: -3;
+
     }
 
     .orb {
+
       position: absolute;
+
       border-radius: 50%;
+
       filter: blur(100px);
+
       opacity: .25;
+
       animation: drift 15s ease-in-out infinite;
+
     }
 
     .orb-one {
+
       width: 450px;
+
       height: 450px;
+
       left: -180px;
+
       top: -130px;
+
       background: #536cff;
+
     }
 
     .orb-two {
+
       width: 500px;
+
       height: 500px;
+
       right: -250px;
+
       top: 35%;
+
       background: #9148ff;
+
       animation-delay: -5s;
+
     }
 
     .orb-three {
+
       width: 350px;
+
       height: 350px;
+
       left: 38%;
+
       bottom: -210px;
+
       background: #2857ff;
+
       animation-delay: -9s;
+
     }
 
     @keyframes drift {
+
       0%,
+
       100% {
+
         transform:
+
           translate3d(0,0,0)
+
           scale(1);
+
       }
 
       50% {
+
         transform:
+
           translate3d(35px,-30px,0)
+
           scale(1.08);
+
       }
+
     }
 
     /* =========================================================
+
        GLOBAL
+
     ========================================================= */
 
     .container {
+
       width: min(1180px, calc(100% - 32px));
+
       margin: 0 auto;
+
     }
 
     .gradient-text {
+
       background:
+
         linear-gradient(
+
           90deg,
+
           #8298ff,
+
           #ab6aff,
+
           #d4d9ff
+
         );
 
       -webkit-background-clip: text;
+
       background-clip: text;
+
       color: transparent;
+
     }
 
     .btn {
+
       min-height: 52px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 9px;
+
       padding: 0 23px;
 
       border: 0;
+
       border-radius: 12px;
 
       font-weight: 800;
+
       cursor: pointer;
 
       transition:
+
         transform .2s ease,
+
         box-shadow .2s ease,
+
         border-color .2s ease,
+
         opacity .2s ease;
+
     }
 
     .btn:hover {
+
       transform: translateY(-2px);
+
     }
 
     .btn:disabled {
+
       opacity: .6;
+
       cursor: wait;
+
       transform: none;
+
     }
 
     .btn-primary {
+
       color: #ffffff;
 
       background:
+
         linear-gradient(
+
           90deg,
+
           #6d84ff,
+
           #965dff
+
         );
 
       box-shadow:
+
         0 12px 38px
+
         rgba(91,87,255,.25);
+
     }
 
     .btn-secondary {
+
       color: #d4d9e2;
 
       background:
+
         rgba(255,255,255,.035);
 
       border:
+
         1px solid rgba(255,255,255,.11);
+
     }
 
     /* =========================================================
+
        HEADER
+
     ========================================================= */
 
     header {
+
       position: fixed;
+
       left: 0;
+
       right: 0;
+
       top: 0;
 
       z-index: 1000;
 
       background:
+
         rgba(5,7,11,.82);
 
       backdrop-filter: blur(18px);
+
       -webkit-backdrop-filter: blur(18px);
 
       border-bottom:
+
         1px solid rgba(255,255,255,.065);
+
     }
 
     nav {
+
       min-height: 78px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
+
     }
 
     .brand {
+
       display: flex;
+
       align-items: center;
+
       gap: 12px;
+
       font-weight: 900;
+
     }
 
     .brand-mark {
+
       width: 42px;
+
       height: 42px;
 
       overflow: hidden;
@@ -297,52 +477,75 @@
       background: #030408;
 
       border:
+
         1px solid rgba(151,104,255,.35);
 
       box-shadow:
+
         0 0 18px rgba(111,72,255,.45),
+
         0 0 32px rgba(129,55,255,.18);
+
     }
 
     .brand-mark img {
+
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
+
       object-position: center;
 
       transform: scale(1.35);
 
       filter:
+
         saturate(1.15)
+
         contrast(1.1);
+
     }
 
     .brand-text {
+
       display: flex;
+
       flex-direction: column;
+
       line-height: 1.05;
+
     }
 
     .brand-main {
+
       font-size: 15px;
+
       letter-spacing: 1.3px;
+
     }
 
     .brand-sub {
+
       margin-top: 3px;
 
       color: #828b99;
 
       font-size: 9px;
+
       font-weight: 800;
+
       letter-spacing: 2.6px;
+
     }
 
     .back-link {
+
       min-height: 42px;
 
       display: inline-flex;
+
       align-items: center;
 
       padding: 0 16px;
@@ -352,34 +555,47 @@
       color: #cbd0da;
 
       background:
+
         rgba(255,255,255,.035);
 
       border:
+
         1px solid rgba(255,255,255,.09);
 
       font-size: 13px;
+
       font-weight: 800;
+
     }
 
     /* =========================================================
+
        HERO
+
     ========================================================= */
 
     .quote-hero {
+
       padding:
+
         145px 0
+
         55px;
 
       text-align: center;
+
     }
 
     .eyebrow {
+
       display: inline-flex;
+
       align-items: center;
 
       gap: 8px;
 
       margin-bottom: 18px;
+
       padding: 8px 13px;
 
       border-radius: 999px;
@@ -387,19 +603,27 @@
       color: #b8c1ff;
 
       background:
+
         rgba(102,113,255,.07);
 
       border:
+
         1px solid rgba(128,143,255,.27);
 
       font-size: 12px;
+
       font-weight: 800;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
     }
 
     .eyebrow-dot {
+
       width: 7px;
+
       height: 7px;
 
       border-radius: 50%;
@@ -407,24 +631,33 @@
       background: #8b91ff;
 
       box-shadow:
+
         0 0 12px rgba(139,145,255,.8);
+
     }
 
     .quote-hero h1 {
+
       max-width: 850px;
 
       margin:
+
         0 auto
+
         18px;
 
       font-size:
+
         clamp(42px,7vw,72px);
 
       line-height: .98;
+
       letter-spacing: -3px;
+
     }
 
     .quote-hero p {
+
       max-width: 680px;
 
       margin: 0 auto;
@@ -432,22 +665,31 @@
       color: #9ba3b0;
 
       font-size:
+
         clamp(16px,2vw,19px);
+
     }
 
     /* =========================================================
+
        IMPORTED PROJECT
+
     ========================================================= */
 
     .imported-wrap {
+
       max-width: 900px;
 
       margin:
+
         10px auto
+
         35px;
+
     }
 
     .imported-project {
+
       display: none;
 
       padding: 18px 20px;
@@ -457,72 +699,107 @@
       text-align: left;
 
       background:
+
         linear-gradient(
+
           145deg,
+
           rgba(111,99,255,.12),
+
           rgba(255,255,255,.025)
+
         );
 
       border:
+
         1px solid rgba(126,137,255,.25);
+
     }
 
     .imported-project.show {
+
       display: block;
+
     }
 
     .imported-top {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
+
     }
 
     .imported-label {
+
       color: #929cff;
 
       font-size: 10px;
+
       font-weight: 900;
+
       letter-spacing: 1.3px;
+
       text-transform: uppercase;
+
     }
 
     .imported-project h3 {
+
       margin-top: 3px;
+
       font-size: 16px;
+
     }
 
     .imported-price {
+
       flex-shrink: 0;
 
       font-size: 30px;
+
       font-weight: 900;
+
     }
 
     .imported-details {
+
       margin-top: 13px;
 
       color: #929aa8;
 
       font-size: 13px;
+
     }
 
     /* =========================================================
+
        PROGRESS
+
     ========================================================= */
 
     .progress-wrap {
+
       max-width: 900px;
 
       margin:
+
         0 auto
+
         24px;
+
     }
 
     .progress-meta {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 15px;
@@ -532,12 +809,17 @@
       color: #8a929f;
 
       font-size: 11px;
+
       font-weight: 800;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
+
     }
 
     .progress-track {
+
       height: 5px;
 
       overflow: hidden;
@@ -545,41 +827,61 @@
       border-radius: 999px;
 
       background:
+
         rgba(255,255,255,.07);
+
     }
 
     .progress-bar {
+
       width: 20%;
+
       height: 100%;
 
       border-radius: inherit;
 
       background:
+
         linear-gradient(
+
           90deg,
+
           #6d84ff,
+
           #9a5fff
+
         );
 
       box-shadow:
+
         0 0 18px
+
         rgba(116,103,255,.55);
 
       transition:
+
         width .35s ease;
+
     }
 
     /* =========================================================
+
        FORM SHELL
+
     ========================================================= */
 
     .form-section {
+
       padding:
+
         0 0
+
         110px;
+
     }
 
     .form-shell {
+
       max-width: 900px;
 
       margin: 0 auto;
@@ -589,97 +891,143 @@
       overflow: hidden;
 
       background:
+
         linear-gradient(
+
           145deg,
+
           rgba(255,255,255,.045),
+
           rgba(255,255,255,.013)
+
         );
 
       border:
+
         1px solid rgba(255,255,255,.085);
 
       box-shadow:
+
         0 30px 90px
+
         rgba(0,0,0,.25);
+
     }
 
     .step {
+
       display: none;
+
       padding: 38px;
+
     }
 
     .step.active {
+
       display: block;
 
       animation:
+
         stepIn .35s ease;
+
     }
 
     @keyframes stepIn {
+
       from {
+
         opacity: 0;
+
         transform: translateY(12px);
+
       }
 
       to {
+
         opacity: 1;
+
         transform: translateY(0);
+
       }
+
     }
 
     .step-number {
+
       margin-bottom: 7px;
 
       color: #8796ff;
 
       font-size: 11px;
+
       font-weight: 900;
+
       letter-spacing: 1.2px;
+
       text-transform: uppercase;
+
     }
 
     .step h2 {
+
       margin-bottom: 9px;
 
       font-size:
+
         clamp(28px,5vw,38px);
 
       line-height: 1.05;
+
       letter-spacing: -1px;
+
     }
 
     .step-intro {
+
       max-width: 650px;
 
       margin-bottom: 30px;
 
       color: #919aa7;
+
     }
 
     /* =========================================================
+
        FIELDS
+
     ========================================================= */
 
     .field-grid {
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
       gap: 18px;
+
     }
 
     .field {
+
       margin-bottom: 19px;
+
     }
 
     .field-grid .field {
+
       margin-bottom: 0;
+
     }
 
     .field-full {
+
       grid-column: 1 / -1;
+
     }
 
     label.field-label {
+
       display: block;
 
       margin-bottom: 8px;
@@ -687,20 +1035,31 @@
       color: #d4d8df;
 
       font-size: 13px;
+
       font-weight: 800;
+
     }
 
     .optional {
+
       color: #6e7683;
+
       font-weight: 500;
+
     }
 
     input[type="text"],
+
     input[type="email"],
+
     input[type="tel"],
+
     input[type="url"],
+
     textarea,
+
     select {
+
       min-height: 52px;
 
       padding: 0 15px;
@@ -712,89 +1071,135 @@
       color: #ffffff;
 
       background:
+
         rgba(255,255,255,.03);
 
       border:
+
         1px solid rgba(255,255,255,.09);
 
       transition:
+
         border-color .2s ease,
+
         box-shadow .2s ease,
+
         background .2s ease;
+
     }
 
     textarea {
+
       min-height: 135px;
 
       padding:
+
         14px 15px;
 
       resize: vertical;
+
     }
 
     select {
+
       appearance: none;
 
       background-image:
+
         linear-gradient(
+
           45deg,
+
           transparent 50%,
+
           #7f8795 50%
+
         ),
+
         linear-gradient(
+
           135deg,
+
           #7f8795 50%,
+
           transparent 50%
+
         );
 
       background-position:
+
         calc(100% - 20px) 22px,
+
         calc(100% - 15px) 22px;
 
       background-size:
+
         5px 5px,
+
         5px 5px;
 
       background-repeat: no-repeat;
+
     }
 
     option {
+
       color: #111111;
+
     }
 
     input::placeholder,
+
     textarea::placeholder {
+
       color: #626a77;
+
     }
 
     input:focus,
+
     textarea:focus,
+
     select:focus {
+
       border-color:
+
         rgba(130,142,255,.55);
 
       background:
+
         rgba(255,255,255,.045);
 
       box-shadow:
+
         0 0 0 4px
+
         rgba(111,99,255,.08);
+
     }
 
     .field-error {
+
       border-color:
+
         rgba(255,102,125,.8) !important;
 
       box-shadow:
+
         0 0 0 4px
+
         rgba(255,80,110,.08) !important;
+
     }
 
     .validation-message {
+
       display: none;
 
       margin:
+
         -10px 0
+
         22px;
 
       padding: 11px 13px;
@@ -804,37 +1209,51 @@
       color: #ff9aac;
 
       background:
+
         rgba(255,71,105,.07);
 
       border:
+
         1px solid rgba(255,90,120,.16);
 
       font-size: 12px;
+
       font-weight: 700;
+
     }
 
     .validation-message.show {
+
       display: block;
+
     }
 
     /* =========================================================
+
        CHOICE CARDS
+
     ========================================================= */
 
     .choice-grid {
+
       display: grid;
+
       grid-template-columns:
+
         repeat(2,1fr);
 
       gap: 11px;
+
     }
 
     .choice-card {
+
       position: relative;
 
       min-height: 82px;
 
       display: flex;
+
       align-items: center;
 
       padding: 17px;
@@ -844,48 +1263,71 @@
       cursor: pointer;
 
       background:
+
         rgba(255,255,255,.025);
 
       border:
+
         1px solid rgba(255,255,255,.075);
 
       transition:
+
         transform .2s ease,
+
         border-color .2s ease,
+
         background .2s ease;
+
     }
 
     .choice-card:hover {
+
       transform: translateY(-2px);
 
       border-color:
+
         rgba(126,139,255,.27);
+
     }
 
     .choice-card.selected {
+
       background:
+
         rgba(108,112,255,.11);
 
       border-color:
+
         rgba(126,139,255,.5);
 
       box-shadow:
+
         inset 0 0 26px
+
         rgba(105,91,255,.05);
+
     }
 
     .choice-card input {
+
       position: absolute;
+
       opacity: 0;
+
       pointer-events: none;
+
     }
 
     .choice-card strong {
+
       display: block;
+
       font-size: 14px;
+
     }
 
     .choice-card span {
+
       display: block;
 
       margin-top: 2px;
@@ -893,23 +1335,31 @@
       color: #858e9b;
 
       font-size: 12px;
+
     }
 
     /* =========================================================
+
        COLORS
+
     ========================================================= */
 
     .color-grid {
+
       display: grid;
+
       grid-template-columns:
+
         repeat(4,1fr);
 
       gap: 10px;
 
       margin-top: 12px;
+
     }
 
     .color-choice {
+
       position: relative;
 
       min-height: 82px;
@@ -921,209 +1371,323 @@
       cursor: pointer;
 
       background:
+
         rgba(255,255,255,.025);
 
       border:
+
         1px solid rgba(255,255,255,.07);
 
       text-align: center;
 
       transition:
+
         transform .2s ease,
+
         border-color .2s ease,
+
         background .2s ease;
+
     }
 
     .color-choice:hover {
+
       transform: translateY(-2px);
+
     }
 
     .color-choice.selected {
+
       border-color:
+
         rgba(140,149,255,.58);
 
       background:
+
         rgba(108,112,255,.09);
+
     }
 
     .color-choice input {
+
       position: absolute;
+
       opacity: 0;
+
       pointer-events: none;
+
     }
 
     .color-dot {
+
       width: 30px;
+
       height: 30px;
 
       margin:
+
         0 auto
+
         7px;
 
       border-radius: 50%;
 
       border:
+
         2px solid rgba(255,255,255,.2);
+
     }
 
     .color-choice span {
+
       color: #9aa2af;
 
       font-size: 11px;
+
       font-weight: 700;
+
     }
 
     .color-blue {
+
       background:
+
         linear-gradient(
+
           145deg,
+
           #2c6fff,
+
           #83a7ff
+
         );
+
     }
 
     .color-purple {
+
       background:
+
         linear-gradient(
+
           145deg,
+
           #7441ff,
+
           #c778ff
+
         );
+
     }
 
     .color-red {
+
       background:
+
         linear-gradient(
+
           145deg,
+
           #ff4e55,
+
           #ff9867
+
         );
+
     }
 
     .color-green {
+
       background:
+
         linear-gradient(
+
           145deg,
+
           #26a978,
+
           #65e7b2
+
         );
+
     }
 
     .color-black {
+
       background:
+
         linear-gradient(
+
           145deg,
+
           #090a0d,
+
           #555b66
+
         );
+
     }
 
     .color-light {
+
       background:
+
         linear-gradient(
+
           145deg,
+
           #ffffff,
+
           #c5cad3
+
         );
+
     }
 
     .color-earth {
+
       background:
+
         linear-gradient(
+
           145deg,
+
           #86634a,
+
           #d3ad7a
+
         );
+
     }
 
     .color-unsure {
+
       background:
+
         conic-gradient(
+
           #547cff,
+
           #9c5dff,
+
           #ff6d6d,
+
           #5fdba5,
+
           #547cff
+
         );
+
     }
 
     /* =========================================================
+
        FORM NAV
+
     ========================================================= */
 
     .form-nav {
+
       margin-top: 35px;
 
       padding-top: 25px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 12px;
 
       border-top:
+
         1px solid rgba(255,255,255,.06);
+
     }
 
     .form-nav-right {
+
       margin-left: auto;
+
     }
 
     /* =========================================================
+
        REVIEW
+
     ========================================================= */
 
     .review-grid {
+
       display: grid;
+
       grid-template-columns:
+
         repeat(2,1fr);
 
       gap: 13px;
+
     }
 
     .review-card {
+
       padding: 18px;
 
       border-radius: 14px;
 
       background:
+
         rgba(255,255,255,.026);
 
       border:
+
         1px solid rgba(255,255,255,.07);
+
     }
 
     .review-card.full {
+
       grid-column: 1 / -1;
+
     }
 
     .review-label {
+
       margin-bottom: 5px;
 
       color: #77808d;
 
       font-size: 10px;
+
       font-weight: 900;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
     }
 
     .review-value {
+
       color: #d5dae2;
 
       font-size: 14px;
 
       white-space: pre-wrap;
+
     }
 
     .final-estimate {
+
       margin-top: 20px;
 
       padding: 22px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
@@ -1131,42 +1695,61 @@
       border-radius: 17px;
 
       background:
+
         linear-gradient(
+
           145deg,
+
           rgba(104,112,255,.13),
+
           rgba(145,85,255,.05)
+
         );
 
       border:
+
         1px solid rgba(127,138,255,.28);
+
     }
 
     .final-estimate span {
+
       color: #929aa8;
 
       font-size: 12px;
+
       font-weight: 800;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
+
     }
 
     .final-estimate strong {
+
       font-size: 34px;
+
     }
 
     .muted {
+
       margin-top: 3px;
 
       color: #68717f;
 
       font-size: 11px;
+
     }
 
     /* =========================================================
+
        SUBMISSION
+
     ========================================================= */
 
     .submit-status {
+
       min-height: 24px;
 
       margin-top: 15px;
@@ -1176,46 +1759,65 @@
       text-align: right;
 
       font-size: 12px;
+
       font-weight: 700;
+
     }
 
     .submit-status.error {
+
       color: #ff8fa3;
+
     }
 
     .success-screen {
+
       display: none;
 
       padding: 55px 38px;
 
       text-align: center;
+
     }
 
     .success-screen.active {
+
       display: block;
+
     }
 
     .success-icon {
+
       width: 70px;
+
       height: 70px;
 
       display: grid;
+
       place-items: center;
 
       margin:
+
         0 auto
+
         22px;
 
       border-radius: 20px;
 
       background:
+
         linear-gradient(
+
           145deg,
+
           rgba(109,132,255,.22),
+
           rgba(149,91,255,.18)
+
         );
 
       border:
+
         1px solid rgba(134,143,255,.3);
 
       color: #cbd1ff;
@@ -1223,38 +1825,53 @@
       font-size: 30px;
 
       box-shadow:
+
         0 0 35px
+
         rgba(110,96,255,.15);
+
     }
 
     .success-screen h2 {
+
       margin-bottom: 12px;
 
       font-size:
+
         clamp(30px,5vw,46px);
 
       letter-spacing: -1.5px;
+
     }
 
     .success-screen > p {
+
       max-width: 620px;
 
       margin:
+
         0 auto
+
         28px;
 
       color: #929aa7;
+
     }
 
     .success-actions {
+
       display: flex;
+
       justify-content: center;
+
       flex-wrap: wrap;
 
       gap: 11px;
+
     }
 
     .copied-message {
+
       min-height: 24px;
 
       margin-top: 16px;
@@ -1262,13 +1879,17 @@
       color: #aeb7ff;
 
       font-size: 13px;
+
     }
 
     .submission-note {
+
       max-width: 900px;
 
       margin:
+
         20px auto
+
         0;
 
       color: #646c78;
@@ -1276,171 +1897,261 @@
       text-align: center;
 
       font-size: 11px;
+
     }
 
     /* =========================================================
+
        FOOTER
+
     ========================================================= */
 
     footer {
+
       padding: 35px 0;
 
       border-top:
+
         1px solid rgba(255,255,255,.06);
 
       color: #737c89;
 
       font-size: 12px;
+
     }
 
     .footer-row {
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
 
       flex-wrap: wrap;
 
       gap: 15px;
+
     }
 
     /* =========================================================
+
        RESPONSIVE
+
     ========================================================= */
 
     @media (max-width: 700px) {
+
       .quote-hero {
+
         padding-top: 125px;
+
       }
 
       .quote-hero h1 {
+
         letter-spacing: -2px;
+
       }
 
       .field-grid,
+
       .choice-grid,
+
       .review-grid {
+
         grid-template-columns: 1fr;
+
       }
 
       .field-full,
+
       .review-card.full {
+
         grid-column: auto;
+
       }
 
       .color-grid {
+
         grid-template-columns:
+
           repeat(2,1fr);
+
       }
 
       .step {
+
         padding: 26px 20px;
+
       }
 
       .imported-top,
+
       .final-estimate {
+
         align-items: flex-start;
+
         flex-direction: column;
+
       }
 
       .submit-status {
+
         text-align: center;
+
       }
+
     }
 
     @media (max-width: 480px) {
+
       .container {
+
         width:
+
           calc(100% - 24px);
+
       }
 
       nav {
+
         min-height: 70px;
+
       }
 
       .brand-main {
+
         font-size: 12px;
+
       }
 
       .brand-sub {
+
         font-size: 7px;
+
       }
 
       .brand-mark {
+
         width: 39px;
+
         height: 39px;
+
       }
 
       .back-link {
+
         padding: 0 12px;
 
         font-size: 11px;
+
       }
 
       .quote-hero {
+
         padding:
+
           115px 0
+
           40px;
+
       }
 
       .form-nav {
+
         display: grid;
+
         grid-template-columns: 1fr 1fr;
 
         gap: 10px;
+
       }
 
       .form-nav .btn {
+
         width: 100%;
+
         padding: 0 14px;
 
         font-size: 13px;
+
       }
 
       .form-nav > div:empty {
+
         display: none;
+
       }
 
       .form-nav-right {
+
         margin-left: 0;
+
         grid-column: 1 / -1;
+
       }
 
       .step[data-step="1"] .form-nav {
+
         grid-template-columns: 1fr;
+
       }
 
       .step[data-step="1"] .form-nav .btn {
+
         grid-column: 1;
+
       }
 
       .success-actions {
+
         flex-direction: column;
+
       }
 
       .success-actions .btn {
+
         width: 100%;
+
       }
+
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       *,
+
       *::before,
+
       *::after {
+
         animation-duration: .01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: .01ms !important;
+
         scroll-behavior: auto !important;
+
       }
+
     }
+
   </style>
+
 </head>
 
 <body>
 
   <div class="ambient">
+
     <div class="orb orb-one"></div>
+
     <div class="orb orb-two"></div>
+
     <div class="orb orb-three"></div>
+
   </div>
 
   <header>
@@ -1449,16 +2160,16 @@
 
       <nav>
 
-        <a
-          href="index.html"
-          class="brand"
-        >
+        <a href="index.html" class="brand">
 
           <div class="brand-mark">
 
             <img
+
               src="28B8892B-8EC4-4866-A6D1-FD70BDA9896B.png"
+
               alt="Forged Digital Designs"
+
             >
 
           </div>
@@ -1466,22 +2177,25 @@
           <div class="brand-text">
 
             <span class="brand-main">
+
               FORGED DIGITAL
+
             </span>
 
             <span class="brand-sub">
+
               DESIGNS
+
             </span>
 
           </div>
 
         </a>
 
-        <a
-          href="index.html"
-          class="back-link"
-        >
+        <a href="index.html" class="back-link">
+
           ← Back to Site
+
         </a>
 
       </nav>
@@ -1497,22 +2211,35 @@
       <div class="container">
 
         <div class="eyebrow">
+
           <span class="eyebrow-dot"></span>
+
           Project Intake
+
         </div>
 
         <h1>
+
           Let's build something
+
           <span class="gradient-text">
+
             worth remembering.
+
           </span>
+
         </h1>
 
         <p>
+
           Tell us about your business,
+
           what you need,
+
           and what you want your website to accomplish.
+
           We'll use it to shape your project.
+
         </p>
 
       </div>
@@ -1524,8 +2251,11 @@
       <div class="imported-wrap">
 
         <div
+
           class="imported-project"
+
           id="importedProject"
+
         >
 
           <div class="imported-top">
@@ -1533,27 +2263,39 @@
             <div>
 
               <div class="imported-label">
+
                 Your Website Estimate
+
               </div>
 
               <h3 id="importedTitle">
+
                 Custom Website Project
+
               </h3>
 
             </div>
 
             <div
+
               class="imported-price gradient-text"
+
               id="importedPrice"
+
             >
+
               $699
+
             </div>
 
           </div>
 
           <div
+
             class="imported-details"
+
             id="importedDetails"
+
           ></div>
 
         </div>
@@ -1569,11 +2311,15 @@
         <div class="progress-meta">
 
           <span id="progressText">
+
             Step 1 of 5
+
           </span>
 
           <span id="progressPercent">
+
             20%
+
           </span>
 
         </div>
@@ -1581,8 +2327,11 @@
         <div class="progress-track">
 
           <div
+
             class="progress-bar"
+
             id="progressBar"
+
           ></div>
 
         </div>
@@ -1598,159 +2347,215 @@
         <div class="form-shell">
 
           <form
+
             id="projectForm"
+
             action="https://formspree.io/f/xkjweqpd"
+
             method="POST"
+
             novalidate
+
           >
 
             <input
+
               type="hidden"
+
               name="_subject"
+
               value="New Forged Digital Designs Project Request"
+
             >
 
             <!-- STEP 1 -->
 
             <section
+
               class="step active"
+
               data-step="1"
+
             >
 
               <div class="step-number">
+
                 Step 01
+
               </div>
 
               <h2>
+
                 Tell us who we're building for.
+
               </h2>
 
               <p class="step-intro">
+
                 Start with the basics.
+
                 This helps us understand the business
+
                 behind the website.
+
               </p>
 
               <div
+
                 class="validation-message"
+
                 data-validation-message
+
               >
+
                 Please complete the required fields before continuing.
+
               </div>
 
               <div class="field-grid">
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="name"
-                  >
+                  <label class="field-label" for="name">
+
                     Your Name *
+
                   </label>
 
                   <input
+
                     id="name"
+
                     name="name"
+
                     type="text"
+
                     placeholder="Your name"
+
                     autocomplete="name"
+
                     required
+
                   >
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="businessName"
-                  >
+                  <label class="field-label" for="businessName">
+
                     Business Name *
+
                   </label>
 
                   <input
+
                     id="businessName"
+
                     name="businessName"
+
                     type="text"
+
                     placeholder="Business name"
+
                     required
+
                   >
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="phone"
-                  >
+                  <label class="field-label" for="phone">
+
                     Phone Number *
+
                   </label>
 
                   <input
+
                     id="phone"
+
                     name="phone"
+
                     type="tel"
+
                     placeholder="(000) 000-0000"
+
                     autocomplete="tel"
+
                     required
+
                   >
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="email"
-                  >
+                  <label class="field-label" for="email">
+
                     Email *
+
                   </label>
 
                   <input
+
                     id="email"
+
                     name="email"
+
                     type="email"
+
                     placeholder="you@example.com"
+
                     autocomplete="email"
+
                     required
+
                   >
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="location"
-                  >
+                  <label class="field-label" for="location">
+
                     Business Location
+
                   </label>
 
                   <input
+
                     id="location"
+
                     name="location"
+
                     type="text"
+
                     placeholder="City, State"
+
                   >
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="industry"
-                  >
+                  <label class="field-label" for="industry">
+
                     Type of Business
+
                   </label>
 
                   <input
+
                     id="industry"
+
                     name="industry"
+
                     type="text"
+
                     placeholder="Detailing, landscaping, restaurant..."
+
                   >
 
                 </div>
@@ -1762,11 +2567,17 @@
                 <div></div>
 
                 <button
+
                   class="btn btn-primary form-nav-right"
+
                   type="button"
+
                   data-next
+
                 >
+
                   Continue →
+
                 </button>
 
               </div>
@@ -1776,139 +2587,165 @@
             <!-- STEP 2 -->
 
             <section
+
               class="step"
+
               data-step="2"
+
             >
 
               <div class="step-number">
+
                 Step 02
+
               </div>
 
               <h2>
+
                 What does the website need to do?
+
               </h2>
 
               <p class="step-intro">
+
                 Choose everything that matters.
+
                 You can select more than one.
+
               </p>
 
               <div class="choice-grid">
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Generate leads"
-                  >
+
+                  <input type="checkbox" name="goal" value="Generate leads">
+
                   <div>
+
                     <strong>Generate Leads</strong>
+
                     <span>Get customers to call or message</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Request quotes"
-                  >
+
+                  <input type="checkbox" name="goal" value="Request quotes">
+
                   <div>
+
                     <strong>Request Quotes</strong>
+
                     <span>Let customers submit project details</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Book appointments"
-                  >
+
+                  <input type="checkbox" name="goal" value="Book appointments">
+
                   <div>
+
                     <strong>Book Appointments</strong>
+
                     <span>Make scheduling easier</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Showcase work"
-                  >
+
+                  <input type="checkbox" name="goal" value="Showcase work">
+
                   <div>
+
                     <strong>Showcase Work</strong>
+
                     <span>Photos, projects, before and afters</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Explain services"
-                  >
+
+                  <input type="checkbox" name="goal" value="Explain services">
+
                   <div>
+
                     <strong>Explain Services</strong>
+
                     <span>Make your offers clear</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Build trust"
-                  >
+
+                  <input type="checkbox" name="goal" value="Build trust">
+
                   <div>
+
                     <strong>Build Trust</strong>
+
                     <span>Look professional and established</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Improve Google presence"
-                  >
+
+                  <input type="checkbox" name="goal" value="Improve Google presence">
+
                   <div>
+
                     <strong>Improve Google Presence</strong>
+
                     <span>Better search foundations</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="checkbox"
-                    name="goal"
-                    value="Other"
-                  >
+
+                  <input type="checkbox" name="goal" value="Other">
+
                   <div>
+
                     <strong>Something Else</strong>
+
                     <span>Tell us in the notes</span>
+
                   </div>
+
                 </label>
 
               </div>
 
-              <div
-                class="field"
-                style="margin-top:25px;"
-              >
+              <div class="field" style="margin-top:25px;">
 
-                <label
-                  class="field-label"
-                  for="websiteGoal"
-                >
+                <label class="field-label" for="websiteGoal">
+
                   What would make this website a success?
+
                 </label>
 
                 <textarea
+
                   id="websiteGoal"
+
                   name="websiteGoal"
+
                   placeholder="Example: I want customers to immediately understand my services and request a quote without having to call first."
+
                 ></textarea>
 
               </div>
@@ -1916,19 +2753,31 @@
               <div class="form-nav">
 
                 <button
+
                   class="btn btn-secondary"
+
                   type="button"
+
                   data-back
+
                 >
+
                   ← Back
+
                 </button>
 
                 <button
+
                   class="btn btn-primary"
+
                   type="button"
+
                   data-next
+
                 >
+
                   Continue →
+
                 </button>
 
               </div>
@@ -1938,100 +2787,125 @@
             <!-- STEP 3 -->
 
             <section
+
               class="step"
+
               data-step="3"
+
             >
 
               <div class="step-number">
+
                 Step 03
+
               </div>
 
               <h2>
+
                 Give us the visual direction.
+
               </h2>
 
               <p class="step-intro">
+
                 You don't need to speak designer.
+
                 Just tell us what feels closest
+
                 to what you want.
+
               </p>
 
               <label class="field-label">
+
                 Overall Style
+
               </label>
 
               <div class="choice-grid">
 
                 <label class="choice-card">
-                  <input
-                    type="radio"
-                    name="style"
-                    value="Modern and clean"
-                  >
+
+                  <input type="radio" name="style" value="Modern and clean">
+
                   <div>
+
                     <strong>Modern & Clean</strong>
+
                     <span>Minimal and polished</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="radio"
-                    name="style"
-                    value="Bold and high impact"
-                  >
+
+                  <input type="radio" name="style" value="Bold and high impact">
+
                   <div>
+
                     <strong>Bold & High Impact</strong>
+
                     <span>Big visuals and strong personality</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="radio"
-                    name="style"
-                    value="Premium and luxury"
-                  >
+
+                  <input type="radio" name="style" value="Premium and luxury">
+
                   <div>
+
                     <strong>Premium / Luxury</strong>
+
                     <span>Expensive, refined feel</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="radio"
-                    name="style"
-                    value="Friendly and approachable"
-                  >
+
+                  <input type="radio" name="style" value="Friendly and approachable">
+
                   <div>
+
                     <strong>Friendly</strong>
+
                     <span>Welcoming and approachable</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="radio"
-                    name="style"
-                    value="Rugged and industrial"
-                  >
+
+                  <input type="radio" name="style" value="Rugged and industrial">
+
                   <div>
+
                     <strong>Rugged / Industrial</strong>
+
                     <span>Strong and practical</span>
+
                   </div>
+
                 </label>
 
                 <label class="choice-card">
-                  <input
-                    type="radio"
-                    name="style"
-                    value="Not sure"
-                  >
+
+                  <input type="radio" name="style" value="Not sure">
+
                   <div>
+
                     <strong>You Decide</strong>
+
                     <span>Recommend what fits the business</span>
+
                   </div>
+
                 </label>
 
               </div>
@@ -2039,138 +2913,145 @@
               <div style="margin-top:28px;">
 
                 <label class="field-label">
+
                   Preferred Color Direction
+
                 </label>
 
                 <div class="color-grid">
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="Blue"
-                    >
+
+                    <input type="radio" name="colorDirection" value="Blue">
+
                     <div class="color-dot color-blue"></div>
+
                     <span>Blue</span>
+
                   </label>
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="Purple"
-                    >
+
+                    <input type="radio" name="colorDirection" value="Purple">
+
                     <div class="color-dot color-purple"></div>
+
                     <span>Purple</span>
+
                   </label>
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="Red or orange"
-                    >
+
+                    <input type="radio" name="colorDirection" value="Red or orange">
+
                     <div class="color-dot color-red"></div>
+
                     <span>Red / Orange</span>
+
                   </label>
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="Green"
-                    >
+
+                    <input type="radio" name="colorDirection" value="Green">
+
                     <div class="color-dot color-green"></div>
+
                     <span>Green</span>
+
                   </label>
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="Black or dark"
-                    >
+
+                    <input type="radio" name="colorDirection" value="Black or dark">
+
                     <div class="color-dot color-black"></div>
+
                     <span>Dark</span>
+
                   </label>
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="White or light"
-                    >
+
+                    <input type="radio" name="colorDirection" value="White or light">
+
                     <div class="color-dot color-light"></div>
+
                     <span>Light</span>
+
                   </label>
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="Earth tones"
-                    >
+
+                    <input type="radio" name="colorDirection" value="Earth tones">
+
                     <div class="color-dot color-earth"></div>
+
                     <span>Earth Tones</span>
+
                   </label>
 
                   <label class="color-choice">
-                    <input
-                      type="radio"
-                      name="colorDirection"
-                      value="Recommend colors"
-                    >
+
+                    <input type="radio" name="colorDirection" value="Recommend colors">
+
                     <div class="color-dot color-unsure"></div>
+
                     <span>You Decide</span>
+
                   </label>
 
                 </div>
 
               </div>
 
-              <div
-                class="field-grid"
-                style="margin-top:28px;"
-              >
+              <div class="field-grid" style="margin-top:28px;">
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="logoStatus"
-                  >
+                  <label class="field-label" for="logoStatus">
+
                     Do you have a logo?
+
                   </label>
 
-                  <select
-                    id="logoStatus"
-                    name="logoStatus"
-                  >
+                  <select id="logoStatus" name="logoStatus">
+
                     <option value="">Select one</option>
+
                     <option>Yes</option>
+
                     <option>No</option>
+
                     <option>Yes, but I want it improved</option>
+
                   </select>
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="inspiration"
-                  >
+                  <label class="field-label" for="inspiration">
+
                     Inspiration Website
+
                     <span class="optional">
+
                       Optional
+
                     </span>
+
                   </label>
 
                   <input
+
                     id="inspiration"
+
                     name="inspiration"
+
                     type="url"
+
                     placeholder="https://example.com"
+
                   >
 
                 </div>
@@ -2180,19 +3061,31 @@
               <div class="form-nav">
 
                 <button
+
                   class="btn btn-secondary"
+
                   type="button"
+
                   data-back
+
                 >
+
                   ← Back
+
                 </button>
 
                 <button
+
                   class="btn btn-primary"
+
                   type="button"
+
                   data-next
+
                 >
+
                   Continue →
+
                 </button>
 
               </div>
@@ -2202,109 +3095,133 @@
             <!-- STEP 4 -->
 
             <section
+
               class="step"
+
               data-step="4"
+
             >
 
               <div class="step-number">
+
                 Step 04
+
               </div>
 
               <h2>
+
                 Let's figure out the scope.
+
               </h2>
 
               <p class="step-intro">
+
                 These answers help us understand
+
                 what already exists and what needs
+
                 to be built from scratch.
+
               </p>
 
               <div class="field-grid">
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="existingSite"
-                  >
+                  <label class="field-label" for="existingSite">
+
                     Existing Website?
+
                   </label>
 
-                  <select
-                    id="existingSite"
-                    name="existingSite"
-                  >
+                  <select id="existingSite" name="existingSite">
+
                     <option value="">Select one</option>
+
                     <option>No website yet</option>
+
                     <option>Yes, redesign it</option>
+
                     <option>Yes, keep most of it</option>
+
                   </select>
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="existingUrl"
-                  >
+                  <label class="field-label" for="existingUrl">
+
                     Existing Website URL
+
                     <span class="optional">
+
                       Optional
+
                     </span>
+
                   </label>
 
                   <input
+
                     id="existingUrl"
+
                     name="existingUrl"
+
                     type="url"
+
                     placeholder="https://..."
+
                   >
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="domainStatus"
-                  >
+                  <label class="field-label" for="domainStatus">
+
                     Domain Status
+
                   </label>
 
-                  <select
-                    id="domainStatus"
-                    name="domainStatus"
-                  >
+                  <select id="domainStatus" name="domainStatus">
+
                     <option value="">Select one</option>
+
                     <option>I already own one</option>
+
                     <option>I need to buy one</option>
+
                     <option>I need help choosing one</option>
+
                     <option>I'm not sure</option>
+
                   </select>
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="pageEstimate"
-                  >
+                  <label class="field-label" for="pageEstimate">
+
                     Approximate Pages
+
                   </label>
 
-                  <select
-                    id="pageEstimate"
-                    name="pageEstimate"
-                  >
+                  <select id="pageEstimate" name="pageEstimate">
+
                     <option value="">Select one</option>
+
                     <option>1 page</option>
+
                     <option>2-3 pages</option>
+
                     <option>4-5 pages</option>
+
                     <option>6+ pages</option>
+
                     <option>Not sure</option>
+
                   </select>
 
                 </div>
@@ -2314,152 +3231,221 @@
               <div style="margin-top:28px;">
 
                 <label class="field-label">
+
                   Extra Services
+
                 </label>
 
                 <div class="choice-grid">
 
                   <label class="choice-card">
+
                     <input
+
                       type="checkbox"
+
                       name="extra"
+
                       value="Google Business setup"
+
                     >
+
                     <div>
+
                       <strong>Google Business</strong>
+
                       <span>Setup or optimization help</span>
+
                     </div>
+
                   </label>
 
                   <label class="choice-card">
+
                     <input
+
                       type="checkbox"
+
                       name="extra"
+
                       value="Domain setup"
+
                     >
+
                     <div>
+
                       <strong>Domain Setup</strong>
+
                       <span>Purchase and connection help</span>
+
                     </div>
+
                   </label>
 
                   <label class="choice-card">
+
                     <input
+
                       type="checkbox"
+
                       name="extra"
+
                       value="SEO"
+
                     >
+
                     <div>
+
                       <strong>SEO</strong>
+
                       <span>Stronger search foundation</span>
+
                     </div>
+
                   </label>
 
                   <label class="choice-card">
+
                     <input
+
                       type="checkbox"
+
                       name="extra"
+
                       value="Ongoing maintenance"
+
                     >
+
                     <div>
+
                       <strong>Maintenance</strong>
+
                       <span>Keep us managing the site</span>
+
                     </div>
+
                   </label>
 
                   <label class="choice-card">
+
                     <input
+
                       type="checkbox"
+
                       name="extra"
+
                       value="Quote or booking system"
+
                     >
+
                     <div>
+
                       <strong>Quote / Booking System</strong>
+
                       <span>Interactive customer tools</span>
+
                     </div>
+
                   </label>
 
                   <label class="choice-card">
+
                     <input
+
                       type="checkbox"
+
                       name="extra"
+
                       value="Gallery"
+
                     >
+
                     <div>
+
                       <strong>Photo Gallery</strong>
+
                       <span>Portfolio or before/after work</span>
+
                     </div>
+
                   </label>
 
                 </div>
 
               </div>
 
-              <div
-                class="field-grid"
-                style="margin-top:28px;"
-              >
+              <div class="field-grid" style="margin-top:28px;">
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="budget"
-                  >
+                  <label class="field-label" for="budget">
+
                     Project Budget
+
                   </label>
 
-                  <select
-                    id="budget"
-                    name="budget"
-                  >
+                  <select id="budget" name="budget">
+
                     <option value="">Select one</option>
+
                     <option>Under $500</option>
+
                     <option>$500-$750</option>
+
                     <option>$750-$1,000</option>
+
                     <option>$1,000-$1,500</option>
+
                     <option>$1,500+</option>
+
                     <option>Not sure yet</option>
+
                   </select>
 
                 </div>
 
                 <div class="field">
 
-                  <label
-                    class="field-label"
-                    for="timeline"
-                  >
+                  <label class="field-label" for="timeline">
+
                     Ideal Timeline
+
                   </label>
 
-                  <select
-                    id="timeline"
-                    name="timeline"
-                  >
+                  <select id="timeline" name="timeline">
+
                     <option value="">Select one</option>
+
                     <option>As soon as possible</option>
+
                     <option>Within 1-2 weeks</option>
+
                     <option>Within a month</option>
+
                     <option>1-3 months</option>
+
                     <option>No rush</option>
+
                   </select>
 
                 </div>
 
                 <div class="field field-full">
 
-                  <label
-                    class="field-label"
-                    for="notes"
-                  >
+                  <label class="field-label" for="notes">
+
                     Anything Else?
+
                   </label>
 
                   <textarea
+
                     id="notes"
+
                     name="notes"
+
                     placeholder="Tell us about special features, competitors, ideas, concerns, or anything else we should know."
+
                   ></textarea>
 
                 </div>
@@ -2469,19 +3455,31 @@
               <div class="form-nav">
 
                 <button
+
                   class="btn btn-secondary"
+
                   type="button"
+
                   data-back
+
                 >
+
                   ← Back
+
                 </button>
 
                 <button
+
                   class="btn btn-primary"
+
                   type="button"
+
                   id="reviewButton"
+
                 >
+
                   Review Project →
+
                 </button>
 
               </div>
@@ -2491,51 +3489,77 @@
             <!-- STEP 5 -->
 
             <section
+
               class="step"
+
               data-step="5"
+
             >
 
               <div class="step-number">
+
                 Final Step
+
               </div>
 
               <h2>
+
                 Review your project.
+
               </h2>
 
               <p class="step-intro">
+
                 Make sure everything looks right.
+
                 You can go back and change anything
+
                 before sending it.
+
               </p>
 
               <div
+
                 class="review-grid"
+
                 id="reviewGrid"
+
               ></div>
 
               <div
+
                 class="final-estimate"
+
                 id="finalEstimateBox"
+
               >
 
                 <div>
 
                   <span>
+
                     Website Estimate
+
                   </span>
 
                   <div class="muted">
+
                     Starting estimate only
+
                   </div>
 
                 </div>
 
                 <strong
+
                   class="gradient-text"
+
                   id="finalEstimate"
+
                 >
+
                   Custom
+
                 </strong>
 
               </div>
@@ -2543,26 +3567,41 @@
               <div class="form-nav">
 
                 <button
+
                   class="btn btn-secondary"
+
                   type="button"
+
                   data-back
+
                 >
+
                   ← Make Changes
+
                 </button>
 
                 <button
+
                   class="btn btn-primary"
+
                   type="submit"
+
                   id="submitProject"
+
                 >
+
                   Send Project Request →
+
                 </button>
 
               </div>
 
               <div
+
                 class="submit-status"
+
                 id="submitStatus"
+
               ></div>
 
             </section>
@@ -2570,48 +3609,75 @@
           </form>
 
           <div
+
             class="success-screen"
+
             id="successScreen"
+
           >
 
             <div class="success-icon">
+
               ✓
+
             </div>
 
             <h2>
+
               Project request sent.
+
             </h2>
 
             <p>
+
               Your project details have been sent to
+
               Forged Digital Designs.
+
               We'll review everything you submitted
+
               and use it to determine the right next step
+
               for your website.
+
             </p>
 
             <div class="success-actions">
 
               <button
+
                 class="btn btn-primary"
+
                 type="button"
+
                 id="copyBrief"
+
               >
+
                 Copy Project Brief
+
               </button>
 
               <a
+
                 href="index.html"
+
                 class="btn btn-secondary"
+
               >
+
                 Back to Homepage
+
               </a>
 
             </div>
 
             <div
+
               class="copied-message"
+
               id="copiedMessage"
+
             ></div>
 
           </div>
@@ -2619,8 +3685,11 @@
         </div>
 
         <p class="submission-note">
+
           Your progress is saved in this browser while
+
           you complete the questionnaire.
+
         </p>
 
       </div>
@@ -2636,11 +3705,15 @@
       <div class="footer-row">
 
         <div>
+
           Forged Digital Designs © 2026
+
         </div>
 
         <div>
+
           Forged to stand out. Built to perform.
+
         </div>
 
       </div>
@@ -2650,440 +3723,727 @@
   </footer>
 
   <script>
+
     const form =
+
       document.getElementById(
+
         "projectForm"
+
       );
 
     const steps =
+
       Array.from(
+
         document.querySelectorAll(
+
           ".step"
+
         )
+
       );
 
     const progressBar =
+
       document.getElementById(
+
         "progressBar"
+
       );
 
     const progressText =
+
       document.getElementById(
+
         "progressText"
+
       );
 
     const progressPercent =
+
       document.getElementById(
+
         "progressPercent"
+
       );
 
     const successScreen =
+
       document.getElementById(
+
         "successScreen"
+
       );
 
     const submitProject =
+
       document.getElementById(
+
         "submitProject"
+
       );
 
     const submitStatus =
+
       document.getElementById(
+
         "submitStatus"
+
       );
 
     let currentStep = 1;
 
     let importedEstimate = "";
+
     let importedProjectText = "";
+
     let importedPackage = "";
 
     let finalBrief = "";
 
     /* =========================================================
+
        URL PARAMETERS
+
     ========================================================= */
 
     const urlParams =
+
       new URLSearchParams(
+
         window.location.search
+
       );
 
     importedEstimate =
+
       urlParams.get("estimate") || "";
 
     importedProjectText =
+
       urlParams.get("project") || "";
 
     importedPackage =
-      urlParams.get("package") || "";
+
+      (
+
+        urlParams.get("package") ||
+
+        ""
+
+      )
+
+      .toLowerCase()
+
+      .trim();
 
     const importedProject =
+
       document.getElementById(
+
         "importedProject"
+
       );
 
     const importedPrice =
+
       document.getElementById(
+
         "importedPrice"
+
       );
 
     const importedTitle =
+
       document.getElementById(
+
         "importedTitle"
+
       );
 
     const importedDetails =
+
       document.getElementById(
+
         "importedDetails"
+
       );
 
     const packageInfo = {
+
       ignite: {
+
         title:
+
           "Ignite Website Package",
 
         price:
+
           "399",
 
+        displayPrice:
+
+          "$399",
+
         details:
+
           "1-page custom website, responsive design, contact section, SEO foundations, and domain connection assistance."
+
       },
 
       forge: {
+
         title:
+
           "Forge Website Package",
 
         price:
+
           "699",
 
+        displayPrice:
+
+          "$699",
+
         details:
+
           "Custom business website with multiple sections or pages, forms, mobile optimization, SEO foundations, and Google Business assistance."
+
       },
 
       foundry: {
+
         title:
+
           "Foundry Website Package",
 
         price:
-          "999+",
+
+          "999",
+
+        displayPrice:
+
+          "$999+",
 
         details:
+
           "Advanced custom website with multiple pages, custom functionality, domain configuration, Google Business setup, and launch assistance."
+
       }
+
     };
 
-    if (importedEstimate) {
+    /*
 
-      importedProject.classList.add(
-        "show"
-      );
+      Package takes priority over estimate.
 
-      importedTitle.textContent =
-        "Configured Website Project";
+      This prevents an old estimate URL
 
-      importedPrice.textContent =
-        "$" +
-        Number(
-          importedEstimate
-        ).toLocaleString();
+      from overriding Ignite / Forge / Foundry.
 
-      importedDetails.textContent =
-        importedProjectText ||
-        "Custom website configuration";
+    */
 
-    } else if (
+    if (
+
       importedPackage &&
+
       packageInfo[importedPackage]
+
     ) {
 
       const data =
+
         packageInfo[
+
           importedPackage
+
         ];
 
       importedProject.classList.add(
+
         "show"
+
       );
 
       importedTitle.textContent =
+
         data.title;
 
       importedPrice.textContent =
-        "$" +
-        data.price;
+
+        data.displayPrice;
 
       importedDetails.textContent =
+
         data.details;
 
       importedEstimate =
-        data.price.replace(
-          "+",
-          ""
-        );
+
+        data.price;
 
       importedProjectText =
+
         data.details;
+
+    } else if (
+
+      importedEstimate
+
+    ) {
+
+      importedProject.classList.add(
+
+        "show"
+
+      );
+
+      importedTitle.textContent =
+
+        "Configured Website Project";
+
+      const numericEstimate =
+
+        Number(
+
+          String(
+
+            importedEstimate
+
+          ).replace(
+
+            /[^0-9.]/g,
+
+            ""
+
+          )
+
+        );
+
+      importedPrice.textContent =
+
+        numericEstimate
+
+          ?
+
+            "$" +
+
+            numericEstimate.toLocaleString()
+
+          :
+
+            importedEstimate;
+
+      importedDetails.textContent =
+
+        importedProjectText ||
+
+        "Custom website configuration";
+
     }
 
     /* =========================================================
+
        STEP MANAGEMENT
+
     ========================================================= */
 
     function showStep(
+
       stepNumber
+
     ) {
 
       currentStep =
+
         stepNumber;
 
       steps.forEach(
+
         (step) => {
 
           const active =
+
             Number(
+
               step.dataset.step
+
             ) === currentStep;
 
           step.classList.toggle(
+
             "active",
+
             active
+
           );
 
         }
+
       );
 
       const percent =
+
         currentStep * 20;
 
       progressBar.style.width =
+
         percent + "%";
 
       progressText.textContent =
+
         "Step " +
+
         currentStep +
+
         " of 5";
 
       progressPercent.textContent =
+
         percent + "%";
 
       window.scrollTo({
+
         top: 90,
+
         behavior: "smooth"
+
       });
+
     }
 
     /* =========================================================
+
        VALIDATION
+
     ========================================================= */
 
     function validateCurrentStep() {
 
       const activeStep =
+
         document.querySelector(
+
           '.step[data-step="' +
+
           currentStep +
+
           '"]'
+
         );
 
       const requiredFields =
+
         activeStep.querySelectorAll(
+
           "[required]"
+
         );
 
       const message =
+
         activeStep.querySelector(
+
           "[data-validation-message]"
+
         );
 
       let valid = true;
 
       requiredFields.forEach(
+
         (field) => {
 
           field.classList.remove(
+
             "field-error"
+
           );
 
           if (
+
             !field.value.trim()
+
           ) {
 
             field.classList.add(
+
               "field-error"
+
             );
 
             valid = false;
+
           }
 
           if (
+
             field.type ===
+
               "email" &&
+
             field.value.trim() &&
+
             !field.checkValidity()
+
           ) {
 
             field.classList.add(
+
               "field-error"
+
             );
 
             valid = false;
+
           }
 
         }
+
       );
 
-      if (message) {
+      if (
+
+        message
+
+      ) {
 
         message.classList.toggle(
+
           "show",
+
           !valid
+
         );
+
       }
 
-      if (!valid) {
+      if (
+
+        !valid
+
+      ) {
 
         const firstError =
+
           activeStep.querySelector(
+
             ".field-error"
+
           );
 
-        if (firstError) {
+        if (
+
+          firstError
+
+        ) {
 
           firstError.focus();
+
         }
+
       }
 
       return valid;
+
     }
 
     form.addEventListener(
+
       "input",
+
       (event) => {
 
         if (
+
           event.target.classList.contains(
+
             "field-error"
+
           )
+
         ) {
 
           event.target.classList.remove(
+
             "field-error"
+
           );
+
         }
 
       }
+
     );
 
     /* =========================================================
+
        NEXT / BACK
+
     ========================================================= */
 
     document
+
       .querySelectorAll(
+
         "[data-next]"
+
       )
+
       .forEach(
+
         (button) => {
 
           button.addEventListener(
+
             "click",
+
             () => {
 
               if (
+
                 validateCurrentStep()
+
               ) {
 
                 saveForm();
 
                 showStep(
+
                   currentStep + 1
+
                 );
+
               }
 
             }
+
           );
 
         }
+
       );
 
     document
+
       .querySelectorAll(
+
         "[data-back]"
+
       )
+
       .forEach(
+
         (button) => {
 
           button.addEventListener(
+
             "click",
+
             () => {
 
               saveForm();
 
               showStep(
+
                 currentStep - 1
+
               );
 
             }
+
           );
 
         }
+
       );
 
     /* =========================================================
+
        CHOICE VISUALS
-       FIXED: let the label handle the toggle naturally
+
     ========================================================= */
 
     function updateChoiceVisuals() {
 
       document
+
         .querySelectorAll(
+
           ".choice-card, .color-choice"
+
         )
+
         .forEach(
+
           (card) => {
 
             const input =
+
               card.querySelector(
+
                 "input"
+
               );
 
-            if (!input) {
+            if (
+
+              !input
+
+            ) {
+
               return;
+
             }
 
             card.classList.toggle(
+
               "selected",
+
               input.checked
+
             );
 
           }
+
         );
+
     }
 
     document
+
       .querySelectorAll(
+
         ".choice-card input, .color-choice input"
+
       )
+
       .forEach(
+
         (input) => {
 
           input.addEventListener(
+
             "change",
+
             () => {
 
               updateChoiceVisuals();
+
               saveForm();
 
             }
+
           );
 
         }
+
       );
 
     /* =========================================================
+
        SAVE FORM
+
     ========================================================= */
 
     function saveForm() {
@@ -3091,80 +4451,129 @@
       const data = {};
 
       const formData =
+
         new FormData(
+
           form
+
         );
 
       for (
+
         const [
+
           key,
+
           value
+
         ]
+
         of formData.entries()
+
       ) {
 
         if (
+
           key === "_subject"
+
         ) {
+
           continue;
+
         }
 
         if (
+
           data[key]
+
         ) {
 
           if (
+
             !Array.isArray(
+
               data[key]
+
             )
+
           ) {
 
             data[key] =
+
               [
+
                 data[key]
+
               ];
+
           }
 
           data[key].push(
+
             value
+
           );
 
         } else {
 
           data[key] =
+
             value;
+
         }
+
       }
 
       try {
 
         localStorage.setItem(
+
           "forgedProjectForm",
+
           JSON.stringify(
+
             data
+
           )
+
         );
 
-      } catch (error) {
+      } catch (
+
+        error
+
+      ) {
 
         console.log(
+
           "Form save unavailable."
+
         );
+
       }
+
     }
 
     form.addEventListener(
+
       "input",
+
       saveForm
+
     );
 
     form.addEventListener(
+
       "change",
+
       saveForm
+
     );
 
     /* =========================================================
+
        RESTORE
+
     ========================================================= */
 
     function restoreForm() {
@@ -3174,547 +4583,992 @@
       try {
 
         saved =
+
           JSON.parse(
+
             localStorage.getItem(
+
               "forgedProjectForm"
+
             )
+
           );
 
-      } catch (error) {
+      } catch (
+
+        error
+
+      ) {
 
         return;
+
       }
 
-      if (!saved) {
+      if (
+
+        !saved
+
+      ) {
+
         return;
+
       }
 
       Object.keys(
+
         saved
+
       ).forEach(
+
         (key) => {
 
           const fields =
+
             form.querySelectorAll(
+
               '[name="' +
+
               key +
+
               '"]'
+
             );
 
           const values =
+
             Array.isArray(
+
               saved[key]
+
             )
-              ? saved[key]
-              : [saved[key]];
+
+              ?
+
+                saved[key]
+
+              :
+
+                [
+
+                  saved[key]
+
+                ];
 
           fields.forEach(
+
             (field) => {
 
               if (
+
                 field.type ===
+
                   "checkbox" ||
+
                 field.type ===
+
                   "radio"
+
               ) {
 
                 field.checked =
+
                   values.includes(
+
                     field.value
+
                   );
 
               } else {
 
                 field.value =
+
                   saved[key];
+
               }
 
             }
+
           );
 
         }
+
       );
 
       updateChoiceVisuals();
+
     }
 
     restoreForm();
 
     /* =========================================================
+
        REVIEW
+
     ========================================================= */
 
     const reviewButton =
+
       document.getElementById(
+
         "reviewButton"
+
       );
 
     const reviewGrid =
+
       document.getElementById(
+
         "reviewGrid"
+
       );
 
     const finalEstimate =
+
       document.getElementById(
+
         "finalEstimate"
+
       );
 
     function getCheckedValues(
+
       name
+
     ) {
 
       return Array.from(
+
         form.querySelectorAll(
+
           'input[name="' +
+
           name +
+
           '"]:checked'
+
         )
+
       )
+
       .map(
+
         (input) =>
+
           input.value
+
       )
-      .join(", ");
+
+      .join(
+
+        ", "
+
+      );
+
     }
 
     function fieldValue(
+
       id
+
     ) {
 
       const element =
+
         document.getElementById(
+
           id
+
         );
 
       return element &&
+
         element.value.trim()
-          ? element.value.trim()
-          : "Not provided";
+
+          ?
+
+            element.value.trim()
+
+          :
+
+            "Not provided";
+
     }
 
     function selectedRadio(
+
       name
+
     ) {
 
       const input =
+
         form.querySelector(
+
           'input[name="' +
+
           name +
+
           '"]:checked'
+
         );
 
       return input
-        ? input.value
-        : "Not selected";
+
+        ?
+
+          input.value
+
+        :
+
+          "Not selected";
+
     }
 
     function createReviewCard(
+
       label,
+
       value,
+
       full = false
+
     ) {
 
       const card =
+
         document.createElement(
+
           "div"
+
         );
 
       card.className =
+
         "review-card" +
+
         (
+
           full
-            ? " full"
-            : ""
+
+            ?
+
+              " full"
+
+            :
+
+              ""
+
         );
 
       const labelElement =
+
         document.createElement(
+
           "div"
+
         );
 
       labelElement.className =
+
         "review-label";
 
       labelElement.textContent =
+
         label;
 
       const valueElement =
+
         document.createElement(
+
           "div"
+
         );
 
       valueElement.className =
+
         "review-value";
 
       valueElement.textContent =
+
         value ||
+
         "Not provided";
 
       card.appendChild(
+
         labelElement
+
       );
 
       card.appendChild(
+
         valueElement
+
       );
 
       reviewGrid.appendChild(
+
         card
+
       );
+
     }
 
     function buildReview() {
 
       reviewGrid.innerHTML =
+
         "";
 
       createReviewCard(
+
         "Client",
+
         fieldValue(
+
           "name"
+
         )
+
       );
 
       createReviewCard(
+
         "Business",
+
         fieldValue(
+
           "businessName"
+
         )
+
       );
 
       createReviewCard(
+
         "Phone",
+
         fieldValue(
+
           "phone"
+
         )
+
       );
 
       createReviewCard(
+
         "Email",
+
         fieldValue(
+
           "email"
+
         )
+
       );
 
       createReviewCard(
+
         "Business Type",
+
         fieldValue(
+
           "industry"
+
         )
+
       );
 
       createReviewCard(
+
         "Location",
+
         fieldValue(
+
           "location"
+
         )
+
       );
 
       createReviewCard(
+
         "Website Goals",
+
         getCheckedValues(
+
           "goal"
+
         ) ||
+
         "Not selected",
+
         true
+
       );
 
       createReviewCard(
+
         "Definition of Success",
+
         fieldValue(
+
           "websiteGoal"
+
         ),
+
         true
+
       );
 
       createReviewCard(
+
         "Visual Style",
+
         selectedRadio(
+
           "style"
+
         )
+
       );
 
       createReviewCard(
+
         "Color Direction",
+
         selectedRadio(
+
           "colorDirection"
+
         )
+
       );
 
       createReviewCard(
+
         "Logo",
+
         fieldValue(
+
           "logoStatus"
+
         )
+
       );
 
       createReviewCard(
+
         "Existing Website",
+
         fieldValue(
+
           "existingSite"
+
         )
+
       );
 
       createReviewCard(
+
         "Existing URL",
+
         fieldValue(
+
           "existingUrl"
+
         )
+
       );
 
       createReviewCard(
+
         "Domain",
+
         fieldValue(
+
           "domainStatus"
+
         )
+
       );
 
       createReviewCard(
+
         "Approximate Pages",
+
         fieldValue(
+
           "pageEstimate"
+
         )
+
       );
 
       createReviewCard(
+
         "Budget",
+
         fieldValue(
+
           "budget"
+
         )
+
       );
 
       createReviewCard(
+
         "Timeline",
+
         fieldValue(
+
           "timeline"
+
         )
+
       );
 
       createReviewCard(
+
         "Extra Services",
+
         getCheckedValues(
+
           "extra"
+
         ) ||
+
         "None selected",
+
         true
+
       );
 
       createReviewCard(
+
         "Additional Notes",
+
         fieldValue(
+
           "notes"
+
         ),
+
         true
+
       );
 
       if (
-        importedEstimate
+
+        importedPackage &&
+
+        packageInfo[
+
+          importedPackage
+
+        ]
+
       ) {
 
         finalEstimate.textContent =
-          "$" +
+
+          packageInfo[
+
+            importedPackage
+
+          ].displayPrice;
+
+      } else if (
+
+        importedEstimate
+
+      ) {
+
+        const numericEstimate =
+
           Number(
-            importedEstimate
-          ).toLocaleString();
+
+            String(
+
+              importedEstimate
+
+            ).replace(
+
+              /[^0-9.]/g,
+
+              ""
+
+            )
+
+          );
+
+        finalEstimate.textContent =
+
+          numericEstimate
+
+            ?
+
+              "$" +
+
+              numericEstimate.toLocaleString()
+
+            :
+
+              importedEstimate;
 
       } else {
 
         finalEstimate.textContent =
+
           "Custom";
+
       }
+
     }
 
     reviewButton.addEventListener(
+
       "click",
+
       () => {
 
         saveForm();
+
         buildReview();
-        showStep(5);
+
+        showStep(
+
+          5
+
+        );
 
       }
+
     );
 
     /* =========================================================
+
        PROJECT BRIEF
+
     ========================================================= */
 
     function createProjectBrief() {
 
       const lines = [
+
         "FORGED DIGITAL DESIGNS",
+
         "PROJECT BRIEF",
+
         "",
+
         "CLIENT INFORMATION",
 
         "Name: " +
+
           fieldValue(
+
             "name"
+
           ),
 
         "Business: " +
+
           fieldValue(
+
             "businessName"
+
           ),
 
         "Phone: " +
+
           fieldValue(
+
             "phone"
+
           ),
 
         "Email: " +
+
           fieldValue(
+
             "email"
+
           ),
 
         "Location: " +
+
           fieldValue(
+
             "location"
+
           ),
 
         "Industry: " +
+
           fieldValue(
+
             "industry"
+
           ),
 
         "",
+
         "WEBSITE GOALS",
 
         getCheckedValues(
+
           "goal"
+
         ) ||
+
         "Not selected",
 
         "",
+
         "SUCCESS LOOKS LIKE",
 
         fieldValue(
+
           "websiteGoal"
+
         ),
 
         "",
+
         "DESIGN",
 
         "Style: " +
+
           selectedRadio(
+
             "style"
+
           ),
 
         "Colors: " +
+
           selectedRadio(
+
             "colorDirection"
+
           ),
 
         "Logo: " +
+
           fieldValue(
+
             "logoStatus"
+
           ),
 
         "Inspiration: " +
+
           fieldValue(
+
             "inspiration"
+
           ),
 
         "",
+
         "PROJECT SCOPE",
 
         "Existing Website: " +
+
           fieldValue(
+
             "existingSite"
+
           ),
 
         "Existing URL: " +
+
           fieldValue(
+
             "existingUrl"
+
           ),
 
         "Domain: " +
+
           fieldValue(
+
             "domainStatus"
+
           ),
 
         "Pages: " +
+
           fieldValue(
+
             "pageEstimate"
+
           ),
 
         "Extras: " +
+
           (
+
             getCheckedValues(
+
               "extra"
+
             ) ||
+
             "None selected"
+
           ),
 
         "",
+
         "BUDGET & TIMELINE",
 
         "Budget: " +
+
           fieldValue(
+
             "budget"
+
           ),
 
         "Timeline: " +
+
           fieldValue(
+
             "timeline"
+
           ),
 
         "",
+
         "ADDITIONAL NOTES",
 
         fieldValue(
+
           "notes"
+
         )
+
       ];
 
       if (
-        importedPackage
-      ) {
 
-        lines.push(
-          "",
-          "SELECTED PACKAGE",
+        importedPackage &&
+
+        packageInfo[
+
           importedPackage
+
+        ]
+
+      ) {
+
+        lines.push(
+
+          "",
+
+          "SELECTED PACKAGE",
+
+          packageInfo[
+
+            importedPackage
+
+          ].title
+
         );
+
       }
 
       if (
+
         importedEstimate
+
       ) {
 
-        lines.push(
-          "",
-          "WEBSITE ESTIMATE",
-          "$" +
-            Number(
+        const numericEstimate =
+
+          Number(
+
+            String(
+
               importedEstimate
-            ).toLocaleString()
+
+            ).replace(
+
+              /[^0-9.]/g,
+
+              ""
+
+            )
+
+          );
+
+        lines.push(
+
+          "",
+
+          "WEBSITE ESTIMATE",
+
+          numericEstimate
+
+            ?
+
+              "$" +
+
+              numericEstimate.toLocaleString()
+
+            :
+
+              importedEstimate
+
         );
+
       }
 
       if (
+
         importedProjectText
+
       ) {
 
         lines.push(
+
           "",
+
           "ESTIMATOR CONFIGURATION",
+
           importedProjectText
+
         );
+
       }
 
       return lines.join(
+
         "\n"
+
       );
+
     }
 
     /* =========================================================
+
        SUBMIT TO FORMSPREE
+
     ========================================================= */
 
     form.addEventListener(
+
       "submit",
-      async (event) => {
+
+      async (
+
+        event
+
+      ) => {
 
         event.preventDefault();
 
@@ -3723,190 +5577,297 @@
         buildReview();
 
         finalBrief =
+
           createProjectBrief();
 
         submitProject.disabled =
+
           true;
 
         submitProject.textContent =
+
           "Sending...";
 
         submitStatus.classList.remove(
+
           "error"
+
         );
 
         submitStatus.textContent =
+
           "Sending your project request...";
 
         const formData =
+
           new FormData(
+
             form
+
           );
 
         formData.append(
+
           "Project Brief",
+
           finalBrief
+
         );
 
         if (
-          importedPackage
-        ) {
 
-          formData.append(
-            "Selected Package",
+          importedPackage &&
+
+          packageInfo[
+
             importedPackage
+
+          ]
+
+        ) {
+
+          formData.append(
+
+            "Selected Package",
+
+            packageInfo[
+
+              importedPackage
+
+            ].title
+
           );
+
         }
 
         if (
+
           importedEstimate
+
         ) {
 
           formData.append(
+
             "Website Estimate",
-            "$" +
-            Number(
-              importedEstimate
-            ).toLocaleString()
+
+            importedEstimate
+
           );
+
         }
 
         if (
+
           importedProjectText
+
         ) {
 
           formData.append(
+
             "Estimator Configuration",
+
             importedProjectText
+
           );
+
         }
 
         try {
 
           const response =
+
             await fetch(
+
               "https://formspree.io/f/xkjweqpd",
+
               {
+
                 method:
+
                   "POST",
 
                 body:
+
                   formData,
 
                 headers: {
+
                   Accept:
+
                     "application/json"
+
                 }
+
               }
+
             );
 
           if (
+
             !response.ok
+
           ) {
 
             throw new Error(
+
               "Form submission failed."
+
             );
+
           }
 
           try {
 
             localStorage.removeItem(
+
               "forgedProjectForm"
+
             );
 
-          } catch (error) {
+          } catch (
+
+            error
+
+          ) {
 
             console.log(
+
               "Saved form could not be cleared."
+
             );
+
           }
 
           form.style.display =
+
             "none";
 
           successScreen.classList.add(
+
             "active"
+
           );
 
           progressBar.style.width =
+
             "100%";
 
           progressText.textContent =
+
             "Project Request Sent";
 
           progressPercent.textContent =
+
             "100%";
 
           window.scrollTo({
+
             top: 100,
+
             behavior: "smooth"
+
           });
 
-        } catch (error) {
+        } catch (
+
+          error
+
+        ) {
 
           submitProject.disabled =
+
             false;
 
           submitProject.textContent =
+
             "Send Project Request →";
 
           submitStatus.classList.add(
+
             "error"
+
           );
 
           submitStatus.textContent =
+
             "Something went wrong while sending. Please try again.";
+
         }
 
       }
+
     );
 
     /* =========================================================
+
        COPY BRIEF
+
     ========================================================= */
 
     const copyBrief =
+
       document.getElementById(
+
         "copyBrief"
+
       );
 
     const copiedMessage =
+
       document.getElementById(
+
         "copiedMessage"
+
       );
 
     copyBrief.addEventListener(
+
       "click",
+
       async () => {
 
         if (
+
           !finalBrief
+
         ) {
 
           finalBrief =
+
             createProjectBrief();
+
         }
 
         try {
 
           await navigator.clipboard.writeText(
+
             finalBrief
+
           );
 
           copiedMessage.textContent =
+
             "Project brief copied ✓";
 
-        } catch (error) {
+        } catch (
+
+          error
+
+        ) {
 
           copiedMessage.textContent =
+
             "Your browser couldn't copy it automatically.";
+
         }
 
       }
+
     );
 
   </script>
 
 </body>
+
 </html>
